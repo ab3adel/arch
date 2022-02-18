@@ -1,0 +1,74 @@
+.homepageFiveContainer {
+    display:grid;
+    grid-template-rows: 100px 1fr 100px;
+    min-height: 100vh;
+    background-color: #272727;
+    grid-row: 5/5;
+    .homepageFiveTitle {
+        grid-row:1/1;
+        display:flex;
+        color:white;
+        justify-content: center;
+        font-size: xx-large;
+        letter-spacing: 1rem;
+        p {
+            color:#c5a47e;
+            margin-left: 1rem;
+        }
+    }
+    .homepageFiveBody {
+        display:flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        padding:1rem;
+        .client {
+            width:25%;
+            opacity: 0.5;
+        }
+        .client :focus {
+            opacity: 1;
+        }
+    }
+    .homepageFiveButton {
+        justify-content: center;
+        align-items: center;
+        display:flex;
+        
+        button {
+            background-color: #c5a47e;
+            border-radius: 30px;
+            color:white;
+            font-size: x-large;
+            display: flex;
+            align-items: center;
+            .MuiSvgIcon-root {
+                font-size: 2rem;
+            }
+        }
+    }
+}
+@media only  screen and (max-width:501px) {
+    .homepageFiveContainer {
+        .homepageFiveTitle {
+            font-size: large;
+            font-weight:bold;
+            letter-spacing: 0.5rem;
+        }
+        .homepageFiveBody {
+            flex-direction: column;
+            padding:0;
+            .client {
+                width:100%;
+                display: flex;
+                justify-content: center;
+                opacity: 0.5;
+            }
+        }
+        .homepageFiveButton {
+            button {
+                font-size: large;
+            }
+        }
+    }
+}

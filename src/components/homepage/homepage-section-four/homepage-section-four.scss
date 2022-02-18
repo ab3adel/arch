@@ -1,0 +1,49 @@
+.homepageFourContainer {
+    grid-row:4/4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #272727;
+    .homepageFourBackground {
+        background-image: url('../../../images/homepage4/back.jpg');
+        background-repeat: no-repeat;
+        background-blend-mode: darken;
+        display: inline-block;
+        .parallaxNumber {
+           font-weight: bold;
+           font-size: 22rem;
+           line-height: 1;
+           mix-blend-mode: darken;
+           color: white;
+           background:#272727 ;
+        }
+    }
+    .homepageFourTitle {
+        font-size:x-large;
+        display: flex;
+        flex-direction: column;
+        color:white;
+        p {
+            color:#c5a47e
+        }
+
+    }
+}
+@media only screen and (max-width:501px) {
+    .homepageFourContainer {
+        flex-direction: column;
+        max-width: 100vw;
+        .homepageFourBackground {
+            .parallaxNumber {
+                font-size: 17rem;
+            }
+        }
+        .homepageFourTitle {
+            justify-content: center;
+            align-items: center;
+            p {
+                text-align: center;
+            }
+        }
+    }
+}

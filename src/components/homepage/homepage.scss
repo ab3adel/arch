@@ -1,0 +1,7 @@
+
+.homepageContainer {
+    grid-row: 2/2;
+    display: grid;
+    grid-template-rows: minmax(100vh,100vh) 1fr minmax(100vh,105vh) minmax(100vh,100vh) minmax(100vh,100vh) ;
+  
+}
