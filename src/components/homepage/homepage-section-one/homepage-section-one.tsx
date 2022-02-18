@@ -17,11 +17,11 @@ import {useState,useEffect, useRef} from 'react'
 import Img1 from '../../../images/back1.jpg'
 import Img2 from '../../../images/back2.jpg'
 import Img3 from '../../../images/back3.jpg'
-import testImg1 from '../../../images/back4.jpg'
-import testImg2 from '../../../images/back5.jpg'
-import testImg3 from '../../../images/back7.jpg'
+import testImg1 from '../../../images/slide1.jpg'
+import testImg2 from '../../../images/slide2.jpg'
+import testImg3 from '../../../images/slide3.jpg'
 interface iEle {i:number,shift:number,left:number}
-interface iCustom {i:number,shift:number,index:number}
+interface iCustom {i:number,shift:number,index:number,order:number}
 interface childCustom {i:string,shift:number,index:number}
 interface iTexts {[key:string]:string}
 let imgsArr =[testImg1,testImg2,testImg3]
@@ -43,61 +43,7 @@ const main:Variants = {
       },
     })
   }
-  const fakeMain:Variants = {
-    first:(custom:iCustom) =>({
-      backgroundImage:`url(${imgsArr[custom.index]})`,
-    }),
-      second :(custom:iCustom) =>({
-        backgroundImage:`url(${imgsArr[custom.index]})`,
-        backgroundSize:['105%','110%','115%'],
-        opacity:[0,1,0],
-        transition:{
-          when:"beforeChildren",
-          duration:3,
-          ease:'easeInOut' ,
-          opacity:{
-            duration:2
-         },
-          backgroundImage : {
-            delay:3,
-            duration:1
-          },
-       
-        },
-      })
-    }
-  const child:Variants = {
-    first :( custom:iCustom)=>({ 
-      backgroundImage:`url(${imgsArr[custom.index]})`,
-      opacity:1,
-    
-    }),
-    second : (custom:iCustom) =>({
-     border:'1px solid transparent',
-     backgroundImage:`url(${imgsArr[custom.index]})`,
-     opacity:[0,1,0],
-     backgroundPositionX:[`${custom.i}%`,custom.i >40 ? `${custom.i + custom.shift }%`: `${custom.i - custom.shift }%`],
-      transition : {
-        duration:2,
-        ease:'linear',
-        opacity: {
-          delay:0.5+custom.index/200,
-          duration:1.5,
-          ease:'linear'
-        },
-        backgroundPositionX:{
-          delay:custom.index/200,
-          duration:2+custom.index/200,
-          ease:'easeInOut'
-        },
-       backgroundImage : {
-         delay:0.5
-       },
-
-      },
-     
-    })
-  }
+  
   const childTopMost:Variants = {
     first :( custom:iCustom)=>({ 
       backgroundImage:`url(${imgsArr[custom.index===0? 2:custom.index-1 ]})`,
@@ -142,7 +88,8 @@ const title:Variants= {
       ease:'easeInOut',
       y:{
         duration:2,
-        ease:'easeIn'
+        ease:'easeIn',
+       
       },
       rotateZ :{
         delay:2.5,
@@ -186,30 +133,18 @@ const button:Variants = {
   }
 }
 const testChild:Variants ={
-  second : (custom:childCustom) =>({
-    border:'1px solid transparent',
+  second : (custom:iCustom) =>({
     backgroundImage:`url(${imgsArr[custom.index]})`,
-    x:[100,0],
-    opacity:[0,1,0],
-    backgroundPositionX:custom.shift,
-     transition : {
-       duration:3,
-       ease:'linear',
-     opacity: {
-         delay:custom.index,
-         duration:3,
-         ease:'linear'
-       },
-      
-      backgroundImage : {
-        delay:0.5
-      },
-      x:{
-        delay:1-custom.index/100
+      backgroundPositionX:['0%',`${custom.i}%`],
+      opacity:[1,0],
+      transition: {
+        duration:4,
+        ease:'easeInOut',
+        delay:1.5,
+       backgroundPositionX: {
+         delay:1.5+custom.order/10
+       }
       }
-
-     },
-    
    })
 }
 export const HomePageSectionOne= ( ) =>{
@@ -217,9 +152,9 @@ export const HomePageSectionOne= ( ) =>{
   const [vals,setVals] =useState(
     [
       
-      {left:87.5,shift:12.5,i:87.5}, 
-      {left:75.5,shift:12.5,i:75} ,
-      //{left:62.5,shift:0,i:62.5} ,
+      {left:87.5,shift:12.5,i:100}, 
+      {left:75.5,shift:12.5,i:87.5} ,
+      {left:62.5,shift:0,i:75.5} ,
       {left:50,shift:12.5,i:62.5} 
       ,{left:37.5,shift:12.5,i:50} 
     ,{left:25,shift:12.5,i:37.5}
@@ -229,7 +164,7 @@ export const HomePageSectionOne= ( ) =>{
  
 )
 const [texts,setTexts]=useState({title:[
-  'M','O','H','A','M','M','A','D','','I','S','M','A','E','E','L'
+  '3','D','','.','I','K','O','N','I','K','S','','D','E','S','I','G','N'
 ],
 paragraph:['Occaecat adipisicing ea in voluptate ut elit commodo Nisi magna cupidatat est labore Lorem.',
 ` Qui ex ex incididunt laborum qui occaecat aliquip cupidatat excepteur 
@@ -272,14 +207,15 @@ if (window.innerWidth <1024){
 
 },[])
 const handleMobileViewAnimation= () =>{
-  let step = window.innerWidth/8
-  let prev=20;
+  let step = 5
+  let prev=35;
   let newVals=[]
   let left= 0
+  if (window.innerWidth >510) step=10
   for (let index =0;index<5;index++ ) {
     
-    newVals.push({i:prev,shift:10,left})
-    if (prev<50) prev+=10
+    newVals.push({i:prev,shift:step,left})
+    prev+=step
    
     left+=20
   }
@@ -361,7 +297,7 @@ const animateManually =(str:string)=>{
                    { 
                      vals.map((ele:iEle,i:number)=>
                      {
-                       if (ele.i === 50) {
+                       /*if (ele.i === 50) {
                          return (
                           <motion.div
                           key={i}
@@ -375,16 +311,16 @@ const animateManually =(str:string)=>{
                           animate={controlChild}>
                         </motion.div>
                          )
-                       }
+                       }*/
                        return (
                               <motion.div
                                 key={i}
                                 custom={  
-                              {  i:ele.i,index,shift:ele.shift}
+                              {  i:ele.i,index,shift:ele.shift,order:i}
                             }
                                 style={{left:`${ele.left}%`}}
                                 className="animatedInterface"
-                                variants={child} 
+                                variants={testChild} 
                                 initial='first'
                                 animate={controlChild}>
                               </motion.div>

@@ -1,5 +1,7 @@
 import './homepage-section-three.scss'
-import HolderImg from '../../../images/back6.jpg'
+import HolderImg from '../../../images/homepage3/holder1.jpg'
+import HolderImg1 from '../../../images/homepage3/holder2.jpg'
+import HolderImg2 from '../../../images/homepage3/holder3.jpg'
 import {Holder ,iProps} from './holder'
 import    { 
     ArrowLeftOutlined,
@@ -9,13 +11,13 @@ from '@mui/icons-material'
 export const HomepageSectionThree = ()=> {
 const data = [ 
     {imgSrc:HolderImg,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE'},
+    {imgSrc:HolderImg1,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE'},
+    {imgSrc:HolderImg2,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE'},
+    {imgSrc:HolderImg1,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE'},
+    {imgSrc:HolderImg2,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE'},
     {imgSrc:HolderImg,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE'},
     {imgSrc:HolderImg,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE'},
-    {imgSrc:HolderImg,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE'},
-    {imgSrc:HolderImg,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE'},
-    {imgSrc:HolderImg,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE'},
-    {imgSrc:HolderImg,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE'},
-    {imgSrc:HolderImg,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE'},
+    {imgSrc:HolderImg1,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE'},
     {imgSrc:HolderImg,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE'},
 ]
 const slider=(str:string) =>{

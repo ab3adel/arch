@@ -190,7 +190,7 @@
             z-index: 3;
             position: relative;
             .animatedInterface {
-                width:20%;
+                width:12.5%;
                 height: 100%;
                 position: absolute;
                 opacity: 1;
@@ -239,9 +239,10 @@
                 letter-spacing: 0.5rem;
                 display: flex;
                 line-height:1.5rem;
+                padding:1rem;
                 p {
-                    margin-top: 0;
-                    margin-bottom: 0;
+                    
+                    margin:0
                 }
             }
             .animatedParagraph {
@@ -293,7 +294,7 @@
            }
            .animationContainer{
                .animatedInterface{
-                  
+                  width:20%
                }
            }
            .homepageOneBody {
@@ -317,6 +318,11 @@
     .homepageOneContainer {
         .rightCol {
             background-position: center;
+            .animationContainer {
+                .animatedInterface {
+                    width:20%;
+                }
+            }
         }
     }
 }
