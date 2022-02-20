@@ -49,7 +49,8 @@ export const HomepageSectionFour = () => {
     const handleScroll = () =>{
         let div =  document.querySelector('.App') as HTMLDivElement
         let back =document.querySelector('.homepageFourBackground') as HTMLDivElement
-       let backPosition = Number(back.style.backgroundPositionY.split('%')[0])
+        if (!back)  return
+       let backPosition = Number(back?.style.backgroundPositionY.split('%')[0])
        setBackgroundPosition(backPosition)
        
         if (y <div.scrollTop) {

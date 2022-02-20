@@ -3,7 +3,7 @@ import {motion,Variants,useAnimation} from 'framer-motion'
 import { useEffect,useRef, useState } from 'react'
 
 
-export interface iProps {imgSrc:string,title:string,verticalTitle:string}
+export interface iProps {imgSrc:string,title:string,verticalTitle:string,navigateTo:Function,to:string}
 
 const img:Variants= {
     first:{
@@ -97,7 +97,7 @@ const verticalTitleVariant:Variants= {
     }
 }
 
-export const Holder =({imgSrc,title,verticalTitle}:iProps)=>{
+export const Holder =({imgSrc,title,verticalTitle,navigateTo,to}:iProps)=>{
 let arrWords=['A','R','C','H','I','T','E','C','T','U','R','E']
 const controlImg=useAnimation()
 const controlZoom =useAnimation()
@@ -121,6 +121,7 @@ const stopAnimationHandler = ()=>{
         <motion.div className="holderContainer" 
         onMouseOver={()=>startAnimationHandler()}
         onMouseLeave={()=>stopAnimationHandler()}
+        onClick={()=>navigateTo(to)}
         >
             <motion.div className="imageHolder"
               variants={img}

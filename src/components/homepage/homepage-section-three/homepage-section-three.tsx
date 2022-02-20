@@ -1,4 +1,5 @@
 import './homepage-section-three.scss'
+import {useNavigate} from 'react-router-dom'
 import HolderImg from '../../../images/homepage3/holder1.jpg'
 import HolderImg1 from '../../../images/homepage3/holder2.jpg'
 import HolderImg2 from '../../../images/homepage3/holder3.jpg'
@@ -9,16 +10,17 @@ import    {
 } 
 from '@mui/icons-material'
 export const HomepageSectionThree = ()=> {
+    const navigate =useNavigate()
 const data = [ 
-    {imgSrc:HolderImg,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE'},
-    {imgSrc:HolderImg1,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE'},
-    {imgSrc:HolderImg2,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE'},
-    {imgSrc:HolderImg1,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE'},
-    {imgSrc:HolderImg2,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE'},
-    {imgSrc:HolderImg,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE'},
-    {imgSrc:HolderImg,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE'},
-    {imgSrc:HolderImg1,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE'},
-    {imgSrc:HolderImg,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE'},
+    {imgSrc:HolderImg,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE',to:'slug',navigateTo:(str:string)=>{}},
+    {imgSrc:HolderImg1,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE',to:'slug1',navigateTo:(str:string)=>{}},
+    {imgSrc:HolderImg2,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE',to:'slug2',navigateTo:(str:string)=>{}},
+    {imgSrc:HolderImg1,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE',to:'slug3',navigateTo:(str:string)=>{}},
+    {imgSrc:HolderImg2,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE',to:'slug4',navigateTo:(str:string)=>{}},
+    {imgSrc:HolderImg,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE',to:'slug5',navigateTo:(str:string)=>{}},
+    {imgSrc:HolderImg,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE',to:'slug6',navigateTo:(str:string)=>{}},
+    {imgSrc:HolderImg1,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE',to:'slug7',navigateTo:(str:string)=>{}},
+    {imgSrc:HolderImg,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE',to:'slug8',navigateTo:(str:string)=>{}},
 ]
 const slider=(str:string) =>{
     let slider = document.querySelector('.scrollableDiv') as HTMLDivElement
@@ -28,6 +30,9 @@ const slider=(str:string) =>{
     else {
         slider.scrollLeft=slider.scrollLeft -200;
     }
+}
+const toPortfolio =(str:string)=>{
+    navigate(`/portfolio/:${str}`)
 }
     return (
         <div className="homepageThreeContainer">
@@ -40,6 +45,8 @@ const slider=(str:string) =>{
                     <div className="holders">
                         {data.map((ele:iProps,i:number)=>{
                         return( <Holder imgSrc={ele.imgSrc}
+                                        navigateTo={toPortfolio}
+                                        to={ele.to}
                                         key={i}
                                         title={ele.title}
                                         verticalTitle={ele.verticalTitle}/>)

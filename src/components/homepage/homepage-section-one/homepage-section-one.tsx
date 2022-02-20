@@ -153,8 +153,8 @@ export const HomePageSectionOne= ( ) =>{
     [
       
       {left:87.5,shift:12.5,i:100}, 
-      {left:75.5,shift:12.5,i:87.5} ,
-      {left:62.5,shift:0,i:75.5} ,
+      {left:75,shift:12.5,i:87.5} ,
+      {left:62.5,shift:0,i:75} ,
       {left:50,shift:12.5,i:62.5} 
       ,{left:37.5,shift:12.5,i:50} 
     ,{left:25,shift:12.5,i:37.5}
