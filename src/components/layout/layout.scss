@@ -1,7 +1,8 @@
 
 .layoutContainer {
-    grid-template-rows: 100px 1fr 100px;
+    grid-template-rows: 50px 1fr 100vh;
     max-width: 100vw;
+    display:grid;
     .header {
         grid-row: 1/1;
     }

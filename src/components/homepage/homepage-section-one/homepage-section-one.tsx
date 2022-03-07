@@ -36,7 +36,7 @@ const main:Variants = {
         duration:1.5,
         ease:'easeInOut' ,
         backgroundImage : {
-          delay:1.5,
+          delay:1,
           duration:1
         },
      
@@ -359,7 +359,7 @@ const animateManually =(str:string)=>{
                   </div>
                   <div className="navLinks">
                     <NavLink  to={'/'}>HOME</NavLink>
-                    <NavLink to={'#'}>ABOUT US</NavLink>
+                    <NavLink to={'/about'}>ABOUT US</NavLink>
                     <NavLink to={'#'}>PROJECTS</NavLink>
                     <NavLink to={'#'}>BLOG</NavLink>
                     <NavLink to={'#'}>CONTACTS</NavLink>

@@ -17,6 +17,7 @@ import
     ,Fade
 } 
 from '@mui/material'
+import {useLocation} from 'react-router'
 import MenuIcon from '@mui/icons-material/Menu'
 
 import { Login } from '@mui/icons-material'
@@ -25,7 +26,8 @@ export const Navbar =() =>{
     const [anchorElNav, setAnchorElNav] = useState <Element |null>(null);
     const [fade,setFade] = useState(false)
     const [y,setY] = useState(0)
-
+    const location = useLocation()
+    console.log(location.pathname)
     const handleOpenNavMenu = (event:React.MouseEvent) => {
         setAnchorElNav(event.currentTarget);
        
@@ -116,7 +118,7 @@ export const Navbar =() =>{
                                             </ListItem>
                                           
                                             <ListItem button onClick={handleCloseNavMenu}>
-                                                <Link to="#">
+                                                <Link to="/about">
                                                     About Us
                                                 </Link>
                                             </ListItem >
@@ -139,8 +141,9 @@ export const Navbar =() =>{
                             </Drawer>
                         </Box>
                         <Box sx={{flexGrow:1
-                                 ,display:{xs:'none',md:'flex',sm:'flex'}
-                                 ,justifyContent:'space-between'
+                                 ,display:{xs:'none',md:'flex',sm:'flex',lg:'flex'}
+                                 ,justifyContent:'space-between',
+                                 backgroundColor:'transparent'
                                  
                                  }}>
                                      
@@ -154,19 +157,20 @@ export const Navbar =() =>{
                                               display:'flex',
                                               justifyContent:'space-evenly',
                                               alignItmes:'center',
-                                              width:'60%'
+                                              width:'60%',
+                                              color:'white'
                                           }}>
                                             <Link to="/">
                                                 Home
                                             </Link>
                                           
-                                             <Link to="#">
+                                             <Link to="/about">
                                                     About Us
                                             </Link>
                                             <Link to="#">
                                                    Projects
                                             </Link>
-                                            <Link to="#">
+                                             <Link to="#">
                                                    Bolg
                                             </Link>
                                             <Link to="#">
@@ -181,6 +185,55 @@ export const Navbar =() =>{
                
             </AppBar>
             </Fade>
+        
+           
+                <Container maxWidth="xl">
+               
+                    <Toolbar disableGutters>
+                       
+                        <Box sx={{flexGrow:1
+                                 ,display:{xs:'none',md:'flex',sm:'flex',lg:'flex'}
+                                 ,justifyContent:'space-between',
+                                 backgroundColor:'transparent'
+                                 
+                                 }}>
+                                     
+                                     
+                                     <Typography variant="h5" component="div" sx={{flexGrow:1,
+                                                                                 display:'flex',
+                                                                                 justifyContent:'center'}}>
+                                                3D<span>.</span>Ikoniks
+                                     </Typography>
+                                          <Box sx={{
+                                              display:'flex',
+                                              justifyContent:'space-evenly',
+                                              alignItmes:'center',
+                                              width:'60%',
+                                              color:'white'
+                                          }}>
+                                            <Link to="/">
+                                                Home
+                                            </Link>
+                                          
+                                             <Link to="/about">
+                                                    About Us
+                                            </Link>
+                                            <Link to="#">
+                                                   Projects
+                                            </Link>
+                                             <Link to="#">
+                                                   Bolg
+                                            </Link>
+                                            <Link to="#">
+                                                   Contacts
+                                            </Link>
+                                            </Box>
+                                          
+                        </Box>
+                    </Toolbar>
+                    
+                </Container>
+         
         </div>
         
          </>

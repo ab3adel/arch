@@ -5,6 +5,7 @@
     min-height: 100vh;
     max-height: 100vh;
     background-color: #272727;
+    grid-row: 3/3;
     .footerTitle {
         grid-row: 1/1;
         display: flex;
@@ -80,7 +81,7 @@
             grid-column: 2/2;
             display: flex;
             justify-content: center;
-           
+            background-color: #272727;
             .sendButton {
                 display: flex;
                 justify-content: flex-end;
@@ -107,6 +108,7 @@
         justify-content: space-around;
         color:white;
         align-items: center;
+        background-color: #272727;
         h4 {
             color:white;
             white-space: nowrap;
@@ -158,8 +160,13 @@
                 grid-column: 1/3;
                 .sendButton {
                     align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    height: 100%;
                     button {
-                        width:auto
+                        width:auto;
+                       
+
                     }
                 }
             }

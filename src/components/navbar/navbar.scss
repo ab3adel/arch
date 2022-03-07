@@ -2,8 +2,35 @@
     grid-row: 1/1;
     display:grid;
     grid-template-columns: 0.3fr 1fr 0.3fr;
-  
+    grid-column: 1/1;
      background-color: #2b2b2b;
+     .MuiContainer-root {
+         display:flex;
+         justify-content: stretch;
+         align-items: center;
+         color:white;
+         grid-column: 1/4;
+         .MuiToolbar-root {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width:100%;
+            .MuiBox-root {
+                .MuiTypography-root {
+                    font-weight: bold;
+                    span {
+                        color:rgb(184, 184, 31);
+                    }
+                }
+            }
+            a {
+                color: white;
+                text-decoration: none;
+                position: relative;
+               transition : 2s ease-in-out;
+            }
+         }
+     }
      .fixedButton.MuiPaper-root{
          display:none
      }
