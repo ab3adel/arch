@@ -27,7 +27,7 @@ export const Navbar =() =>{
     const [fade,setFade] = useState(false)
     const [y,setY] = useState(0)
     const location = useLocation()
-    console.log(location.pathname)
+
     const handleOpenNavMenu = (event:React.MouseEvent) => {
         setAnchorElNav(event.currentTarget);
        

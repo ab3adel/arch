@@ -31,8 +31,8 @@ const slider=(str:string) =>{
         slider.scrollLeft=slider.scrollLeft -200;
     }
 }
-const toPortfolio =(str:string)=>{
-    navigate(`/portfolio/:${str}`)
+const toPortfolio =()=>{
+    navigate(`/services`)
 }
     return (
         <div className="homepageThreeContainer">
