@@ -128,12 +128,12 @@ export const Navbar =() =>{
                                                 </Link>
                                             </ListItem >
                                             <ListItem button onClick={handleCloseNavMenu}>
-                                               <Link to="#">
+                                               <Link to="/blogs">
                                                     Blog
                                                 </Link>
                                             </ListItem >
                                             <ListItem button onClick={handleCloseNavMenu}>
-                                               <Link to="#">
+                                               <Link to="/contacts">
                                                     Contacts
                                                 </Link>
                                             </ListItem >  
@@ -170,10 +170,10 @@ export const Navbar =() =>{
                                             <Link to="#">
                                                    Projects
                                             </Link>
-                                             <Link to="#">
+                                             <Link to="/blogs">
                                                    Bolg
                                             </Link>
-                                            <Link to="#">
+                                            <Link to="/contacts">
                                                    Contacts
                                             </Link>
                                             </Box>
@@ -221,10 +221,10 @@ export const Navbar =() =>{
                                             <Link to="#">
                                                    Projects
                                             </Link>
-                                             <Link to="#">
+                                             <Link to="/blogs">
                                                    Bolg
                                             </Link>
-                                            <Link to="#">
+                                            <Link to="/contacts">
                                                    Contacts
                                             </Link>
                                             </Box>

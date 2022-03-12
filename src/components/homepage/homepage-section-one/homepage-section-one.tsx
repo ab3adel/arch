@@ -361,8 +361,8 @@ const animateManually =(str:string)=>{
                     <NavLink  to={'/'}>HOME</NavLink>
                     <NavLink to={'/about'}>ABOUT US</NavLink>
                     <NavLink to={'#'}>PROJECTS</NavLink>
-                    <NavLink to={'#'}>BLOG</NavLink>
-                    <NavLink to={'#'}>CONTACTS</NavLink>
+                    <NavLink to={'/blogs'}>BLOG</NavLink>
+                    <NavLink to={'/contacts'}>CONTACTS</NavLink>
                   </div>
                 
                 </div>

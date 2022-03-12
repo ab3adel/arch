@@ -1,0 +1,211 @@
+
+.blog {
+    display:flex;
+    flex-direction: column;
+    background-color: #2b2b22;
+    justify-content: center;
+    align-items: center;
+   
+    .intro {
+        height: 60vh;
+        display: flex;
+        justify-content: flex-end;
+        grid-row: 1/1;
+        width:100%;
+        background-repeat: no-repeat;
+        background-image:  url('../../images/blogs/background.jpg');
+        background-color: #2b2b22;
+        background-position: right;
+        background-blend-mode: darken  ;
+        background-size: 50%;
+        .introTitle {
+            font-size: x-large;
+            font-weight: bold;
+            width:50%;
+           
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color:white;
+           
+        }
+    }
+    .blogCard {
+        grid-row: 2/2;
+        display: flex;
+        justify-content: center;
+        width:80%;
+        background-color: #4d4d44;
+        box-shadow: 3px 3px 4px black;
+        margin-bottom: 3rem;
+        border-radius: 5px;
+        height: 75vh;
+        img {
+            width:55%;
+            height: auto;
+        }
+        .cardInfo {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color:white;
+            padding:1rem;
+            .tags {
+                display: flex;
+                justify-content: space-around;
+                width:100%;
+                flex-wrap: wrap;
+              
+                span {
+                    cursor: pointer;
+                    font-size: large;
+                    opacity: 0.6;
+                    border-radius: 10px;
+                    background-color: #33332f;
+                    text-transform: uppercase;
+                    display: flex;
+                    justify-content: center;
+                    height: fit-content;
+                    padding:2px;
+
+                }
+                span:hover {
+                    opacity: 1;
+                }
+                
+            }
+            .description {
+              
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                flex:1;
+                padding-top: 10px;
+                .title {
+                    font-size: larger;
+                    font-weight: bold;
+                    text-align: center;
+                    padding:10px;
+                }
+                .content {
+                    font-size: large;
+                    font-weight: 500;
+                    text-align: center;
+                    padding:10px
+                }
+            }
+            .MuiDivider-root {
+                width:80%;
+                background-color: white;
+                opacity: 0.7;
+                align-self: center;
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+            .author {
+                width:100%;
+                justify-content: space-between;
+                opacity: 0.5;
+                display: flex;
+                margin-top: 5px ;
+                margin-bottom: 5px;
+            }
+            .readMore {
+                width:100%;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                margin-top: 5px ;
+                
+                button {
+                   color: #c5a47e;
+                   background-color: transparent;
+                   text-transform: uppercase;
+                   font-size: large;
+                   font-size: bold;
+                   display: flex;
+                   justify-content: space-evenly;
+                   border:none;
+                   box-shadow: none;
+                   cursor: pointer;
+                   align-items: center;
+                   font-weight: bold;
+                   width:40%;
+                   .MuiSvgIcon-root {
+                       font-size: x-large;
+                   }
+                }
+               
+                button:hover {
+                    font-size: larger;
+                }
+            }
+
+            
+        }
+        
+    }
+}
+@media only screen and (max-width:501px) {
+    .blog {
+        .intro {
+            background-size: cover;
+        }
+        .blogCard{
+            flex-direction: column;
+            width:95%;
+            height:auto;
+            img {
+                width:100%;
+                height: 50%;
+            }
+            .cardInfo {
+               padding: 0;
+                width: 100%;
+                .tags {
+                    span {
+                        padding: 5px;;
+                    }
+                }
+                .description {
+                    .title{
+                        font-size: large;
+                    }
+                    .content{
+                        font-size: medium;
+                    }
+                }
+                .author {
+                    width: auto;
+                    padding:5px;                   
+                }
+                .readMore {
+                    margin-bottom: 10px;
+                    button {
+                        width:70%
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen   and (max-width:1024px) and (min-width:501px){
+    .blog {
+        .intro {
+            background-size: cover;
+        }
+        .blogCard {
+            height: auto;
+            width:90%;
+            .cardInfo {
+                .readMore {
+                    button {
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+}
