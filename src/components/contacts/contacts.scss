@@ -13,13 +13,14 @@
         justify-content: flex-end;
         align-items: center;
         height: 60vh;
-       
+   
         h1 {
             font-size: 3rem;
             display: flex;
             justify-content: center;
             width: 50%;
             text-transform: uppercase;
+            letter-spacing: 5px;
 
 
         }
@@ -27,7 +28,8 @@
     .contactsInfo {
         grid-row: 2/2;
         display: flex;
-       
+        height: 100vh;
+        max-height: 100vh;
         .googleMap{
             width:50%;
             height:100vh;
@@ -41,9 +43,10 @@
             font-size: x-large;
             position: relative;
             background: rgba(197,164,125,.95) url('../../images/back1.jpg');
-            background-blend-mode: color-burn;
+            background-blend-mode: overlay;
             background-size: cover;
-            padding :0.5rem 2rem;
+            padding :3rem 2rem;
+            max-height: 100%;
             .contactsWord {
                 transform: rotate(90deg);
                 z-index: 1;
@@ -69,10 +72,11 @@
                     font-size: 2rem;
                 }
                 .body{
-                    padding-left: 1rem;
+                    padding-left: 3rem;
                     display: flex;
                     flex-direction: column;
-                    align-items: flex-end;
+                    align-items: flex-start;
+                    
                 }
             }
 
@@ -182,6 +186,44 @@
                 content:'';
                 border-top:none;
                 border:none;
+            }
+        }
+    }
+}
+@media only screen and (max-width:501px) {
+
+    .contactsContainer {
+        grid-template-rows: 60vh 1fr 100vh;
+        .contactsTitle {
+            justify-content: center;
+            h1 {
+                width:auto;
+                font-size: 2rem;
+            }
+        }
+        .contactsInfo {
+            flex-direction: column;
+            .googleMap {
+                width:auto;
+            }
+            .contactsAll {
+                font-size: large;
+                padding:3rem;
+                .contactsWord {
+                    left:10%;
+                }
+                .info {
+                    .body {
+                        p {
+                            white-space: nowrap;
+                        }
+                    }
+                }
+            }
+        }
+        .mapContainer {
+            h3 {
+                font-size: large;
             }
         }
     }

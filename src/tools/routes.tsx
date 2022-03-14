@@ -6,6 +6,7 @@ import {About} from '../components/about/about'
 import {Services} from '../components/services/services'
 import {Blogs} from '../components/blogs/blogs'
 import {Contacts} from '../components/contacts/contacts'
+import {BlogDetails} from '../components/blogs/blogdetails/blogdetails'
 export const routes:RouteObject [] = [
     {
         path:'/',element:<Layout/>,
@@ -15,6 +16,9 @@ export const routes:RouteObject [] = [
           {path:'/about',element:<About/>},
           {path:'/services',element:<Services/>},
           {path:'/blogs',element:<Blogs/>},
+      
+          {path:'/blogs/:id',element:<BlogDetails/>},
+        
           {path:'/contacts',element:<Contacts/>},
 
 

@@ -5,11 +5,11 @@ import
  } 
 from '@mui/material'
 import {ArrowRightAltOutlined} from '@mui/icons-material'
-
+import {useNavigate} from 'react-router-dom'
 interface iProps {tags:string[],image:string,title:string
-                 ,content:string,author:string,date:string}
-export const Card = ({tags,image,title,content,author,date}:iProps) =>{
-
+                 ,content:string,author:string,date:string,id:number}
+export const Card = ({tags,image,title,content,author,date,id}:iProps) =>{
+let navigate = useNavigate()
     return (
         <div className="blogCard">
             <img src={image} />
@@ -34,7 +34,7 @@ export const Card = ({tags,image,title,content,author,date}:iProps) =>{
                     <p>{date}</p>
                 </div>
                 <div className="readMore">
-                    <button>
+                    <button onClick={()=>navigate(`/blogs/:${id}`)}>
                         Read More 
                         <ArrowRightAltOutlined color="inherit" fontSize='inherit'/>
                     </button>

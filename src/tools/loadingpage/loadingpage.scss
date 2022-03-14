@@ -1,0 +1,29 @@
+.loadingPage.MuiDialog-root {
+
+    background-color: #2b2b2b;
+    .MuiDialog-container {
+        .MuiPaper-root {
+            background-color: transparent;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            .MuiDialogContent-root
+             {
+                display: flex;
+                align-items: center;
+                .loadingAnimation {
+                    font-size: 2rem;
+                    color:white;
+                    font-weight: bold;
+                   display: flex;
+                   letter-spacing: 4px;
+                  text-shadow: 3px 3px 4px white;
+                   .dot {
+                       color:rgb(189, 189, 15)
+                   }
+                    
+                }
+            }
+        }
+    }
+}

@@ -14,16 +14,12 @@ import
 } 
 from '@mui/icons-material'
 import {useState,useEffect, useRef} from 'react'
-import Img1 from '../../../images/back1.jpg'
-import Img2 from '../../../images/back2.jpg'
-import Img3 from '../../../images/back3.jpg'
 import testImg1 from '../../../images/slide1.jpg'
 import testImg2 from '../../../images/slide2.jpg'
 import testImg3 from '../../../images/slide3.jpg'
 interface iEle {i:number,shift:number,left:number}
 interface iCustom {i:number,shift:number,index:number,order:number}
-interface childCustom {i:string,shift:number,index:number}
-interface iTexts {[key:string]:string}
+interface iProps {testImg1:string,testImg2:string,testImg3:string}
 let imgsArr =[testImg1,testImg2,testImg3]
 const main:Variants = {
   first:(custom:iCustom) =>({

@@ -16,11 +16,7 @@ const data = [
     {imgSrc:HolderImg1,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE',to:'slug1',navigateTo:(str:string)=>{}},
     {imgSrc:HolderImg2,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE',to:'slug2',navigateTo:(str:string)=>{}},
     {imgSrc:HolderImg1,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE',to:'slug3',navigateTo:(str:string)=>{}},
-    {imgSrc:HolderImg2,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE',to:'slug4',navigateTo:(str:string)=>{}},
-    {imgSrc:HolderImg,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE',to:'slug5',navigateTo:(str:string)=>{}},
-    {imgSrc:HolderImg,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE',to:'slug6',navigateTo:(str:string)=>{}},
-    {imgSrc:HolderImg1,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE',to:'slug7',navigateTo:(str:string)=>{}},
-    {imgSrc:HolderImg,title:'Modern Hotel in London',verticalTitle:'ARCHITECTURE',to:'slug8',navigateTo:(str:string)=>{}},
+   
 ]
 const slider=(str:string) =>{
     let slider = document.querySelector('.scrollableDiv') as HTMLDivElement
@@ -54,7 +50,7 @@ const toPortfolio =()=>{
                     </div>
                 </div>
                 
-                <div className="previousArrow"  onClick={()=>slider('prev')}>
+               {/* { <div className="previousArrow"  onClick={()=>slider('prev')}>
                     <ArrowLeftOutlined color='inherit' fontSize='inherit'/>
                     <p>prev</p>
                 </div>
@@ -63,7 +59,7 @@ const toPortfolio =()=>{
                     <ArrowRightOutlined color='inherit' fontSize='inherit'/>
                 
                 </div>
-                
+                } */}
             </div>
         </div>
     )
