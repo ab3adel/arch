@@ -156,12 +156,12 @@ export const HomePageSectionOne= ( ) =>{
   const [vals,setVals] =useState(
     [
        {left:87.5,shift:12.5,i:100}, 
-       {left:75,shift:12.5,i:87.5} ,
-       {left:62.5,shift:-5,i:75} ,
-       {left:50,shift:-5,i:62.5} 
-       ,{left:37.5,shift:0,i:50} 
-     ,{left:25,shift:5,i:37.5}
-     ,{left:12.5,shift:10,i:25} 
+       {left:75,shift:12,i:84} ,
+       {left:62.5,shift:-5,i:71} ,
+       {left:50,shift:-5,i:55} 
+       ,{left:37.5,shift:0,i:48} 
+     ,{left:25,shift:5,i:41}
+     ,{left:12.5,shift:10,i:36} 
    ,{left:0,shift:12,i:12.5}
     ],
   // [
@@ -370,7 +370,7 @@ const animateManually =(str:string)=>{
                   <div className="navLinks">
                     <NavLink  to={'/'}>HOME</NavLink>
                     <NavLink to={'/about'}>ABOUT US</NavLink>
-                    <NavLink to={'#'}>PROJECTS</NavLink>
+                    <NavLink to={'/portfolio'}>PROJECTS</NavLink>
                     <NavLink to={'/blogs'}>BLOG</NavLink>
                     <NavLink to={'/contacts'}>CONTACTS</NavLink>
                   </div>

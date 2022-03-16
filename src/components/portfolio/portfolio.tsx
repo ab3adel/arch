@@ -15,7 +15,7 @@ import Img6 from '../../images/back7.jpg'
 export const Portfolio =() =>{
     const slug = useParams()
 
-    let imgsArr= [[Img,Img1,Img2],[Img3,Img4,Img5]]
+    let imgsArr= [Img,Img1,Img2,Img3,Img4,Img5]
     const text = `Aute occaecat ex aliquip deserunt. Consectetur et exercitation 
               ullamco enim pariatur. Eiusmod anim anim quis commodo. Est aliquip est 
               eiusmod reprehenderit ad duis est.`
@@ -29,20 +29,14 @@ export const Portfolio =() =>{
             <div className="portfolioBody">
             {imgsArr.map((ele,i)=>{
                 let style={}
-            if (i%2 ===0) style=window.innerWidth >1024?{flexDirection:'row-reverse'}:{flexDirection:'column-reverse'}
+             style=window.innerWidth >1024?{flexDirection:'row-reverse'}:{flexDirection:'column-reverse'}
             return (
-                <div className="portfolioHolder" key={i} style={style}>
+            <>
                 {
-               ele.map ((e,j)=>{
-
-                   return (
-                  
-                    j % 3 === 0 ?  <RectangleImage srcImg={e} key={j} /> :<SquareImage imgSrc={e} key={j} />
-                   
-                   )
-               })
+           
+                   i% 3 === 0 ?  <RectangleImage srcImg={ele} key={i} /> :<SquareImage imgSrc={ele} key={i} />
                }
-                </div>
+               </>
                  )
                  
                 })}

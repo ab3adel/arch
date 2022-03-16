@@ -123,7 +123,7 @@ export const Navbar =() =>{
                                                 </Link>
                                             </ListItem >
                                             <ListItem button onClick={handleCloseNavMenu}>
-                                                <Link to="#">
+                                                <Link to="/portfolio">
                                                    Porjects
                                                 </Link>
                                             </ListItem >
@@ -167,7 +167,7 @@ export const Navbar =() =>{
                                              <Link to="/about">
                                                     About Us
                                             </Link>
-                                            <Link to="#">
+                                            <Link to="/portfolio">
                                                    Projects
                                             </Link>
                                              <Link to="/blogs">

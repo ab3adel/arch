@@ -12,7 +12,7 @@ export const routes:RouteObject [] = [
         path:'/',element:<Layout/>,
         children:[ 
           {path:'/',index:true,element:<HomePage/>},
-          {path:'/portfolio/:slug',element:<Portfolio />},
+          {path:'/portfolio',element:<Portfolio />},
           {path:'/about',element:<About/>},
           {path:'/services',element:<Services/>},
           {path:'/blogs',element:<Blogs/>},
