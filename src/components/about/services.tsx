@@ -11,7 +11,7 @@ learn from each other. The way we undertake projects is based on permanently app
 values that reinforce each other: socio-cultural value, experiental value, 
 building-technical value and economical value. 
 This way of working allows us to raise your project to a higher level.`
-let arr= [{img:Arch,title:'Architecture'},{img:Inter,title:'Interior'},{img:Planning,title:'Planning'}]
+let arr= [{img:Arch,title:'Title1'},{img:Inter,title:'Title2'},{img:Planning,title:'Title3'}]
 export const OurServices = ()=>{
 
 

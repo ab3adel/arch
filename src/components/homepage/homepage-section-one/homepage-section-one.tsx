@@ -132,13 +132,21 @@ const testChild:Variants ={
   second : (custom:iCustom) =>({
     backgroundImage:`url(${imgsArr[custom.index]})`,
       backgroundPositionX:['0%',`${custom.i}%`],
+      backgroundPositionY:'50%',
+     
       opacity:[1,0],
       transition: {
-        duration:4,
+        duration:3.5,
         ease:'easeInOut',
         delay:1.5,
        backgroundPositionX: {
          delay:1.5+custom.order/10
+       },
+       opacity:{
+         duration:2.8-custom.order/3
+       },
+       backgroundPositionY:{
+         duration:1
        }
       }
    })
@@ -147,16 +155,22 @@ export const HomePageSectionOne= ( ) =>{
  
   const [vals,setVals] =useState(
     [
-      
-      {left:87.5,shift:12.5,i:100}, 
-      {left:75,shift:12.5,i:87.5} ,
-      {left:62.5,shift:0,i:75} ,
-      {left:50,shift:12.5,i:62.5} 
-      ,{left:37.5,shift:12.5,i:50} 
-    ,{left:25,shift:12.5,i:37.5}
-    ,{left:12.5,shift:12.5,i:25} 
-   ,{left:0,shift:12.5,i:12.5}
-   ],
+       {left:87.5,shift:12.5,i:100}, 
+       {left:75,shift:12.5,i:87.5} ,
+       {left:62.5,shift:-5,i:75} ,
+       {left:50,shift:-5,i:62.5} 
+       ,{left:37.5,shift:0,i:50} 
+     ,{left:25,shift:5,i:37.5}
+     ,{left:12.5,shift:10,i:25} 
+   ,{left:0,shift:12,i:12.5}
+    ],
+  // [
+  //   {left:80,shift:5,i:100}, 
+  //   {left:60,shift:5,i:80}, 
+  //   {left:40,shift:5,i:60}, 
+  //   {left:20,shift:10,i:40}, 
+  //   {left:0,shift:20,i:20}, 
+  // ]
  
 )
 const [texts,setTexts]=useState({title:[

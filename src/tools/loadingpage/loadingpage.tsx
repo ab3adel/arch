@@ -61,10 +61,10 @@ const handleLoaded =(num:number) =>{
     newFields[`image${num}`]=true
     setIsLoaded(pre=>({...pre,...newFields}))
 }
-
+const handleClose =()=>setIsFinished(false)
     return (
         <>
-        <div className="images">
+       {isFinished && (<div className="images">
             {images.map((ele,index)=>{
                 return (<img  
                      className='loadedImageCheck'
@@ -72,8 +72,17 @@ const handleLoaded =(num:number) =>{
                     src={ele} 
                     key={index}/>)
             })}
-        </div>
-        <Dialog open={isFinished} className="loadingPage"
+        </div>)}
+        <Dialog 
+        open={isFinished} 
+        className="loadingPage"
+        disableEscapeKeyDown
+        onClose={(_,reason)=>{
+            if (reason !== 'backdropClick' && reason !== 'escapeKeyDown') {
+                handleClose()
+            }
+
+        }}
         >
             <DialogContent>
                 <div className="loadingAnimation">

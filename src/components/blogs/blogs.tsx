@@ -42,6 +42,7 @@ export const Blogs =() =>{
                             title={ele.title}
                             content={ele.content}
                             id={ele.id}
+                            key={index}
                             image={ele.image}/> )
            })}
         </div>
