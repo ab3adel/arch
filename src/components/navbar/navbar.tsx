@@ -17,7 +17,7 @@ import
     ,Fade
 } 
 from '@mui/material'
-import {useLocation} from 'react-router'
+import {useLocation,useNavigate} from 'react-router'
 import MenuIcon from '@mui/icons-material/Menu'
 
 import { Login } from '@mui/icons-material'
@@ -27,6 +27,7 @@ export const Navbar =() =>{
     const [fade,setFade] = useState(false)
     const [y,setY] = useState(0)
     const location = useLocation()
+    const navigate = useNavigate()
 
     const handleOpenNavMenu = (event:React.MouseEvent) => {
         setAnchorElNav(event.currentTarget);
@@ -93,7 +94,7 @@ export const Navbar =() =>{
                     <Toolbar disableGutters>
                         <Box sx={{display:{xs:'flex',sm:'none',md:'none',justifyContent:'space-evenly'}}}>
                             
-                            <Typography variant="h5" component="div" sx={{flexGrow:1,
+                            <Typography   onClick={()=>navigate('/')} variant="h5" component="div" sx={{flexGrow:1,
                                                                                  display:'flex',
                                                                                  justifyContent:'center'}}>
                                                 3D<span>.</span>Ikoniks
@@ -148,9 +149,11 @@ export const Navbar =() =>{
                                  }}>
                                      
                                      
-                                     <Typography variant="h5" component="div" sx={{flexGrow:1,
-                                                                                 display:'flex',
-                                                                                 justifyContent:'center'}}>
+                                     <Typography variant="h5" component="div" 
+                                     sx={{flexGrow:1,
+                                          display:'flex',
+                                           justifyContent:'center'}}
+                                           onClick={()=>navigate('/')}>
                                                 3D<span>.</span>Ikoniks
                                      </Typography>
                                           <Box sx={{

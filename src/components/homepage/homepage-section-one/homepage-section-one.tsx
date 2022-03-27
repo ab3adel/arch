@@ -132,18 +132,18 @@ const testChild:Variants ={
   second : (custom:iCustom) =>({
     backgroundImage:`url(${imgsArr[custom.index]})`,
       backgroundPositionX:['0%',`${custom.i}%`],
-      backgroundPositionY:'50%',
-     
-      opacity:[1,0],
+      backgroundPositionY:'40%',
+
+      opacity:[.7,0],
       transition: {
         duration:3.5,
-        ease:'easeInOut',
         delay:1.5,
        backgroundPositionX: {
-         delay:1.5+custom.order/10
+         delay:1+custom.order/10,
+         //duration:0.5+custom.order/10
        },
        opacity:{
-         duration:2.8-custom.order/3
+         duration:2 -custom.order/10
        },
        backgroundPositionY:{
          duration:1
@@ -155,22 +155,26 @@ export const HomePageSectionOne= ( ) =>{
  
   const [vals,setVals] =useState(
     [
-       {left:87.5,shift:12.5,i:100}, 
-       {left:75,shift:12,i:84} ,
-       {left:62.5,shift:-5,i:71} ,
-       {left:50,shift:-5,i:55} 
-       ,{left:37.5,shift:0,i:48} 
-     ,{left:25,shift:5,i:41}
-     ,{left:12.5,shift:10,i:36} 
-   ,{left:0,shift:12,i:12.5}
+        {left:87.5,shift:100,i:100}, 
+        {left:75,shift:80,i:89.5} ,
+        {left:62.5,shift:40,i:63.5} ,
+        {left:50,shift:20,i:59.5} 
+        ,{left:37.5,shift:12.5,i:40.5} 
+      ,{left:25,shift:10,i:20}
+      ,{left:12.5,shift:5,i:10} 
+    ,{left:0,shift:0,i:-2}
     ],
-  // [
-  //   {left:80,shift:5,i:100}, 
-  //   {left:60,shift:5,i:80}, 
-  //   {left:40,shift:5,i:60}, 
-  //   {left:20,shift:10,i:40}, 
-  //   {left:0,shift:20,i:20}, 
-  // ]
+    // [
+    //     {left:87.5,shift:12.5,i:100}, 
+    //     {left:75,shift:12,i:84} ,
+    //     {left:62.5,shift:-5,i:71} ,
+    //     {left:50,shift:-5,i:55} 
+    //     ,{left:37.5,shift:0,i:48} 
+    //   ,{left:25,shift:5,i:41}
+    //   ,{left:12.5,shift:10,i:36} 
+    // ,{left:0,shift:12,i:12.5}
+    // ],
+  
  
 )
 const [texts,setTexts]=useState({title:[
@@ -306,22 +310,7 @@ const animateManually =(str:string)=>{
                  <div className="animationContainer">
                    { 
                      vals.map((ele:iEle,i:number)=>
-                     {
-                       /*if (ele.i === 50) {
-                         return (
-                          <motion.div
-                          key={i}
-                          custom={  
-                        {  i:ele.i,index,shift:ele.shift}
-                      }
-                          style={{left:`${ele.left}%`,width:'25%'}}
-                          className="animatedInterface"
-                          variants={child} 
-                          initial='first'
-                          animate={controlChild}>
-                        </motion.div>
-                         )
-                       }*/
+                    {
                        return (
                               <motion.div
                                 key={i}

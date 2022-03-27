@@ -3,6 +3,7 @@ import image from '../../images/back1.jpg'
 import image1 from '../../images/back2.jpg'
 import image2 from '../../images/back3.jpg'
 import {Holder} from  './holder'
+import {useGetSectionQuery} from '../../store/services/query'
 interface obj {img:string,title:string,text:string}
 let arr = [
     {img:image1,title:'Service Title'
@@ -29,9 +30,9 @@ let arr = [
     Lorem consectetur veniam nisi ipsum enim do. Id veniam elit velit nostrud labore mollit Lorem.`}
 ]
 export const Services =()=>{
+const {isLoading,data,error} =useGetSectionQuery(1)
 
-
-
+console.log(data,error)
     return (
         <div className="servicesContainer">
              <div className="differBackground"></div>
