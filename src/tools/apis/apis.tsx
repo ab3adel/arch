@@ -6,3 +6,4 @@ export const Apis ={
     nodes:'/nodes',
     message:'/contacts'
 }
+export const Url ='http://backend.test.ikoniks.de/api/website'
