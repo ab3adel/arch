@@ -7,7 +7,6 @@ const [val,setVal] =useState('')
 const handleChange = (e:React.ChangeEvent) =>{
 
     let input = e.target as HTMLInputElement
-    console.log (input.value,'Message')
     setFormField('Message',input.value,false)
 }
     return (
