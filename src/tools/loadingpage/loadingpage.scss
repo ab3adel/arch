@@ -7,17 +7,22 @@
             height: 100%;
             display: flex;
             align-items: center;
+            width:100%;
             .MuiDialogContent-root
              {
                 display: flex;
                 align-items: center;
+                width:100%;
+                justify-content: center;
                 .loadingAnimation {
+                    width:100%;
                     font-size: 2rem;
                     color:white;
                     font-weight: bold;
                    display: flex;
                    letter-spacing: 4px;
                   text-shadow: 3px 3px 4px white;
+                  justify-content: center;
                    .dot {
                        color:rgb(189, 189, 15)
                    }
