@@ -1,6 +1,7 @@
 import {createApi,fetchBaseQuery} from '@reduxjs/toolkit/query/react'
 import {Apis} from '../../tools/apis/apis'
-interface post {id:number,description:string}
+interface obj {id:number,body:{ar:string,en:string},title:{ar:string,en:string}}
+interface post {id:number,description:string,payload:obj[]}
 type FetchType =post[]
 export const ikoniksFetch = createApi({
     baseQuery:fetchBaseQuery({
@@ -13,10 +14,14 @@ export const ikoniksFetch = createApi({
             query:(id)=>({
                 url:`${Apis.categorise}`,
                 params:{page:id}
-            }),
-            
-            
+            }), 
+        }),
+        getNode:builder.query<FetchType,number>({
+            query:(id)=>({
+                url:`${Apis.nodes}`,
+                params:{section:id}
+            })
         })
     })
 })
-export const {useGetSectionQuery} =ikoniksFetch
+export const {useGetSectionQuery,useGetNodeQuery} =ikoniksFetch
