@@ -19,7 +19,7 @@ export const HomePage =() =>{
           
             <HomePageSectionOne 
                 />
-            <HomepageSectionTwo/>
+            {/* <HomepageSectionTwo/> */}
             <HomepageSectionThree />
             <HomepageSectionFour/>
             <HomepageSectionFive/>
