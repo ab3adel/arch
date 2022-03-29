@@ -2,7 +2,7 @@ import './about.scss'
 
 import {OurServices} from './services'
 import {Map} from './map'
-export const About =() =>{
+ const About =() =>{
 
 
     return (
@@ -25,3 +25,4 @@ export const About =() =>{
         </div>
     )
 }
+export default About;
