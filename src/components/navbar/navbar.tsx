@@ -125,7 +125,7 @@ export const Navbar =() =>{
                                             </ListItem >
                                             <ListItem button onClick={handleCloseNavMenu}>
                                                 <Link to="/portfolio">
-                                                   Porjects
+                                                   Portfolio
                                                 </Link>
                                             </ListItem >
                                             <ListItem button onClick={handleCloseNavMenu}>
@@ -171,7 +171,7 @@ export const Navbar =() =>{
                                                     About Us
                                             </Link>
                                             <Link to="/portfolio">
-                                                   Projects
+                                                   Portfolio
                                             </Link>
                                              <Link to="/blogs">
                                                    Bolg
@@ -224,8 +224,8 @@ export const Navbar =() =>{
                                              <Link to="/about">
                                                     About Us
                                             </Link>
-                                            <Link to="#">
-                                                   Projects
+                                            <Link to="/portfolio">
+                                                   Portfolio
                                             </Link>
                                              <Link to="/blogs">
                                                    Bolg
