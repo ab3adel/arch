@@ -174,7 +174,7 @@ export const Navbar =() =>{
                                                    Portfolio
                                             </Link>
                                              <Link to="/blogs">
-                                                   Bolg
+                                                   Blog
                                             </Link>
                                             <Link to="/contacts">
                                                    Contacts
@@ -228,7 +228,7 @@ export const Navbar =() =>{
                                                    Portfolio
                                             </Link>
                                              <Link to="/blogs">
-                                                   Bolg
+                                                   Blog
                                             </Link>
                                             <Link to="/contacts">
                                                    Contacts

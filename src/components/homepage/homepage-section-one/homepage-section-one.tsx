@@ -138,14 +138,15 @@ const testChild:Variants ={
 
       opacity:[.7,0],
       transition: {
-        duration:3.5,
+        duration:3,
         delay:1.5,
        backgroundPositionX: {
          delay:1+custom.order/10,
-         //duration:0.5+custom.order/10
+         duration:0.4+custom.order/10
        },
        opacity:{
-         duration:2 -custom.order/10
+         duration:1.8 -custom.order/10,
+         ease:'linear'
        },
        backgroundPositionY:{
          duration:1
@@ -156,27 +157,26 @@ const testChild:Variants ={
 export const HomePageSectionOne= ( ) =>{
  
   const [vals,setVals] =useState(
-    [
-        {left:87.5,shift:100,i:100}, 
-        {left:75,shift:80,i:89.5} ,
-        {left:62.5,shift:40,i:63.5} ,
-        {left:50,shift:20,i:59.5} 
-        ,{left:37.5,shift:12.5,i:40.5} 
-      ,{left:25,shift:10,i:20}
-      ,{left:12.5,shift:5,i:10} 
-    ,{left:0,shift:0,i:-2}
-    ],
     // [
-    //     {left:87.5,shift:12.5,i:100}, 
-    //     {left:75,shift:12,i:84} ,
-    //     {left:62.5,shift:-5,i:71} ,
-    //     {left:50,shift:-5,i:55} 
-    //     ,{left:37.5,shift:0,i:48} 
-    //   ,{left:25,shift:5,i:41}
-    //   ,{left:12.5,shift:10,i:36} 
-    // ,{left:0,shift:12,i:12.5}
+    //     {left:87.5,shift:100,i:100}, 
+    //     {left:75,shift:80,i:89.5} ,
+    //     {left:62.5,shift:40,i:63.5} ,
+    //     {left:50,shift:20,i:59.5} 
+    //     ,{left:37.5,shift:12.5,i:40.5} 
+    //   ,{left:25,shift:10,i:20}
+    //   ,{left:12.5,shift:5,i:10} 
+    // ,{left:0,shift:0,i:-2}
     // ],
-  
+    [
+      {left:87.5,shift:100,i:100}, 
+      {left:75,shift:80,i:86} ,
+      {left:62.5,shift:40,i:72.5} ,
+      {left:50,shift:20,i:57 }
+      ,{left:37.5,shift:12.5,i:44} 
+    ,{left:25,shift:10,i:28}
+    ,{left:12.5,shift:5,i:16} 
+  ,{left:0,shift:0,i:0}
+  ],
  
 )
 const [texts,setTexts]=useState({title:[
