@@ -184,7 +184,7 @@ const stopAnimationHandler = ()=>{
                     animate={controlTitle}>
                         <p>{title}</p>
                 </motion.div>
-                <motion.div className='holderVerticalTitle'>
+                {/* <motion.div className='holderVerticalTitle'>
                    {arrWords.map((ele:string,i:number)=>{
                        return (<motion.p key={i}
                                  custom={i}
@@ -194,7 +194,7 @@ const stopAnimationHandler = ()=>{
                                 {ele}
                               </motion.p>)
                    })}
-                </motion.div>
+                </motion.div> */}
             </motion.div>
         </motion.div>
     )

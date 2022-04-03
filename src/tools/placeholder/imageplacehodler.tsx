@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import current from '../../images/portfolio/0 (1).jpg'
+import current from '../../images/back4.jpg'
 import './imageplaceholder.scss'
 import {ImageListItem} from '@mui/material'
 interface iProps {imgSrc:string}
@@ -24,7 +24,7 @@ export const ImagePlaceHolder=({imgSrc}:iProps)=>{
             <img
             className={'blurredImage'}
             src={current}
-            style={{opacity:currentImage.loading?0.5:1,transition:"opacity .15s linear"}}
+           
             loading="lazy"
             />
         </ImageListItem>

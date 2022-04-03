@@ -38,7 +38,7 @@ export const Portfolio =() =>{
                 <LoadingPage
                  isFinished={isFinished}
                  setIsFinished={setIsFinished}
-                 images={imgsArr.slice(0,10)}/>
+                 images={imgsArr.slice(0,1)}/>
             )}
         </div>
     )
