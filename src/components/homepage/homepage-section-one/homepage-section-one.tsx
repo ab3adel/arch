@@ -230,9 +230,8 @@ const handleMobileViewAnimation= () =>{
   if (window.innerWidth >510) step=10
   for (let index =0;index<5;index++ ) {
     
-    newVals.push({i:prev,shift:step,left})
+    newVals.push({i:prev +5.5,shift:step,left})
     prev+=step
-   
     left+=20
   }
   setVals(newVals)

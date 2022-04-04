@@ -6,6 +6,7 @@ import {Holder} from  './holder'
 import {useGetSectionQuery,useGetNodeQuery} from '../../store/services/query'
 import { useEffect, useState } from 'react'
 import {useParams} from 'react-router-dom'
+import {PortfolioList} from '../portfolio/imagelist'
 interface obj {img:string,body:{en:string,ar:string},title:{ar:string,en:string}}
 let arr = [
     {img:image1,title:'Service Title'
@@ -32,6 +33,11 @@ let arr = [
     Lorem consectetur veniam nisi ipsum enim do. Id veniam elit velit nostrud labore mollit Lorem.`}
 ]
  interface iTxt {[key:string]:string}
+ let imgsArr:string[]= []
+for (let i =1;i<10;i++ ){
+  import(`../../images/portfolio/0 (${i}).jpg`).then(som=>imgsArr.push(som.default))
+
+}
 export const Services =()=>{
 const {isLoading,data,error} =useGetNodeQuery(3)
 let id = useParams()
@@ -82,6 +88,9 @@ if (!isLoading) {
                             leftDir={false} />)
                     
                 })}
+             </div>
+             <div className="serviceImages">
+                 <PortfolioList images={imgsArr}/>
              </div>
         </div>
     )

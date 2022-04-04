@@ -14,8 +14,6 @@ export const PortfolioList =({images}:iProps)=>{
             {
                 images.map((ele:string,index:number)=>{
                     return (
-                  
-
                             <ImagePlaceHolder  imgSrc={ele} key={index}/>
                        
                     )
