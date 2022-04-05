@@ -10,6 +10,7 @@ import {useAnimation} from 'framer-motion'
 import {Apis,Url} from '../../tools/apis/apis'
 import { AlertColor, CircularProgress} from '@mui/material'
 import {Notification} from '../../tools/notification/notification'
+import {useTranslation} from 'react-i18next'
 const btn:Variants = {
     first : {
         x:200
@@ -31,6 +32,7 @@ const btn:Variants = {
 }
 interface iFields {[key:string]:string|boolean}
 export const Footer =()=>{
+    const {t,i18n} =useTranslation()
 const [ref,inView] =useInView()
 const control= useAnimation()
 const [fields,setFields]=useState<iFields>({
@@ -116,11 +118,11 @@ const handleClose=() =>{
     return (
         <div className="footerContainer" ref={ref}>
             <div className="footerTitle">
-                GET
+               {t('Get')}
                 <p className='dot'>
                 <span>&nbsp;</span>
-                   IN <span>&nbsp;</span> 
-                   TOUCH
+                   {t('In') }<span>&nbsp;</span> 
+                  { t('Touch')}
                 </p>
                 <strong>Contact</strong>
             </div>
@@ -135,21 +137,21 @@ const handleClose=() =>{
                 </div>
                 <div className="col2">
                     <div className="inputGroups">
-                        <Input type='text' label='Name' formFields={fields}
+                        <Input type='text' label={t('Name')} formFields={fields}
                         setFormField={handleField}
                         validator={dummy} name='Name' />
-                        <Input type='number' label='Phone'
+                        <Input type='number' label={t('Phone')}
                          formFields={fields} setFormField={handleField}
                         validator={dummy} name='Phone' />
-                        <Input type='text' label='Company'
+                        <Input type='text' label={t('Company')}
                         formFields={fields} setFormField={handleField}
                         validator={dummy} name='Company' />
-                        <Input type='email' label='Email'
+                        <Input type='email' label={t('Email')}
                         formFields={fields} setFormField={handleField}
                         validator={isEmail} name='Email' />
                     </div>
-                    <TextArea  label='message'  formFields={fields} 
-                    setFormField={handleField} name={'Message'}/>
+                    <TextArea  label={t('Message')}  formFields={fields} 
+                    setFormField={handleField} name={'message'}/>
                 </div>
                 <div className="footerButton">
                     <div className="sendButton">
@@ -165,7 +167,7 @@ const handleClose=() =>{
                          >
                              {loading ? <CircularProgress  />:
                             <>
-                            SEND <ArrowRightAlt color="inherit" fontSize='inherit'/>
+                            {t('Send')}<ArrowRightAlt color="inherit" fontSize='inherit'/>
                             </> }
                            
                           

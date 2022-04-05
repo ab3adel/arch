@@ -14,9 +14,12 @@ import
 } 
 from '@mui/icons-material'
 import {useState,useEffect, useRef} from 'react'
+import {useTranslation} from 'react-i18next'
+import {changeLanguge} from '../../../tools/functions'
 import testImg1 from '../../../images/slide1.jpg'
 import testImg2 from '../../../images/slide2.jpg'
 import testImg3 from '../../../images/slide3.jpg'
+
 interface iEle {i:number,shift:number,left:number}
 interface iCustom {i:number,shift:number,index:number,order:number}
 interface iProps {testImg1:string,testImg2:string,testImg3:string}
@@ -155,7 +158,7 @@ const testChild:Variants ={
    })
 }
 export const HomePageSectionOne= ( ) =>{
- 
+ const {t,i18n}= useTranslation()
   const [vals,setVals] =useState(
     // [
     //     {left:87.5,shift:100,i:100}, 
@@ -301,10 +304,10 @@ const animateManually =(str:string)=>{
                  <div className="arrows">
                    <div className="previousArrow"  onClick={()=>animateManually('prev')}>
                      <ArrowLeftOutlined color='inherit' fontSize='inherit'/>
-                     <p>prev</p>
+                     <p>{t('Prev')}</p>
                    </div>
                    <div className="nextArrow"  onClick={()=>animateManually('next')}>
-                     <p>Next</p>
+                     <p>{t("Next")}</p>
                      <ArrowRightOutlined color='inherit' fontSize='inherit'/>
                    </div>
                  </div>
@@ -358,11 +361,12 @@ const animateManually =(str:string)=>{
                          +7 (212) 674-25-10
                   </div>
                   <div className="navLinks">
-                    <NavLink  to={'/'}>HOME</NavLink>
-                    <NavLink to={'/about'}>ABOUT US</NavLink>
-                    <NavLink to={'/portfolio'}>PORTFOLIO</NavLink>
-                    <NavLink to={'/blogs'}>BLOG</NavLink>
-                    <NavLink to={'/contacts'}>CONTACTS</NavLink>
+                    <NavLink  to={'/'}>{t('Home')}</NavLink>
+                    <NavLink to={'/about'}>{t('About')}</NavLink>
+                    <NavLink to={'/portfolio'}>{t('Portfolio')}</NavLink>
+                    <NavLink to={'/blogs'}>{t('Blog')}</NavLink>
+                    <NavLink to={'/contacts'}>{t('Contacts')}</NavLink>
+                    <NavLink to={'/'} onClick={()=>changeLanguge()}>{t('Language')}</NavLink>
                   </div>
                 
                 </div>
@@ -404,7 +408,7 @@ const animateManually =(str:string)=>{
                      animate={controlButton}
                    >
                      
-                        Look More
+                        {t("LookMore")}
                         <ArrowRightAlt 
                       
                         fontSize='inherit' color='inherit'/>

@@ -10,8 +10,10 @@ import    {
     ArrowRightOutlined
 } 
 from '@mui/icons-material'
+import {useTranslation} from 'react-i18next'
 export const HomepageSectionThree = ()=> {
     const navigate =useNavigate()
+    const {t}= useTranslation()
 const data = [ 
     {imgSrc:HolderImg,title:'3d animation videos'
     ,verticalTitle:'ARCHITECTURE',to:9,navigateTo:(str:string)=>{},shortText:'Create a unique visual communication with the clients, with high quality 3d animation videos of your design or product.  '},
@@ -38,7 +40,7 @@ const toPortfolio =(id:number)=>{
     return (
         <div className="homepageThreeContainer">
             <div className="homepageThreeHeader">
-                <h3>Our <span>&nbsp;</span><span>&nbsp;</span> <span>Services</span></h3>
+                <h3>{t('Our')} <span>&nbsp;</span><span>&nbsp;</span> <span>{t('Services')}</span></h3>
             </div>
             <div className="homepageThreeBody">
                 <div className="scrollableDiv">

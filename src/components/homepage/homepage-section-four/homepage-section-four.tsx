@@ -3,6 +3,7 @@ import {motion,Variants,useAnimation} from 'framer-motion'
 import { useEffect, useState } from 'react'
 import {useInView} from 'react-intersection-observer'
 import { Console } from 'console'
+import {useTranslation} from 'react-i18next'
 const image:Variants = {
     first :(i:number)=>
     
@@ -42,7 +43,7 @@ const textVariant:Variants= {
 }
 export const HomepageSectionFour = () => {
     const controlImage = useAnimation()
-    const controlText = useAnimation()
+    const {t,i18n} =useTranslation()
     const {ref,inView} =useInView()
     let [y,setY]=useState(0)
     let [backgroundPosition,setBackgroundPosition]=useState(0)
@@ -93,8 +94,16 @@ export const HomepageSectionFour = () => {
             variants={textVariant}
            
             viewport={{once:true}}>
+                {i18n.language ==="en"?
+                <>
                 <p>YEARS OF SUCCESSFUL WORK</p>
                 IN THE MARKET
+                </>
+            :<>
+            <p>سنوات من النجاح</p>
+                في السوق
+            </>
+            }
             </motion.div>
         </div>
     )

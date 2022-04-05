@@ -19,14 +19,14 @@ import
 from '@mui/material'
 import {useLocation,useNavigate} from 'react-router'
 import MenuIcon from '@mui/icons-material/Menu'
-
-import { Login } from '@mui/icons-material'
+import {changeLanguge} from '../../tools/functions'
+import {useTranslation} from 'react-i18next'
 
 export const Navbar =() =>{
     const [anchorElNav, setAnchorElNav] = useState <Element |null>(null);
     const [fade,setFade] = useState(false)
     const [y,setY] = useState(0)
-    const location = useLocation()
+    const {t,i18n} =useTranslation() 
     const navigate = useNavigate()
 
     const handleOpenNavMenu = (event:React.MouseEvent) => {
@@ -114,30 +114,35 @@ export const Navbar =() =>{
                                          
                                             <ListItem button onClick={handleCloseNavMenu}>
                                                <Link to="/">
-                                               Home
+                                            {t( 'Home')}
                                                 </Link>
                                             </ListItem>
                                           
                                             <ListItem button onClick={handleCloseNavMenu}>
                                                 <Link to="/about">
-                                                    About Us
+                                                    {t('About')}
                                                 </Link>
                                             </ListItem >
                                             <ListItem button onClick={handleCloseNavMenu}>
                                                 <Link to="/portfolio">
-                                                   Portfolio
+                                                   {t("Portfolio")}
                                                 </Link>
                                             </ListItem >
                                             <ListItem button onClick={handleCloseNavMenu}>
                                                <Link to="/blogs">
-                                                    Blog
+                                                    {t('Blog')}
                                                 </Link>
                                             </ListItem >
                                             <ListItem button onClick={handleCloseNavMenu}>
                                                <Link to="/contacts">
-                                                    Contacts
+                                                    {t('Contacts')}
                                                 </Link>
-                                            </ListItem >  
+                                            </ListItem > 
+                                            <ListItem>
+                                                <Link to="/" onClick={()=>changeLanguge()}>
+                                                {t('Language')}
+                                                </Link>
+                                            </ListItem> 
                                 </List>
                             </Drawer>
                         </Box>
@@ -164,20 +169,23 @@ export const Navbar =() =>{
                                               color:'white'
                                           }}>
                                             <Link to="/">
-                                                Home
+                                            {t( 'Home')}
                                             </Link>
                                           
                                              <Link to="/about">
-                                                    About Us
+                                             {t('About')}
                                             </Link>
                                             <Link to="/portfolio">
-                                                   Portfolio
+                                            {t("Portfolio")}
                                             </Link>
                                              <Link to="/blogs">
-                                                   Blog
+                                             {t('Blog')}
                                             </Link>
                                             <Link to="/contacts">
-                                                   Contacts
+                                            {t('Contacts')}
+                                            </Link>
+                                            <Link to="/" onClick={()=>changeLanguge()}>
+                                                {t('Language')}
                                             </Link>
                                             </Box>
                                           
@@ -218,20 +226,23 @@ export const Navbar =() =>{
                                               color:'white'
                                           }}>
                                             <Link to="/">
-                                                Home
+                                            {t( 'Home')}
                                             </Link>
                                           
                                              <Link to="/about">
-                                                    About Us
+                                             {t('About')}
                                             </Link>
                                             <Link to="/portfolio">
-                                                   Portfolio
+                                            {t("Portfolio")}
                                             </Link>
                                              <Link to="/blogs">
-                                                   Blog
+                                             {t('Blog')}
                                             </Link>
                                             <Link to="/contacts">
-                                                   Contacts
+                                            {t('Contacts')}
+                                            </Link>
+                                            <Link to="/" onClick={()=>changeLanguge()}>
+                                                {t('Language')}
                                             </Link>
                                             </Box>
                                           
