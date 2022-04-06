@@ -2,9 +2,10 @@ import { useEffect, useState } from "react"
 import current from '../../images/back4.jpg'
 import './imageplaceholder.scss'
 import {ImageListItem} from '@mui/material'
-interface iProps {imgSrc:string}
 
-export const ImagePlaceHolder=({imgSrc}:iProps)=>{
+interface iProps {imgSrc:string,setZoom:Function}
+
+export const ImagePlaceHolder=({imgSrc,setZoom}:iProps)=>{
     const [currentImage,setCurrentImage]= useState({src:current,loading:true})
     useEffect(()=>{
         const imageLoading = new Image ()
@@ -14,6 +15,9 @@ export const ImagePlaceHolder=({imgSrc}:iProps)=>{
         }
     
     },[])
+    const handleZoomImage =()=>{
+        setZoom((pre:any)=>({...pre,open:true,img:imgSrc}))
+    }
 
     return (
         <>
@@ -34,6 +38,8 @@ export const ImagePlaceHolder=({imgSrc}:iProps)=>{
             <img
                 src={`${imgSrc}?w=161&fit=crop&auto=format`}
                 loading="lazy"
+                onClick={()=>handleZoomImage()}
+                style={{cursor:'pointer'}}
             />
         </ImageListItem>
        }

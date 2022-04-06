@@ -8,14 +8,15 @@ import
  }
 from '@mui/icons-material'
 import GoogleMapReact  from 'google-map-react'
+import {useTranslation} from 'react-i18next'
  const Contacts =() =>{
-
+const {t,i18n} =useTranslation()
 
 
     return (
         <div className="contactsContainer">
             <div className="contactsTitle">
-                <h1>Contact Us</h1>
+                <h1>{t('ContactUs')}</h1>
             </div>
             <div className="contactsInfo">
                 <div className="googleMap">
@@ -30,7 +31,7 @@ import GoogleMapReact  from 'google-map-react'
                     <div className="info">
                         <div className="title">
                             <Phone color='inherit' fontSize='inherit'/>
-                            <h5>PHONE</h5>
+                            <h5>{t('Phone')}</h5>
                         </div>
                         <div className="body">
                             <p>+0<span>&nbsp;</span>444<span>&nbsp;</span>444<span>&nbsp;</span>66-77</p>
@@ -42,7 +43,7 @@ import GoogleMapReact  from 'google-map-react'
                     <div className="info">
                         <div className="title">
                             <Email color='inherit' fontSize='inherit'/>
-                            <h5>EMAIL</h5>
+                            <h5>{t("Email")}</h5>
                         </div>
                         <div className="body">
                             <p>3D.Ikoniks@gmail.com</p>
@@ -51,7 +52,7 @@ import GoogleMapReact  from 'google-map-react'
                     <div className="info">
                         <div className="title">
                             <LocationCity color='inherit' fontSize='inherit'/>
-                            <h5>ADDRESS</h5>
+                            <h5>{t("Address")}</h5>
                         </div>
                         <div className="body">
                             <p>USA.NEWYORK </p>

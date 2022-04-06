@@ -11,7 +11,7 @@ export const Inspector = ({open,setOpen,imgSrc}:iProps)=> {
 
 
     return (
-        <Dialog open={open} onClose ={()=>setOpen (false)}>
+        <Dialog open={open} onClose ={()=>setOpen (false)} className="inspector">
             <DialogContent >
                 <img src={imgSrc}/>
             </DialogContent>

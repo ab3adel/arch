@@ -65,6 +65,20 @@
         
     }
 }
+.MuiDialog-root.inspector {
+    .MuiDialog-container {
+        .MuiPaper-root {
+            max-width:80%;
+            .MuiDialogContent-root {
+                img {
+                    max-width: 100%;
+                }
+            }
+        }
+
+    }
+}
+
 @media screen  and (max-width:1025px){
     .portfolioContainer {
         .portfolioBody {
@@ -85,5 +99,31 @@
         width:90%;
         height: 50%;
         max-width: 100%;
+    }
+}
+@media screen and (max-width:501px){
+    .portfolioContainer {
+        .portfolioHeader {
+            overflow: hidden;
+            p {
+                width: 100%;
+                font-size: medium;
+                text-align: justify;
+            }
+        }
+    }
+    .MuiDialog-root.inspector {
+        .MuiDialog-container {
+            .MuiPaper-root {
+                max-width:100%;
+                width: 100%;
+                .MuiDialogContent-root {
+                    img {
+                        max-width: 100%;
+                    }
+                }
+            }
+    
+        }
     }
 }

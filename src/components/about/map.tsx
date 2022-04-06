@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import map from '../../images/about/map.png'
 import {Location} from './location'
+import {useTranslation} from 'react-i18next'
 interface iCountry {[key:string]:string|boolean}
 
 export const Map = () => {
+    const {t,i18n} =useTranslation()
 const [countries,setCountries]=useState<iCountry[]>([
     {name:'Syria',top:'50%',left:'50%',show:false},
     {name:'Jordan',top:'10%',left:'10%',show:false},
@@ -26,7 +28,8 @@ const handleMarkInfo=(countryName:string)=>{
 
     return (
         <div className="mapContainer">
-            <h3>We are world <span>wide</span></h3>
+           {i18n.language==="en"? <h3>We are world <span>wide</span></h3>
+        : <h3>  <span>العالم</span> نحن حول</h3>}
             <div className="mapImageContainer">
                 <img src={map} />
             {countries.map((ele:iCountry,index:number)=>{

@@ -215,6 +215,18 @@
             }
         }
     }
+    .MuiModal-root {
+        .MuiPaper-root {
+            .MuiList-root {
+                overflow: hidden;
+                .MuiListItem-root{
+                    a{
+                        white-space: normal;
+                    }
+                }
+            }
+        }
+    }
 }
 @media  screen and (orientation :landscape) {
     .navbar{
