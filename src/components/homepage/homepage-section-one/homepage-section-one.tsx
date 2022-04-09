@@ -148,7 +148,7 @@ const testChild:Variants ={
          duration:0.4+custom.order/10
        },
        opacity:{
-         duration:1.8 -custom.order/10,
+         duration:1.3 -custom.order/10,
          ease:'linear'
        },
        backgroundPositionY:{
@@ -358,7 +358,7 @@ const animateManually =(str:string)=>{
                 <div className="homepageOneHeader">
 
                   <div className="headerPhoneNumber">
-                         +7 (212) 674-25-10
+                  (+49) 173 9354932
                   </div>
                   <div className="navLinks">
                     <NavLink  to={'/'}>{t('Home')}</NavLink>
@@ -366,7 +366,7 @@ const animateManually =(str:string)=>{
                     <NavLink to={'/portfolio'}>{t('Portfolio')}</NavLink>
                     <NavLink to={'/blogs'}>{t('Blog')}</NavLink>
                     <NavLink to={'/contacts'}>{t('Contacts')}</NavLink>
-                    <NavLink to={'/'} onClick={()=>changeLanguge()}>{t('Language')}</NavLink>
+                    {/* <NavLink to={'/'} onClick={()=>changeLanguge()}>{t('Language')}</NavLink> */}
                   </div>
                 
                 </div>

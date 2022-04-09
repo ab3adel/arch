@@ -34,10 +34,10 @@ const {t,i18n} =useTranslation()
                             <h5>{t('Phone')}</h5>
                         </div>
                         <div className="body">
-                            <p>+0<span>&nbsp;</span>444<span>&nbsp;</span>444<span>&nbsp;</span>66-77</p>
-                            <p>+0<span>&nbsp;</span>444<span>&nbsp;</span>444<span>&nbsp;</span>66-77</p>
-                            <p>+0<span>&nbsp;</span>444<span>&nbsp;</span>444<span>&nbsp;</span>66-77</p>
-                            <p>+0<span>&nbsp;</span>444<span>&nbsp;</span>444<span>&nbsp;</span>66-77</p>
+                            <p>+(+49)<span>&nbsp;</span>173<span>&nbsp;</span>935<span>&nbsp;</span>4932</p>
+                            <p>+(+49)<span>&nbsp;</span>173<span>&nbsp;</span>935<span>&nbsp;</span>4932</p>
+                            <p>+(+49)<span>&nbsp;</span>173<span>&nbsp;</span>935<span>&nbsp;</span>4932</p>
+                            <p>+(+49)<span>&nbsp;</span>173<span>&nbsp;</span>935<span>&nbsp;</span>4932</p>
                         </div>
                     </div>
                     <div className="info">
@@ -46,7 +46,7 @@ const {t,i18n} =useTranslation()
                             <h5>{t("Email")}</h5>
                         </div>
                         <div className="body">
-                            <p>3D.Ikoniks@gmail.com</p>
+                            <p>service@ikoniks.de</p>
                         </div>
                     </div>
                     <div className="info">
@@ -55,8 +55,8 @@ const {t,i18n} =useTranslation()
                             <h5>{t("Address")}</h5>
                         </div>
                         <div className="body">
-                            <p>USA.NEWYORK </p>
-                            <p>ST 44848 Local 8390</p>
+                            <p>Filderbahnplatz.35 </p>
+                            <p>70567 Stuttgart</p>
                         </div>
                     </div>
 

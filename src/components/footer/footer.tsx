@@ -129,10 +129,10 @@ const handleClose=() =>{
             <div className="footerBody">
                 <div className="col1">
                     <div className="contacts">
-                        <p>+777777777777</p>
-                        <p>+88888888888</p>
-                        <p> info@3d.com</p>
-                        <p> Germany , Stuttgart ,55 St</p>
+                        <p>(+49) 173 9354932</p>
+                        <p>(+49) 173 9354932</p>
+                        <p>service@ikoniks.de</p>
+                        <p> Filderbahnplatz.3570567 Stuttgart</p>
                     </div>
                 </div>
                 <div className="col2">

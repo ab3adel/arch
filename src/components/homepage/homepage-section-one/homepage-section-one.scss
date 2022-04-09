@@ -113,9 +113,10 @@
                 display: flex;
                 justify-content: space-evenly;
                 a {
-                    color:white
+                    color:white;
+                    text-shadow:1px 2px 1px grey;
                 }
-                .activeLink {
+                a.active {
                     color:gold
                 }
             }
@@ -240,13 +241,23 @@
                 display: flex;
                 line-height:1.5rem;
                 padding:1rem;
+                text-shadow: 0.07em 0 black,
+                0 0.07em black,     
+               -0.07em 0 black,
+               0 -0.07em   black,;
                 p {
                     
                     margin:0
                 }
             }
             .animatedParagraph {
-                font-size: large;
+                font-size: larger;
+                color:white;
+                letter-spacing: 3px;
+                text-shadow: 0.07em 0 black,
+                             0 0.07em black,     
+                            -0.07em 0 black,
+                            0 -0.07em   black,;
             }
             .lookMoreBtn {
                 background-color: #c5a47e;

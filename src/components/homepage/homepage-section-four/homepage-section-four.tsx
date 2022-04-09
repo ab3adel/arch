@@ -85,7 +85,7 @@ export const HomepageSectionFour = () => {
               custom={!isNaN(backgroundPosition)?backgroundPosition:50}
               >
                  <div className="parallaxNumber">
-                     12
+                     4
                  </div>
             </motion.div>
             <motion.div className="homepageFourTitle"

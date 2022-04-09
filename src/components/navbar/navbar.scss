@@ -29,6 +29,9 @@
                 position: relative;
                transition : 2s ease-in-out;
             }
+            a.active{
+             color:gold;
+         }
          }
      }
      .fixedButton.MuiPaper-root{
@@ -53,6 +56,9 @@
                     text-decoration: none;
                     position: relative;
                    transition : 2s ease-in-out;
+                }
+                a.active{
+                    color:gold;
                 }
                 .MuiBox-root {
                     .MuiTypography-root {

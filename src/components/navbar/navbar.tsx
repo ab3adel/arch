@@ -1,4 +1,4 @@
-import {Link } from 'react-router-dom'
+import {Link,NavLink } from 'react-router-dom'
 import React, {useState,useEffect} from 'react'
 import './navbar.scss'
 
@@ -113,36 +113,36 @@ export const Navbar =() =>{
                                   <List sx={{display:'flex',alignItems:'cetnter'}}>
                                          
                                             <ListItem button onClick={handleCloseNavMenu}>
-                                               <Link to="/">
+                                               <NavLink to="/">
                                             {t( 'Home')}
-                                                </Link>
+                                                </NavLink>
                                             </ListItem>
                                           
                                             <ListItem button onClick={handleCloseNavMenu}>
-                                                <Link to="/about">
+                                                <NavLink to="/about">
                                                     {t('About')}
-                                                </Link>
+                                                </NavLink>
                                             </ListItem >
                                             <ListItem button onClick={handleCloseNavMenu}>
-                                                <Link to="/portfolio">
+                                                <NavLink to="/portfolio">
                                                    {t("Portfolio")}
-                                                </Link>
+                                                </NavLink>
                                             </ListItem >
                                             <ListItem button onClick={handleCloseNavMenu}>
-                                               <Link to="/blogs">
+                                               <NavLink to="/blogs">
                                                     {t('Blog')}
-                                                </Link>
+                                                </NavLink>
                                             </ListItem >
                                             <ListItem button onClick={handleCloseNavMenu}>
-                                               <Link to="/contacts">
+                                               <NavLink to="/contacts">
                                                     {t('Contacts')}
-                                                </Link>
+                                                </NavLink>
                                             </ListItem > 
-                                            <ListItem>
+                                            {/* <ListItem>
                                                 <Link to="/" onClick={()=>changeLanguge()}>
                                                 {t('Language')}
                                                 </Link>
-                                            </ListItem> 
+                                            </ListItem>  */}
                                 </List>
                             </Drawer>
                         </Box>
@@ -168,25 +168,25 @@ export const Navbar =() =>{
                                               width:'60%',
                                               color:'white'
                                           }}>
-                                            <Link to="/">
+                                            <NavLink to="/">
                                             {t( 'Home')}
-                                            </Link>
+                                            </NavLink>
                                           
-                                             <Link to="/about">
+                                             <NavLink to="/about">
                                              {t('About')}
-                                            </Link>
-                                            <Link to="/portfolio">
+                                            </NavLink>
+                                            <NavLink to="/portfolio">
                                             {t("Portfolio")}
-                                            </Link>
-                                             <Link to="/blogs">
+                                            </NavLink>
+                                             <NavLink to="/blogs">
                                              {t('Blog')}
-                                            </Link>
-                                            <Link to="/contacts">
+                                            </NavLink>
+                                            <NavLink to="/contacts">
                                             {t('Contacts')}
-                                            </Link>
-                                            <Link to="/" onClick={()=>changeLanguge()}>
+                                            </NavLink>
+                                            {/* <Link to="/" onClick={()=>changeLanguge()}>
                                                 {t('Language')}
-                                            </Link>
+                                            </Link> */}
                                             </Box>
                                           
                         </Box>
@@ -225,25 +225,25 @@ export const Navbar =() =>{
                                               width:'60%',
                                               color:'white'
                                           }}>
-                                            <Link to="/">
+                                            <NavLink to="/">
                                             {t( 'Home')}
-                                            </Link>
+                                            </NavLink>
                                           
-                                             <Link to="/about">
+                                             <NavLink to="/about">
                                              {t('About')}
-                                            </Link>
-                                            <Link to="/portfolio">
+                                            </NavLink>
+                                            <NavLink to="/portfolio">
                                             {t("Portfolio")}
-                                            </Link>
-                                             <Link to="/blogs">
+                                            </NavLink>
+                                             <NavLink to="/blogs">
                                              {t('Blog')}
-                                            </Link>
-                                            <Link to="/contacts">
+                                            </NavLink>
+                                            <NavLink to="/contacts">
                                             {t('Contacts')}
-                                            </Link>
-                                            <Link to="/" onClick={()=>changeLanguge()}>
+                                            </NavLink>
+                                            {/* <Link to="/" onClick={()=>changeLanguge()}>
                                                 {t('Language')}
-                                            </Link>
+                                            </Link> */}
                                             </Box>
                                           
                         </Box>
