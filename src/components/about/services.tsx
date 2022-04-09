@@ -5,7 +5,7 @@ import Planning from '../../images/homepage2/icon-planing.png'
 import {Variants,motion} from 'framer-motion'
 import {Service} from './service'
 import {useTranslation} from 'react-i18next'
-let txt = `For each project we establish relationships with partners who we know will help 
+let txt5 = `For each project we establish relationships with partners who we know will help 
 us create added value for your project. As well as bringing together the public 
 and private sectors, we make sector-overarching links to gather knowledge and to 
 learn from each other. The way we undertake projects is based on permanently applying 
@@ -46,12 +46,12 @@ export const OurServices = ()=>{
         <div className="ourServicesContainer">
             <h3><span>About</span> Us</h3>
             <div className="ourServices">
-                {arr.map((ele:{img:string,title:string},index)=>{
+                {arr.map((ele:{img:string,title:string,txt:string},index)=>{
                     return (<Service img = {ele.img} 
                                     title={ele.title} 
                                     key={index} 
                                     custom={index}
-                                    text={txt}/>)
+                                    text={ele.txt}/>)
                 })}
             </div>
         </div>
