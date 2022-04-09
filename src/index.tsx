@@ -16,7 +16,7 @@ ReactDOM.render(
     <Provider store={store}>
 
       <Router>
-        <Suspense fallback={()=><CircularProgress  sx={{position:'absolute',top:'50%',left:'50%'}}
+        <Suspense fallback={<CircularProgress  sx={{position:'absolute',top:'50%',left:'50%'}}
                                   size={40} />}>
 
           <App />

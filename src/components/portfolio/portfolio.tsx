@@ -13,7 +13,7 @@ for (let i =1;i<31;i++ ){
 
 }
 
-export const Portfolio =() =>{
+ const Portfolio =() =>{
     const slug = useParams()
     const [isFinished,setIsFinished] =useState(true)
 
@@ -43,3 +43,4 @@ export const Portfolio =() =>{
         </div>
     )
 }
+export default Portfolio;

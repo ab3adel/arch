@@ -8,12 +8,16 @@ interface iProps {imgSrc:string,setZoom:Function}
 export const ImagePlaceHolder=({imgSrc,setZoom}:iProps)=>{
     const [currentImage,setCurrentImage]= useState({src:current,loading:true})
     useEffect(()=>{
-        const imageLoading = new Image ()
-        imageLoading.src=imgSrc
-        imageLoading.onload=()=>{
-            setCurrentImage(pre=>({...pre,src:imgSrc,loading:false}))
+        let mounted =true ;
+        if (mounted) {
+
+            const imageLoading = new Image ()
+            imageLoading.src=imgSrc
+            imageLoading.onload=()=>{
+                setCurrentImage(pre=>({...pre,src:imgSrc,loading:false}))
+            }
         }
-    
+    return ()=>{ mounted=false}
     },[])
     const handleZoomImage =()=>{
         setZoom((pre:any)=>({...pre,open:true,img:imgSrc}))

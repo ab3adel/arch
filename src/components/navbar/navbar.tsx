@@ -94,7 +94,8 @@ export const Navbar =() =>{
                     <Toolbar disableGutters>
                         <Box sx={{display:{xs:'flex',sm:'none',md:'none',justifyContent:'space-evenly'}}}>
                             
-                            <Typography   onClick={()=>navigate('/')} variant="h5" component="div" sx={{flexGrow:1,
+                            <Typography className="logo"  
+                                      onClick={()=>navigate('/')} variant="h5" component="div" sx={{flexGrow:1,
                                                                                  display:'flex',
                                                                                  justifyContent:'center'}}>
                                                 3D<span>.</span>Ikoniks
@@ -155,6 +156,7 @@ export const Navbar =() =>{
                                      
                                      
                                      <Typography variant="h5" component="div" 
+                                     className="logo"
                                      sx={{flexGrow:1,
                                           display:'flex',
                                            justifyContent:'center'}}
@@ -210,7 +212,9 @@ export const Navbar =() =>{
                                  }}>
                                      
                                      
-                                     <Typography variant="h5" 
+                                     <Typography 
+                                                className="logo"
+                                                variant="h5" 
                                                onClick={()=>navigate('/')}
                                                 component="div" 
                                                 sx={{flexGrow:1,

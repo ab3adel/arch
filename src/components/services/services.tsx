@@ -33,13 +33,11 @@ let arr = [
     Lorem consectetur veniam nisi ipsum enim do. Id veniam elit velit nostrud labore mollit Lorem.`}
 ]
  interface iTxt {[key:string]:string}
- let imgsArr:string[]= []
-for (let i =1;i<10;i++ ){
-  import(`../../images/portfolio/0 (${i}).jpg`).then(som=>imgsArr.push(som.default))
+ 
 
-}
 export const Services =()=>{
 const {isLoading,data,error} =useGetNodeQuery(3)
+const [imgsArr,setImgsArr]=useState<string[]>([])
 let id = useParams()
 let[ requiredData ,setRequiredData]= useState([{img:'',body:{en:'',ar:''},title:{ar:'',en:''}}])
 
@@ -47,9 +45,11 @@ let [txts,setTxts]=useState<iTxt>({
     txt1:'',txt2:'',txt3:'',txt4:''
 })
 let iterator =[1,2,3,4]
+
+
 useEffect (()=>{
     
-if (!isLoading) {
+if (!isLoading && !error) {
     let theData=(data as any).payload.filter((ele : any)=>ele.id=== Number(id.id?.substring(1)))
     let totalTxt = theData[0].body.en.split(",")
     let factor = Math.floor(totalTxt.length/4 )
@@ -62,8 +62,27 @@ if (!isLoading) {
     setTxts(pre=>({...pre,txt1,txt2,txt3,txt4}))
 }
 },[isLoading])
+useEffect(()=>{
+   
+    const  loadImages= async () =>{
 
-
+        if (Number(id.id?.substring(1)) !== 10) {
+           
+            for (let i =1;i<10;i++ ){
+                import(`../../images/portfolio/0 (${i}).jpg`).then(som=>setImgsArr((pre:any)=>[...pre,som.default]))
+              
+              }
+        }
+        else {
+           
+            for (let i =1;i<6;i++) {
+                import(`../../images/services/product/product${i}.jpg`).then(som=>setImgsArr((pre:any)=>[...pre,som.default]))
+            }
+           
+        }
+    }
+    loadImages()
+},[id])
     return (
         <div className="servicesContainer">
              <div className="differBackground"></div>
@@ -75,14 +94,14 @@ if (!isLoading) {
     
                          return ( <Holder key={index} 
                             isLoading={isLoading}
-                            img={image2} 
+                            img={imgsArr[index]} 
                             text={txts[`txt${ele}`]} 
                             title={requiredData[0].title.en} 
                             leftDir={true} />)
                         }
                         return (<Holder key={index} 
                             isLoading={isLoading}
-                            img={image2} 
+                            img={imgsArr[index]} 
                             text={txts[`txt${ele}`]} 
                             title={requiredData[0].title.en} 
                             leftDir={false} />)
