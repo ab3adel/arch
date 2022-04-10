@@ -2,9 +2,26 @@ import './about.scss'
 import {useTranslation} from 'react-i18next'
 import {OurServices} from './services'
 import {Map} from './map'
+import {useGetNodeQuery} from '../../store/services/query'
+import CircularProgress from  '@mui/material/CircularProgress/CircularProgress'
+import { useEffect, useState } from 'react'
+import {iData} from '../../tools/interfaces'
+import Arch from '../../images/homepage2/icon-architecture.png'
+import {Notification} from '../../tools/notification/notification'
  const About =() =>{
+     const [theData,setTheData]= useState<iData[]>([{title:{en:''},body:{en:''},attachment:Arch}])
      const {t,i18n} = useTranslation()
+     const {isLoading,isError,data}= useGetNodeQuery(8)
+     const [open,setOpen]=useState(false)
 
+useEffect (()=>{
+if (!isLoading && !isError) {
+setTheData((data as  any).payload)
+}
+if (isError) {
+    setOpen(true)
+}
+},[isLoading])
 
     return (
         <div className="aboutContainer">
@@ -22,8 +39,15 @@ import {Map} from './map'
                     This way of working allows us to raise your project to a higher level.
                 </p>
             </div>
-            <OurServices />
+           { isLoading|| isError ?
+           <CircularProgress size={50}  />:
+           <OurServices data={theData} loading={isLoading} error={isError}  />}
             <Map />
+            <Notification message="something wrong happend" 
+            show={open} 
+            handleClose={()=>setOpen(false)}
+            severity={'error'}
+            />
         </div>
     )
 }

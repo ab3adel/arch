@@ -7,6 +7,8 @@ import {useGetSectionQuery,useGetNodeQuery} from '../../store/services/query'
 import { useEffect, useState } from 'react'
 import {useParams} from 'react-router-dom'
 import {PortfolioList} from '../portfolio/imagelist'
+import {Notification} from '../../tools/notification/notification'
+import {CircularProgress} from "@mui/material"
 interface obj {img:string,body:{en:string,ar:string},title:{ar:string,en:string}}
 let arr = [
     {img:image1,title:'Service Title'
@@ -36,8 +38,9 @@ let arr = [
  
 
 export const Services =()=>{
-const {isLoading,data,error} =useGetNodeQuery(3)
+const {isLoading,data,error,isError} =useGetNodeQuery(3)
 const [imgsArr,setImgsArr]=useState<string[]>([])
+const [open,setOpen]=useState(false)
 let id = useParams()
 let[ requiredData ,setRequiredData]= useState([{img:'',body:{en:'',ar:''},title:{ar:'',en:''}}])
 
@@ -61,6 +64,9 @@ if (!isLoading && !error) {
     setRequiredData(theData)
     setTxts(pre=>({...pre,txt1,txt2,txt3,txt4}))
 }
+if (isError) {
+    setOpen(true)
+}
 },[isLoading])
 useEffect(()=>{
    
@@ -83,9 +89,14 @@ useEffect(()=>{
     }
     loadImages()
 },[id])
+let theId= Number(id.id?.substring(1)) === 10
     return (
         <div className="servicesContainer">
              <div className="differBackground"></div>
+            {isError ? 
+            <CircularProgress size={50} sx={{position:'absolute',left:"50%",top:"50%"}} />:
+             <>
+             
              <div className="imagesHolder">
                 {
                 iterator.map((ele:number,index:number)=>{
@@ -94,14 +105,14 @@ useEffect(()=>{
     
                          return ( <Holder key={index} 
                             isLoading={isLoading}
-                            img={imgsArr[index]} 
+                            img={theId? imgsArr[index] :image2} 
                             text={txts[`txt${ele}`]} 
                             title={requiredData[0].title.en} 
                             leftDir={true} />)
                         }
                         return (<Holder key={index} 
                             isLoading={isLoading}
-                            img={imgsArr[index]} 
+                            img={theId? imgsArr[index] :image2} 
                             text={txts[`txt${ele}`]} 
                             title={requiredData[0].title.en} 
                             leftDir={false} />)
@@ -111,6 +122,12 @@ useEffect(()=>{
              <div className="serviceImages">
                  <PortfolioList images={imgsArr}/>
              </div>
+             </>}
+             <Notification message="something wrong happend" 
+            show={open} 
+            handleClose={()=>setOpen(false)}
+            severity={'error'}
+            />
         </div>
     )
 }

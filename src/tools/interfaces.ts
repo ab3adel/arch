@@ -1,0 +1,1 @@
+export  interface  iData {title:{en:string},body:{en:string},attachment:string}

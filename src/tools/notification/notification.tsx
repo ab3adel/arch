@@ -11,7 +11,7 @@ export const Notification =({message,show,handleClose,severity}:iProps)=>{
 
 
     return (
-        <Snackbar open={show} autoHideDuration={5000} onClose={handleClose}>
+        <Snackbar open={show} autoHideDuration={10000} onClose={handleClose}>
             <Alert severity={severity}>
                 {message}
             </Alert>

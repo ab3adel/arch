@@ -12,14 +12,20 @@ export const ikoniksFetch = createApi({
     endpoints:(builder)=>({
         getSection:builder.query<FetchType,number>({
             query:(id)=>({
-                url:`${Apis.categorise}`,
+                url:`${Apis.sections}`,
                 params:{page:id}
+            }), 
+        }),
+        getCategory:builder.query<FetchType,number>({
+            query:(id)=>({
+                url:`${Apis.categorise}`,
+                params:{section:id}
             }), 
         }),
         getNode:builder.query<FetchType,number>({
             query:(id)=>({
                 url:`${Apis.nodes}`,
-                params:{section:id}
+                params:{category:id}
             })
         })
     })
