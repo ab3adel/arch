@@ -1,7 +1,6 @@
 
 import Arch from '../../images/homepage2/icon-architecture.png'
-import Inter from '../../images/homepage2/icon-interiors.png'
-import Planning from '../../images/homepage2/icon-planing.png'
+
 import {Variants,motion} from 'framer-motion'
 import {Service} from './service'
 import {useTranslation} from 'react-i18next'
@@ -9,8 +8,8 @@ import {Skeleton} from '@mui/material'
 import {iData} from '../../tools/interfaces'
 interface iProps {loading:boolean,error:boolean,data:iData[]}
 let arr= [{img:Arch,title:'About us',txt:'txt1'}
-,{img:Inter,title:'Our mission',txt:'txt2'}
-,{img:Planning,title:'Our goal',txt:'txt3'}]
+,{img:Arch,title:'Our mission',txt:'txt2'}
+,{img:Arch,title:'Our goal',txt:'txt3'}]
 export const OurServices = ({loading,error,data}:iProps)=>{
        const {t,i18n}=useTranslation()
 
