@@ -8,7 +8,7 @@ import {useInView} from 'react-intersection-observer'
 import { useEffect, useState } from 'react'
 import {useAnimation} from 'framer-motion'
 import {Apis,Url} from '../../tools/apis/apis'
-import { AlertColor, CircularProgress} from '@mui/material'
+import { AlertColor, CircularProgress,TextField} from '@mui/material'
 import {Notification} from '../../tools/notification/notification'
 import {useTranslation} from 'react-i18next'
 const btn:Variants = {
@@ -150,8 +150,11 @@ const handleClose=() =>{
                         formFields={fields} setFormField={handleField}
                         validator={isEmail} name='Email' />
                     </div>
-                    <TextArea  label={t('Message')}  formFields={fields} 
-                    setFormField={handleField} name={'message'}/>
+                    <Input type='text' label={"Message"} multiline={true}
+                        formFields={fields} setFormField={handleField}
+                        validator={dummy} name='Message' />
+   
+                    
                 </div>
                 <div className="footerButton">
                     <div className="sendButton">
@@ -177,7 +180,7 @@ const handleClose=() =>{
             </div>
 
             <div className="footerTail">
-                <h4>3D<p className='dot'>.</p>com</h4>
+                <h4>3D<p className='dot'>.</p>Ikoniks</h4>
                 <p>by Ikoniks Software</p>
                 <p><Copyright/> all Rights Reserved</p>
             </div>

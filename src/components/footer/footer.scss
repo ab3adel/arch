@@ -48,6 +48,9 @@
                 align-items: flex-start;
                 height:50%;
                 font-size: large;
+                p {
+                    margin:0.37rem;
+                }
 
             }
         }
@@ -73,6 +76,7 @@
                 height: 40%;
                 width:25%;
                 resize: none;
+                border-radius:10px;
             }
             
         }
