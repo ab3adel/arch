@@ -11,6 +11,7 @@ import {Provider} from 'react-redux'
 import {store} from './store/store'
 import {CircularProgress} from '@mui/material'
 import './i18n'
+import './fonts/Raleway/Raleway-VariableFont_wght.ttf'
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

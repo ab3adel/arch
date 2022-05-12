@@ -25,9 +25,11 @@ import {useTranslation} from 'react-i18next'
 export const Navbar =() =>{
     const [anchorElNav, setAnchorElNav] = useState <Element |null>(null);
     const [fade,setFade] = useState(false)
+    const [homePageLocation,setHomePageLocation] = useState(false)
     const [y,setY] = useState(0)
     const {t,i18n} =useTranslation() 
     const navigate = useNavigate()
+    const location =useLocation()
 
     const handleOpenNavMenu = (event:React.MouseEvent) => {
         setAnchorElNav(event.currentTarget);
@@ -60,11 +62,15 @@ export const Navbar =() =>{
    return ()=> document.querySelector('.App')?.removeEventListener('scroll',handleScroll)
     
      },[y])
-  
+   useEffect (()=>{
+       if (location.pathname === '/') {
+           setHomePageLocation(true)
+       }
+   },[])
      
     return (
         <>
-        <div className="navbar">
+        <div className="navbar" style={{zIndex:homePageLocation? '':6000}}>
         { !fade &&  (<AppBar className="fixedButton" position="fixed" sx={{display:{xs:'flex',sm:'none',md:'none',xl:'none'}}}>
                                 <Container maxWidth='xl'>
                                     <Box sx={{justifyContent:'flex-end'}}>

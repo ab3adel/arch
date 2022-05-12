@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family:  'Roboto';
+  font-family: 'Raleway', 'Roboto';
     
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -21,8 +21,7 @@ scrollbar-color:rgba(197,164,125,.95);
 }  
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Raleway','Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
 p,img {
@@ -30,4 +29,8 @@ p,img {
 }
 a {
   text-decoration: none;
+}
+@font-face {
+  font-family: 'Raleway';
+  src: local('Raleway'),url('./fonts//Raleway/Raleway-VariableFont_wght.ttf');
 }

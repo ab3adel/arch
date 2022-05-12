@@ -20,6 +20,7 @@ export const ImagePlaceHolder=({imgSrc,setZoom}:iProps)=>{
     return ()=>{ mounted=false}
     },[])
     const handleZoomImage =()=>{
+      
         setZoom((pre:any)=>({...pre,open:true,img:imgSrc}))
     }
 
@@ -43,6 +44,7 @@ export const ImagePlaceHolder=({imgSrc,setZoom}:iProps)=>{
                 src={`${imgSrc}?w=161&fit=crop&auto=format`}
                 loading="lazy"
                 onClick={()=>handleZoomImage()}
+                
                 style={{cursor:'pointer'}}
             />
         </ImageListItem>

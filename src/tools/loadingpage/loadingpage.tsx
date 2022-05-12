@@ -48,20 +48,19 @@ export const LoadingPage =({images,isFinished,setIsFinished}:iProps) =>{
         let newFields= {...isLoaded}
         let arr =Object.keys(newFields).filter (ele=> !newFields[ele])
         if (arr.length ===0 && Object.keys(newFields).length >0) { 
-           
             setIsFinished(false)
         }
     
 
     },[isLoaded])
 const handleLoaded =(num:number) =>{
-   
+  
     let newFields= {...isLoaded}
-   
     newFields[`image${num}`]=true
     setIsLoaded(pre=>({...pre,...newFields}))
 }
 const handleClose =()=>setIsFinished(false)
+
     return (
         <>
        {isFinished && (<div className="images">
