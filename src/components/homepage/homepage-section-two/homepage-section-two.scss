@@ -53,9 +53,30 @@
         justify-content:center;
         align-items:center;
         padding:2em 2em 0 2em;
+        display:flex;
         img {
+
             max-width: 100%;
             max-height: 100%;
+        }
+    }
+}
+@media only screen  and (max-width:500px) {
+    .homepageSectionTwoContainer {
+        .partTwo {
+            padding:10px;
+            padding-left: 0;
+            .partTwoBody {
+                .MuiGrid-root {
+                    img{
+                        width:40px;
+                    }
+                }
+            }
+        }
+        .partThree {
+            padding:10px;
+            padding-right: 0;
         }
     }
 }

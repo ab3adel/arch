@@ -54,8 +54,8 @@ export const HomepageSectionTwo =() =>{
                         </Typography>
                     </Grid>
                     <Grid item  container
-                        lg={3} md={3} sm={6} 
-                        xs={12} 
+                        lg={3} md={3} sm={4} 
+                        xs={4} 
                         className="partTwo" 
                         
                         >
@@ -66,12 +66,13 @@ export const HomepageSectionTwo =() =>{
                                 color='inherit'
                                 className="partTwoTitle"
                                 sx={{fontSize:{xs:'1em',sm:'1em',md:'2em'}}}>
-                            Our Specialization <span>:</span> 
+                                Our Specialization<span>:</span> 
                             </Typography>
                         </Grid>
-                        <Grid item container xs={12} 
+                        <Grid item container
+                              xs={12} 
                         
-                        className="partTwoBody">
+                             className="partTwoBody">
                             <Grid item xs={12} direction="column">
                                 <img src={arch} />
                                 <Typography 
@@ -99,8 +100,8 @@ export const HomepageSectionTwo =() =>{
                         </Grid>
                     </Grid>
                     <Grid item 
-                        xs={12} 
-                        sm={12} 
+                        xs={8} 
+                        sm={8} 
                         md={4} 
                         lg={4}
                     
