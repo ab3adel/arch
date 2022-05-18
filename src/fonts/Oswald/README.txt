@@ -1,36 +1,23 @@
-Raleway Variable Font
-=====================
+Oswald Variable Font
+====================
 
-This download contains Raleway as both variable fonts and static fonts.
+This download contains Oswald as both a variable font and static fonts.
 
-Raleway is a variable font with this axis:
+Oswald is a variable font with this axis:
   wght
 
-This means all the styles are contained in these files:
-  Raleway/Raleway-VariableFont_wght.ttf
-  Raleway/Raleway-Italic-VariableFont_wght.ttf
+This means all the styles are contained in a single file:
+  Oswald/Oswald-VariableFont_wght.ttf
 
 If your app fully supports variable fonts, you can now pick intermediate styles
 that aren’t available as static fonts. Not all apps support variable fonts, and
-in those cases you can use the static font files for Raleway:
-  Raleway/static/Raleway-Thin.ttf
-  Raleway/static/Raleway-ExtraLight.ttf
-  Raleway/static/Raleway-Light.ttf
-  Raleway/static/Raleway-Regular.ttf
-  Raleway/static/Raleway-Medium.ttf
-  Raleway/static/Raleway-SemiBold.ttf
-  Raleway/static/Raleway-Bold.ttf
-  Raleway/static/Raleway-ExtraBold.ttf
-  Raleway/static/Raleway-Black.ttf
-  Raleway/static/Raleway-ThinItalic.ttf
-  Raleway/static/Raleway-ExtraLightItalic.ttf
-  Raleway/static/Raleway-LightItalic.ttf
-  Raleway/static/Raleway-Italic.ttf
-  Raleway/static/Raleway-MediumItalic.ttf
-  Raleway/static/Raleway-SemiBoldItalic.ttf
-  Raleway/static/Raleway-BoldItalic.ttf
-  Raleway/static/Raleway-ExtraBoldItalic.ttf
-  Raleway/static/Raleway-BlackItalic.ttf
+in those cases you can use the static font files for Oswald:
+  Oswald/static/Oswald-ExtraLight.ttf
+  Oswald/static/Oswald-Light.ttf
+  Oswald/static/Oswald-Regular.ttf
+  Oswald/static/Oswald-Medium.ttf
+  Oswald/static/Oswald-SemiBold.ttf
+  Oswald/static/Oswald-Bold.ttf
 
 Get started
 -----------
@@ -74,7 +61,7 @@ License
 Please read the full license text (OFL.txt) to understand the permissions,
 restrictions and requirements for usage, redistribution, and modification.
 
-You can use them freely in your products & projects - print or digital,
+You can use them in your products & projects - print or digital,
 commercial or otherwise.
 
 This isn't legal advice, please consider consulting a lawyer and see the full

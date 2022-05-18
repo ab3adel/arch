@@ -4,7 +4,7 @@ from '@mui/icons-material'
 import React from 'react'
 import {motion,Variants,useAnimation} from 'framer-motion'
 import Grid from '@mui/material/Grid/Grid'
-import {ImagePlaceHolder} from '../../tools/placeholder/imageplacehodler'
+import {ImagePlaceHolder} from '../../../tools/placeholder/imageplacehodler'
 
 
 
@@ -15,7 +15,7 @@ const variant:Variants={
         display:'flex',
         rotateZ:[0,180],
         transition:{
-            duration:2,
+          
             ease:'circIn'
         }
     },
@@ -23,7 +23,6 @@ const variant:Variants={
         display:'none',
         rotateZ:[180,0],
         transition:{
-            duration:2,
             ease:'circIn'
         }
     },
@@ -62,11 +61,6 @@ const cancelHovering=(e:React.MouseEvent | React.TouchEvent)=>{
         <Grid 
             item 
             xs={12}
-            sm={12}
-            md={6}
-            lg={6}
-
-           
             className="limitedHeight "
             onMouseEnter={(e)=>handleHovering(e)}
             onTouchStart={(e)=>handleHovering(e)}
