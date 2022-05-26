@@ -14,7 +14,7 @@ export const BlurrImageHolder =(
         image.src=img
         image.onload=()=>imageIsLoaded()
     },[img])
- 
+
       return (<>
      {imageLoaded? <img src={img} />: <img src={image2} style={{filter:'blur(1.5rem)'}}/>}
       </>)

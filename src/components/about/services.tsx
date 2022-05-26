@@ -15,7 +15,7 @@ export const OurServices = ({loading,error,data}:iProps)=>{
 
     return (
         <div className="ourServicesContainer">
-            <h3><span>About</span> Us</h3>
+            <h3><span>{t("About")}</span> {t("Us")}</h3>
             <div className="ourServices">
                 {loading || error? 
                 arr.map((ele,index)=>{

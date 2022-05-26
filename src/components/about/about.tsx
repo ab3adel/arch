@@ -25,10 +25,10 @@ if (isError) {
 
     return (
         <div className="aboutContainer">
-            <h2>About 3D.IKONKS</h2>
+            <h2>{t("About")} 3D.IKONKS</h2>
             <div className="aboutIntro">
            { i18n.language ==="en"?<h4> We Turn Ideas Into Art Of Works<span>.</span></h4>:
-           <h4><span>.</span> نحول الأفكار الى فن</h4>}
+           <h4>Wir verwandeln Ideen in Kunstwerke <span>.</span></h4>}
                 <p>
                     For each project we establish relationships with partners who we know will help 
                     us create added value for your project. As well as bringing together the public 

@@ -23,20 +23,7 @@ useEffect(()=>{
 
     return (
         <div className={leftDir?"ldHolder":'rdHolder'}>
-            {/* <div className="floatingBox" >
-                <div className="info">
-                    <legend>Location</legend>
-                    <span>Australia</span>
-                </div>
-                <div className="info">
-                    <legend>Price</legend>
-                    <span>55765$</span>
-                </div>
-                <Divider/>
-                <div className="searchInput">
-                    <TextField className="serviceInput" placeholder='Search' />
-                </div>
-            </div> */}
+           
            { isLoading ? 
                      <>
                       <Skeleton variant='rectangular' 

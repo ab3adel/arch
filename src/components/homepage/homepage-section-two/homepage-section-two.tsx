@@ -9,10 +9,9 @@ import arch from '../../../images/homepage2/icon-architecture.png'
 import planning from '../../../images/homepage2/icon-planing.png'
 import interiors from '../../../images/homepage2/icon-interiors.png'
 import back from '../../../images/homepage2/homepage2.jpg'
-import { fontSize } from '@mui/system'
-
+import {useTranslation} from 'react-i18next'
 export const HomepageSectionTwo =() =>{
-
+    const {t} = useTranslation()
 
 
     return (
@@ -23,7 +22,7 @@ export const HomepageSectionTwo =() =>{
                 <Typography variant={'h3'}
                            justifyContent="center"
                             className="homepageTwoTitle">
-                    About <span>3D.Ikoniks</span>
+                  {t("About")} <span>3D.Ikoniks</span>
                 </Typography>
             </Grid>      
             <Grid item container xs={12}>
@@ -37,7 +36,7 @@ export const HomepageSectionTwo =() =>{
                             color='inherit'
                             sx={{fontSize:{xs:'1em',sm:'1em',md:'2em'}}}
                         >
-                            We turn idea into works of art<span>.</span>
+                           {t("WeTurnIdea")}<span>.</span>
                         </Typography>
                         <Typography 
                             variant="body1"
@@ -66,7 +65,7 @@ export const HomepageSectionTwo =() =>{
                                 color='inherit'
                                 className="partTwoTitle"
                                 sx={{fontSize:{xs:'1em',sm:'1em',md:'2em'}}}>
-                                Our Specialization<span>:</span> 
+                                {t("OurSpecialization")}<span>:</span> 
                             </Typography>
                         </Grid>
                         <Grid item container
@@ -78,7 +77,7 @@ export const HomepageSectionTwo =() =>{
                                 <Typography 
                                     color='inherit'
                                     variant='subtitle1' >
-                                    Architecture
+                                   { t("Architecture")}
                                 </Typography>
                             </Grid>
                             <Grid item xs={12} direction="column">
@@ -86,7 +85,7 @@ export const HomepageSectionTwo =() =>{
                                 <Typography 
                                     color='inherit'
                                     variant='subtitle1' >
-                                    Interiors
+                                    {t("Interiors")}
                                 </Typography>
                             </Grid>
                             <Grid item xs={12} direction="column">
@@ -94,7 +93,7 @@ export const HomepageSectionTwo =() =>{
                                 <Typography 
                                     color='inherit'
                                     variant='subtitle1' >
-                                    Planning
+                                    {t("Planning")}
                                 </Typography>
                             </Grid>
                         </Grid>

@@ -4,16 +4,17 @@ import
     Grid,
 }
 from '@mui/material'
-
+import {useGetCategoryQuery} from '../../store/services/query'
 import { useEffect,  useState } from 'react'
 import {Outlet} from 'react-router'
 import {Inspector} from './inspector'
+import { LoadingPage } from '../../tools/loadingpage/loadingpage'
 
 
 
 const  Portfolio=()=>{
    
-    
+
     const [inspectorOptions,setInspectorOptions]=useState({open:false,img:""})
 
 
@@ -45,7 +46,7 @@ return (
                        setOpen={()=>setInspectorOptions(pre=>({...pre,open:false}))} 
                        imgSrc={inspectorOptions.img}/>
 
-        
+
     </div>
 )
 

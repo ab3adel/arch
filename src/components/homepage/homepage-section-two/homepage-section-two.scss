@@ -66,6 +66,9 @@
         .partTwo {
             padding:10px;
             padding-left: 0;
+            .partTwoTitle {
+                font-weight: normal;
+            }
             .partTwoBody {
                 .MuiGrid-root {
                     img{

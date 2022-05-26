@@ -1,9 +1,11 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import { Grid, Typography } from "@mui/material"
 import {ImageHolder} from './imageHolder'
 import {LoadingPage} from '../../../tools/loadingpage/loadingpage'
 import {Inspector} from '../inspector'
 import './portfolioDetails.scss'
+import {useGetNodeQuery,useGetCategoryQuery} from '../../../store/services/query'
+import {useParams} from 'react-router'
 import img1 from '../../../images/portfolio/1.jpg'
 import img2 from '../../../images/portfolio/2.jpg'
 import img3 from '../../../images/portfolio/3.jpg'
@@ -20,9 +22,34 @@ interface iProps {setInspectorOptions:Function,imgsArr:string[]}
 
 
 export const PortfolioDetails =() =>{
+    const {id,slug} =useParams()
+   
+    console.log(id,slug)
+    const {isLoading,data,isSuccess} =useGetCategoryQuery(3)
     const [isFinished,setIsFinished] =useState(true)
     const [inspectorOptions,setInspectorOptions]=useState({img:'',open:false})
+    const [nodes,setNodes]=useState<string[]>([])
+useEffect (()=>{
+ if (isSuccess && data) {
+     let array:any[]=[]
+     let category =data.payload.filter(ele=>ele.id === Number(id))[0]
+  
+     let newNodes =category.nodes.filter ((ele:any)=>ele.title.en === slug)
+                                 .map((ele:any)=>{
 
+                                     if (ele.attachment) {
+                                         array.push(`http://backend.test.ikoniks.de/${ele.attachment}`)
+                                     }
+                                     if (ele.background) {
+                                        array.push(`http://backend.test.ikoniks.de/${ele.background}`)
+                                     }
+                                 })
+                                 
+     setNodes(array)
+ }
+ 
+     
+},[isSuccess,isLoading])
     return (
         <>
         <Grid 
@@ -159,7 +186,7 @@ export const PortfolioDetails =() =>{
                 justifyContent="center"
                 xs={10} >
                     {
-                        imgsArr.map((ele:string,index:number)=> {
+                        nodes.map((ele:any,index:number)=> {
                             return (
                                 
                                     <ImageHolder  

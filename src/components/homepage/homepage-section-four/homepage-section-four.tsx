@@ -100,8 +100,8 @@ export const HomepageSectionFour = () => {
                 IN THE MARKET
                 </>
             :<>
-            <p>سنوات من النجاح</p>
-                في السوق
+            <p>JAHRE ERFOLGREICHE ARBEIT</p>
+                 AUF DEM MARKT
             </>
             }
             </motion.div>

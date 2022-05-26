@@ -5,10 +5,11 @@
     "ContactUs":"Contact Us",
     "Contacts":"Contacts",
     "About":"About",
+    "AboutUs":"About Us",
     "Prev":"prev",
     "Next":"Next",
     "LookMore":"Look More",
-    "Language":"العربية" ,
+    "Language":"German" ,
     "Our":"Our",
     "Services":"Services",
     "Clients":"Clients",
@@ -23,7 +24,16 @@
     "Email":"Email",
     "Message":"Message",
     "WeTurnIdea":"We turn Idea into works of art",
-    "Address":"Address"
+    "Address":"Address",
+    "Architecture":"Architecture",
+    "Interiors":"Interiors",
+    "Planning":"Planning",
+    "OurSpecialization":"Our Specialization",
+    "3d animation videos":"3d animation videos",
+    "Exterior 3D visualization":"Exterior 3D visualization",
+    "Interior 3D visualization":"Interior 3D visualization",
+    "Product visualization":"Product visualization",
+    "Us":"Us"
   
 
 }

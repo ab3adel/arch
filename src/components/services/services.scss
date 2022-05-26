@@ -7,6 +7,7 @@
     grid-template-columns: 70% 30%;
     grid-template-rows: 90vh minmax(100vh,300vh) 1fr;
     position: relative;
+    row-gap:2em ;
     .differBackground {
         grid-column: 2/2;
         grid-row: 1/1;
@@ -199,11 +200,13 @@
 }
 @media only screen and (max-width:501px) {
     .servicesContainer {
-        grid-template-rows: 50vh minmax(70vh,260vh);
+        grid-template-rows: 50vh minmax(70vh,260vh) 1fr;
         grid-template-columns: 60% 40%;
+       
         .imagesHolder {
             width:100%;
             left: auto;
+          
             .ldHolder {
                 height: 70vh;
                 flex-direction: column-reverse;
@@ -275,8 +278,7 @@
                     }
                 }
                 img {
-                    max-width: 98%;
-                    width:auto;
+                   
                 }
                 .floatingBox {
                     width: 90%;
@@ -300,8 +302,7 @@
                     }
                 }
                 img {
-                    max-width: 98%;
-                    width:auto;
+                  
                 }
                 .floatingBox {
                     width: 90%;

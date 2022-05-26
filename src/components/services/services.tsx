@@ -1,14 +1,15 @@
 import './services.scss'
-import image from '../../images/back1.jpg'
+
 import image1 from '../../images/back2.jpg'
 import image2 from '../../images/back3.jpg'
 import {Holder} from  './holder'
-import {useGetSectionQuery,useGetNodeQuery} from '../../store/services/query'
+import {useGetCategoryQuery} from '../../store/services/query'
 import { useEffect, useState } from 'react'
 import {useParams} from 'react-router-dom'
 import {PortfolioList} from '../portfolio/imagelist'
 import {Notification} from '../../tools/notification/notification'
 import {CircularProgress} from "@mui/material"
+import {useTranslation} from 'react-i18next'
 interface obj {img:string,body:{en:string,ar:string},title:{ar:string,en:string}}
 let arr = [
     {img:image1,title:'Service Title'
@@ -35,61 +36,54 @@ let arr = [
     Lorem consectetur veniam nisi ipsum enim do. Id veniam elit velit nostrud labore mollit Lorem.`}
 ]
  interface iTxt {[key:string]:string}
- 
+ interface iNodes {nodes:any[]}
+ interface iCategory {nodes:any[]}
 
 export const Services =()=>{
-const {isLoading,data,error,isError} =useGetNodeQuery(3)
+const {t,i18n}=useTranslation()
+const {isLoading,data,isSuccess,isError}=useGetCategoryQuery(2)
 const [imgsArr,setImgsArr]=useState<string[]>([])
 const [open,setOpen]=useState(false)
-let id = useParams()
+let {id} = useParams()
 let[ requiredData ,setRequiredData]= useState([{img:'',body:{en:'',ar:''},title:{ar:'',en:''}}])
 
-let [txts,setTxts]=useState<iTxt>({
-    txt1:'',txt2:'',txt3:'',txt4:''
-})
+let [txts,setTxts]=useState<string []>([])
 let iterator =[1,2,3,4]
 
 
 useEffect (()=>{
-    
-if (!isLoading && !error) {
-    let theData=(data as any).payload.filter((ele : any)=>ele.id=== Number(id.id?.substring(1)))
-    let totalTxt = theData[0].body.en.split(",")
-    let factor = Math.floor(totalTxt.length/4 )
-    let txt1=totalTxt.slice(0,2 * factor).join()
-   let txt2= totalTxt.slice(factor,2 * factor).join()
-   let txt3 = totalTxt.slice(2*factor,3*factor).join()
-    let txt4 = totalTxt.slice(3*factor,4*factor).join()
+   
+if (isSuccess && data) {
+    let imgsArray : any[]=[]
+    let category = data.payload.filter(ele=>ele.id === Number(id))[0] as iCategory
+   let textsArr= category.nodes.filter(ele=>ele.title.en === 'text').map((ele:any)=>{
+       if (i18n.language=== 'gr'){
+           return ele.body.gr
+       }
+       else {
+           return ele.body.en
+       }
+   })
+   let array= category.nodes.filter(ele=>ele.title.en !== 'text')
+                                 .map(ele=>{
 
-    setRequiredData(theData)
-    setTxts(pre=>({...pre,txt1,txt2,txt3,txt4}))
+                                            if (ele.attachment) {
+                                                imgsArray.push( 'http://backend.test.ikoniks.de/'+ele.attachment)
+                                            }
+                                            if (ele.background) {
+                                                imgsArray.push('http://backend.test.ikoniks.de/'+ele.background)
+                                            }        })              
+setImgsArr(imgsArray)                                   
+setTxts(textsArr)
+
+   
 }
 if (isError) {
     setOpen(true)
 }
 },[isLoading])
-useEffect(()=>{
-   
-    const  loadImages= async () =>{
 
-        if (Number(id.id?.substring(1)) !== 10) {
-           
-            for (let i =1;i<10;i++ ){
-                import(`../../images/portfolio/0 (${i}).jpg`).then(som=>setImgsArr((pre:any)=>[...pre,som.default]))
-              
-              }
-        }
-        else {
-           
-            for (let i =1;i<6;i++) {
-                import(`../../images/services/product/product${i}.jpg`).then(som=>setImgsArr((pre:any)=>[...pre,som.default]))
-            }
-           
-        }
-    }
-    loadImages()
-},[id])
-let theId= Number(id.id?.substring(1)) === 10
+
     return (
         <div className="servicesContainer">
              <div className="differBackground"></div>
@@ -99,21 +93,21 @@ let theId= Number(id.id?.substring(1)) === 10
              
              <div className="imagesHolder">
                 {
-                iterator.map((ele:number,index:number)=>{
+                txts.map((ele:string,index:number)=>{
 
                         if (index %2 ===0){
     
                          return ( <Holder key={index} 
                             isLoading={isLoading}
-                            img={theId? imgsArr[index] :image2} 
-                            text={txts[`txt${ele}`]} 
+                            img={ imgsArr[index] } 
+                            text={ele} 
                             title={requiredData[0].title.en} 
                             leftDir={true} />)
                         }
                         return (<Holder key={index} 
                             isLoading={isLoading}
-                            img={theId? imgsArr[index] :image2} 
-                            text={txts[`txt${ele}`]} 
+                            img={ imgsArr[index] } 
+                            text={ele} 
                             title={requiredData[0].title.en} 
                             leftDir={false} />)
                     

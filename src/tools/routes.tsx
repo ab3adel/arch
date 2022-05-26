@@ -18,7 +18,7 @@ export const routes:RouteObject [] = [
           {path:'/',index:true,element:<HomePage/>},
           {path:'/portfolio',element:<Portfolio />,children:[
             {path:'/portfolio',index:true,element:<PortfolioList/>}
-            ,{path:'/portfolio/:slug',element:<PortfolioDetails />}
+            ,{path:'/portfolio/:id/:slug',element:<PortfolioDetails />}
           ]},
           {path:'/about',element:<About/>},
           {path:'/services/:id',element:<Services/>},

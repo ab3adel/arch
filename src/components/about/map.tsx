@@ -29,7 +29,7 @@ const handleMarkInfo=(countryName:string)=>{
     return (
         <div className="mapContainer">
            {i18n.language==="en"? <h3>We are world <span>wide</span></h3>
-        : <h3>  <span>العالم</span> نحن حول</h3>}
+        : <h3>Wir sind <span>weltweit</span> </h3>}
             <div className="mapImageContainer">
                 <img src={map} />
             {countries.map((ele:iCountry,index:number)=>{

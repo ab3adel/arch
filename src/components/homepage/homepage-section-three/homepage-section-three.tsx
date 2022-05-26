@@ -15,13 +15,13 @@ export const HomepageSectionThree = ()=> {
     const navigate =useNavigate()
     const {t}= useTranslation()
 const data = [ 
-    {imgSrc:HolderImg,title:'3d animation videos'
-    ,verticalTitle:'ARCHITECTURE',to:11,navigateTo:(str:string)=>{},shortText:'Create a unique visual communication with the clients, with high quality 3d animation videos of your design or product.  '},
-    {imgSrc:HolderImg1,title:'Exterior 3D visualization '
-    ,verticalTitle:'ARCHITECTURE',to:9,navigateTo:(str:string)=>{},shortText:'Create a perfect visual simulation of your architectural project with 3d technology '},
-    {imgSrc:HolderImg2,title:'Interior 3D visualization',verticalTitle:'ARCHITECTURE'
-    ,to:12,navigateTo:(str:string)=>{},shortText:'Ascend with your imagination to higher levels of creativity with interior 3D visualization for your designs. '},
-    {imgSrc:HolderImg3,title:'Product visualization ',verticalTitle:'ARCHITECTURE'
+    {imgSrc:HolderImg,title:t('3d animation videos')
+    ,verticalTitle:t('Architeture'),to:89,navigateTo:(str:string)=>{},shortText:'Create a unique visual communication with the clients, with high quality 3d animation videos of your design or product.  '},
+    {imgSrc:HolderImg1,title:t('Exterior 3D visualization')
+    ,verticalTitle:'ARCHITECTURE',to:80,navigateTo:(str:string)=>{},shortText:'Create a perfect visual simulation of your architectural project with 3d technology '},
+    {imgSrc:HolderImg2,title:t('Interior 3D visualization'),verticalTitle:'ARCHITECTURE'
+    ,to:79,navigateTo:(str:string)=>{},shortText:'Ascend with your imagination to higher levels of creativity with interior 3D visualization for your designs. '},
+    {imgSrc:HolderImg3,title:'Product visualization',verticalTitle:'ARCHITECTURE'
     ,to:10,navigateTo:(str:string)=>{},shortText:'Whatever your products may be, we can display them in a professional, and catchy way! '},
    
 ]
@@ -35,7 +35,7 @@ const slider=(str:string) =>{
     }
 }
 const toPortfolio =(id:number)=>{
-    navigate(`/services/:${id}`)
+    navigate(`/services/${id}`)
 }
     return (
         <div className="homepageThreeContainer">

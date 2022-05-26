@@ -7,6 +7,7 @@ import {LoadingPage} from '../../tools/loadingpage/loadingpage'
 import { useState } from 'react'
 import React from 'react'
 import { isConstructorDeclaration } from 'typescript'
+
 let imgsArr:string[]= []
 for (let i =1;i<31;i++ ){
   import(`../../images/portfolio/0 (${i}).jpg`).then(som=>imgsArr.push(som.default))
@@ -14,8 +15,10 @@ for (let i =1;i<31;i++ ){
 }
 
  const Portfolio =() =>{
+     console.log('yup')
     const slug = useParams()
     const [isFinished,setIsFinished] =useState(true)
+    
 
     const text = `Aute occaecat ex aliquip deserunt. Consectetur et exercitation 
               ullamco enim pariatur. Eiusmod anim anim quis commodo. Est aliquip est 

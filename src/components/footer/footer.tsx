@@ -8,7 +8,13 @@ import {useInView} from 'react-intersection-observer'
 import { useEffect, useState } from 'react'
 import {useAnimation} from 'framer-motion'
 import {Apis,Url} from '../../tools/apis/apis'
-import { AlertColor, CircularProgress,TextField} from '@mui/material'
+import 
+{ 
+    AlertColor
+    , CircularProgress
+    ,Grid
+} 
+from '@mui/material'
 import {Notification} from '../../tools/notification/notification'
 import {useTranslation} from 'react-i18next'
 const btn:Variants = {
@@ -126,16 +132,19 @@ const handleClose=() =>{
                 </p>
                 <strong>Contact</strong>
             </div>
-            <div className="footerBody">
-                <div className="col1">
+            <Grid container className="footerBody" rowGap={2}>
+                <Grid item md={3}  lg={3} sm={12} xs ={12} 
+                      justifySelf={"center"}
+                      alignSelf={"center"}
+                      className="col1">
                     <div className="contacts">
                         <p>(+49) 173 9354932</p>
                         <p>(+49) 173 9354932</p>
                         <p>service@ikoniks.de</p>
                         <p> Filderbahnplatz.3570567 Stuttgart</p>
                     </div>
-                </div>
-                <div className="col2">
+                </Grid>
+                {/* <div className="col2">
                     <div className="inputGroups">
                         <Input type='text' label={t('Name')} formFields={fields}
                         setFormField={handleField}
@@ -155,7 +164,55 @@ const handleClose=() =>{
                         validator={dummy} name='Message' />
    
                     
-                </div>
+                </div> */}
+                <Grid container item 
+                    xs={9} className="col2" 
+                    justifySelf={"center"}
+                    alignSelf={"center"} 
+                    rowGap={2}
+                    
+                      >
+                    <Grid item container xs={12} 
+                        sm={6} md={6} 
+                        lg={6}
+                         justifyContent={'center'} 
+                         alignItems={'center'}
+                         rowGap={1}
+                         >
+
+                        <Grid item  xs={12} sm={6} md={6} lg={6}
+                          >
+                                
+                            <Input type='text' label={t('Name')} formFields={fields}
+                                setFormField={handleField}
+                                validator={dummy} name='Name' />
+                        </Grid>
+                        <Grid item  xs={12} sm={6} md={6} lg={6} >
+                            <Input type='number' label={t('Phone')}
+                                formFields={fields} setFormField={handleField}
+                                validator={dummy} name='Phone' />
+                        </Grid>
+                        <Grid item  xs={12} sm={6} md={6}  lg={6}>
+                            <Input type='text' label={t('Company')}
+                                formFields={fields} setFormField={handleField}
+                                validator={dummy} name='Company' />
+                        </Grid>
+                        <Grid item  xs={12} sm={6} md={6} lg={6} >  
+                            <Input type='email' label={t('Email')}
+                                formFields={fields} setFormField={handleField}
+                                validator={isEmail} name='Email' />
+                        </Grid>
+                    </Grid>
+                       
+                       
+                    <Grid item  xs={12} sm={6} md={6} lg={6}
+                        justifyContent={"center"}
+                         alignItems={'center'}>
+                        <Input type='text' label={"Message"} multiline={true}
+                            formFields={fields} setFormField={handleField}
+                            validator={dummy} name='Message' />
+                    </Grid>
+                </Grid>
                 <div className="footerButton">
                     <div className="sendButton">
 
@@ -177,7 +234,7 @@ const handleClose=() =>{
                         </motion.button>
                     </div>
                 </div>
-            </div>
+            </Grid>
 
             <div className="footerTail">
                 <h4>3D<p className='dot'>.</p>Ikoniks</h4>

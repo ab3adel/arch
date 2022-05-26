@@ -3,9 +3,10 @@
     display:grid;
     grid-template-rows: 100px 1fr 100px;
     min-height: 100vh;
-    max-height: 100vh;
+   height: fit-content;
     background-color: #272727;
     grid-row: 3/3;
+
     .footerTitle {
         grid-row: 1/1;
         display: flex;
@@ -35,30 +36,24 @@
         .col1 {
             grid-row: 1/1;
             grid-column: 1/1;
-            display: flex;
+         
             opacity: 0.7;
             color:white;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+          
             .contacts {
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
-                align-items: flex-start;
-                height:50%;
                 font-size: large;
-                p {
-                    margin:0.37rem;
-                }
-
+               p {
+                   white-space: nowrap;
+               }
             }
         }
         .col2 {
             grid-row: 1/1;
             grid-column: 2/2;
-            display: flex;
-            align-items: center;
+           
+            background-color: #272727;
             .inputGroups {
                 width:60%;
                 display: flex;
@@ -97,8 +92,8 @@
                     display: flex;
                     align-items: center;
                     font-size: large;
-                    height: 50%;
-                    width:25%;
+                    padding: 10px;
+                    height: fit-content;
                     justify-content: center;
                     .MuiSvgIcon-root {
                         font-size: 2rem;
@@ -142,7 +137,7 @@
             .col2 {
                 grid-column: 1/3;
                 grid-row: 2/2;
-                flex-direction: column;
+               
                 .inputGroups {
                     width: 100%;
                     height: 100%;
@@ -194,7 +189,7 @@
             .col2 {
                 grid-column: 1/3;
                 grid-row: 2/2;
-                flex-direction: column;
+              
                 .inputGroups {
                     width: 80%;
                     height: 100%;

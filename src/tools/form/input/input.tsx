@@ -5,6 +5,8 @@ import {useTranslation} from 'react-i18next'
 interface iProps {name:string,validator:Function
     ,label:string,type:'number'|'text'|'email',formFields:any,setFormField:Function
 ,multiline?:boolean}
+
+let messageStyle ={}
 export const Input =({name,validator,label,type,formFields,setFormField,multiline=false}:iProps) =>{
 const [err,setErr] =useState(formFields[`${name}Error`])
 const {t,i18n} =useTranslation()
@@ -24,11 +26,14 @@ let lang =i18n.language
                         formFields[`${name}Error`]? 
                         'this field is required':validator(formFields[name]):''}
         name={name}
-        className="inputField"
+        className={label === "Message"?"messageField":"inputField"}
         type={type}
         style ={{
-            textAlign:lang==="en"?'left':"right"
+            textAlign:lang==="en"?'left':"right",
+          
+           
         }}
+        
         multiline={multiline}
         rows={multiline? 5:1}
         />

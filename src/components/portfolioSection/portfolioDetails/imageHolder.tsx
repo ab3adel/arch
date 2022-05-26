@@ -56,7 +56,7 @@ const cancelHovering=(e:React.MouseEvent | React.TouchEvent)=>{
     controlZoom.start('backward')
   
 }
-
+console.log(imgSrc)
     return (
         <Grid 
             item 

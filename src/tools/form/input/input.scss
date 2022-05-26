@@ -10,3 +10,35 @@
     }
 
 }
+.MuiFormControl-root.messageField {
+    background-color: transparent;
+    border-radius: 0.75rem;
+ 
+   
+    label {
+        color:white;
+    }
+      .MuiOutlinedInput-root {
+          color:White;
+          background-color: #323232;
+     
+
+      }
+}
+@media screen  and (max-width:500px){
+    .MuiFormControl-root.messageField {
+        background-color: transparent;
+        border-radius: 0.75rem;
+        width:100%;
+       
+        label {
+            color:white;
+        }
+          .MuiOutlinedInput-root {
+              color:White;
+              background-color: #323232;
+         
+    
+          }
+    }
+}

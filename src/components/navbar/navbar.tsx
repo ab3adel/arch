@@ -145,11 +145,11 @@ export const Navbar =() =>{
                                                     {t('Contacts')}
                                                 </NavLink>
                                             </ListItem > 
-                                            {/* <ListItem>
+                                           <ListItem>
                                                 <Link to="/" onClick={()=>changeLanguge()}>
                                                 {t('Language')}
                                                 </Link>
-                                            </ListItem>  */}
+                                            </ListItem>  
                                 </List>
                             </Drawer>
                         </Box>
@@ -192,9 +192,9 @@ export const Navbar =() =>{
                                             <NavLink to="/contacts">
                                             {t('Contacts')}
                                             </NavLink>
-                                            {/* <Link to="/" onClick={()=>changeLanguge()}>
+                                             <Link to="/" onClick={()=>changeLanguge()}>
                                                 {t('Language')}
-                                            </Link> */}
+                                            </Link> 
                                             </Box>
                                           
                         </Box>
@@ -251,9 +251,9 @@ export const Navbar =() =>{
                                             <NavLink to="/contacts">
                                             {t('Contacts')}
                                             </NavLink>
-                                            {/* <Link to="/" onClick={()=>changeLanguge()}>
+                                            <Link to="/" onClick={()=>changeLanguge()}>
                                                 {t('Language')}
-                                            </Link> */}
+                                            </Link> 
                                             </Box>
                                           
                         </Box>

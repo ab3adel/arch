@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material"
 import {motion,Variants,useAnimation} from 'framer-motion'
 import {useNavigate} from 'react-router'
-interface iProps {imgSrc:string,section:string}
+interface iProps {imgSrc:string,section:string,slug:string}
 const animatedPortfolio:Variants = {
     backgroundInitial:{
         backgroundSize:['110%','100%'],
@@ -34,7 +34,7 @@ const animatedPortfolio:Variants = {
     
 }
 
-export const Holder= ({imgSrc,section}:iProps)=>{
+export const Holder= ({imgSrc,section,slug}:iProps)=>{
     const controlBackground = useAnimation()
     const controlShadow =useAnimation()
    const navigate= useNavigate()
@@ -55,16 +55,16 @@ export const Holder= ({imgSrc,section}:iProps)=>{
     return (
         
         <Grid 
-        className="portfolioListContainer"
-        item 
-        container 
+            className="portfolioListContainer"
+            item 
+            container 
 
-        md ={4} sm ={6} xs ={12}
-        onMouseEnter={()=>hovered()}
-        onMouseLeave={()=>out()}
-        onClick={()=>navigate(section)}
-        onTouchStart={()=>hovered()}
-        onTouchEnd ={()=>out()}
+            md ={4} sm ={6} xs ={12}
+            onMouseEnter={()=>hovered()}
+            onMouseLeave={()=>out()}
+            onClick={()=>navigate(slug)}
+            onTouchStart={()=>hovered()}
+            onTouchEnd ={()=>out()}
         >
                     
                 <motion.div className='background-animated' 
