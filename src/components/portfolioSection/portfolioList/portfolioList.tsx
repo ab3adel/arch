@@ -22,10 +22,14 @@ const handleChange =(e:React.SyntheticEvent<Element,Event>,newValue:number) =>{
 }
 useEffect (()=>{
 if (isSuccess && data) {
- 
+
    let newSections =data.payload.map ((ele:any) => {
       let headImgs = ele.nodes.filter ((ele:any)=>ele.title.en.includes('head')).
-                              map((ele:any)=>'http://backend.test.ikoniks.de/'+ele.attachment)
+                              map((ele:any)=>{
+                                  let projectName = ele.title.en.split('-')[0]
+                                 return ({attachment:'http://backend.test.ikoniks.de/'+ele.attachment,projectName})
+                              }
+                                   )
         if (i18n.language === 'en') {
           return {name: ele.name.en,nodes:ele.nodes,id:ele.id,headImgs}
         }
@@ -78,16 +82,16 @@ console.log(data)
                     {
                        sections ? sections.map((ele:any,index:number)=>{
                             return (
-                                <TabPanel value={value} index={0} >
+                                <TabPanel value={value} index={index} >
 
                                     {ele && ele.headImgs?
-                                    ele.headImgs.map((img:string,index:number)=>{
+                                    ele.headImgs.map((node:{attachment:string,projectName:string},index:number)=>{
 
                                         return (
-                                            <Holder imgSrc={img} 
+                                            <Holder imgSrc={node.attachment} 
                                                     key={index} 
                                                     section={sections[value].name} 
-                                                    slug={`${ele.id}/project${index}`}
+                                                    slug={`${ele.id}/${node.projectName}`}
                                                     />
                                         )
                                     }):  

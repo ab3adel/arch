@@ -4,52 +4,89 @@ import {ImageHolder} from './imageHolder'
 import {LoadingPage} from '../../../tools/loadingpage/loadingpage'
 import {Inspector} from '../inspector'
 import './portfolioDetails.scss'
-import {useGetNodeQuery,useGetCategoryQuery} from '../../../store/services/query'
+import {useGetCategoryQuery} from '../../../store/services/query'
 import {useParams} from 'react-router'
+import {useTranslation} from 'react-i18next'
 import img1 from '../../../images/portfolio/1.jpg'
 import img2 from '../../../images/portfolio/2.jpg'
 import img3 from '../../../images/portfolio/3.jpg'
-import img4 from '../../../images/portfolio/4.jpg'
-import img5 from '../../../images/portfolio/5.jpg'
-import img6 from '../../../images/portfolio/6.jpg'
-import img7 from '../../../images/portfolio/7.jpg'
 
 
-let imgsArr: string[]=[img1,img2,img3,img6,img1,img2]
+
+
+let imgsArr: string[]=[img1,img2,img3,img1,img2]
 
 interface iProps {setInspectorOptions:Function,imgsArr:string[]}
 
 
-
+let defaultText=`
+                t mollit ea reprehenderit veniam et. 
+                Labore non id esse proident enim enim 
+                tempor ullamco nulla nulla deserunt ea. 
+                Quis anim et anim aute ut quis do pariatur 
+                Quis anim et anim aute ut quis do pariatur 
+                ut dolore laboris cillum exercitation. 
+                Et mollit ea reprehenderit veniam et. 
+                Labore non id esse proident enim enim 
+                tempor ullamco nulla nulla deserunt ea. 
+                Quis anim et anim aute ut quis do pariatur 
+                ut dolore laboris cillum exercitation. 
+                Et mollit ea reprehenderit veniam et. 
+                Labore non id esse proident enim enim 
+                tempor ullamco nulla nulla deserunt ea. 
+                Quis anim et anim aute ut quis do pariatur 
+                ut dolore laboris cillum exercitation. 
+`
 export const PortfolioDetails =() =>{
     const {id,slug} =useParams()
-   
-    console.log(id,slug)
+   const {t,i18n} =useTranslation()
+ 
     const {isLoading,data,isSuccess} =useGetCategoryQuery(3)
     const [isFinished,setIsFinished] =useState(true)
     const [inspectorOptions,setInspectorOptions]=useState({img:'',open:false})
     const [nodes,setNodes]=useState<string[]>([])
+    const [description,setDescription]=useState<string>(defaultText)
 useEffect (()=>{
  if (isSuccess && data) {
      let array:any[]=[]
      let category =data.payload.filter(ele=>ele.id === Number(id))[0]
   
-     let newNodes =category.nodes.filter ((ele:any)=>ele.title.en === slug)
+     let newNodes =category.nodes.filter ((ele:any)=>ele.title.en === slug || ele.title.en === slug+'-'+'head')
                                  .map((ele:any)=>{
-
-                                     if (ele.attachment) {
+                                
+                                     if (ele.attachment && !ele.title.en.includes('head')) {
                                          array.push(`http://backend.test.ikoniks.de/${ele.attachment}`)
                                      }
-                                     if (ele.background) {
+                                     if (ele.background && !ele.title.en.includes('head')) {
                                         array.push(`http://backend.test.ikoniks.de/${ele.background}`)
                                      }
+                                     if (ele.files.length>0) {
+                                         ele.files.map ((ele:any)=>{
+                                             array.push(`http://backend.test.ikoniks.de/${ele.url}`)
+                                         })
+                                     }
+                                     if (ele.title.en.includes('head')) {
+                                         if (i18n.language === 'en') {
+                                             if (ele.body && ele.body.en){
+
+                                                 setDescription(ele.body.en)
+                                             }
+                                         }
+                                         else {
+                                             if (ele.body && ele.body.gr) {
+
+                                                 setDescription(ele.body.gr)
+                                             }
+                                         }
+                                     }
                                  })
-                                 
+                            
      setNodes(array)
  }
  
      
 },[isSuccess,isLoading])
+
     return (
         <>
         <Grid 
@@ -69,25 +106,10 @@ useEffect (()=>{
                      >
                          <p className='neatText'>
                             <span className="firstLetter">
-                            E
+                            {description.trim().charAt(0)}
                             </span>
                             <span>
-                                t mollit ea reprehenderit veniam et. 
-                                Labore non id esse proident enim enim 
-                                tempor ullamco nulla nulla deserunt ea. 
-                                Quis anim et anim aute ut quis do pariatur 
-                                Quis anim et anim aute ut quis do pariatur 
-                                ut dolore laboris cillum exercitation. 
-                                Et mollit ea reprehenderit veniam et. 
-                                Labore non id esse proident enim enim 
-                                tempor ullamco nulla nulla deserunt ea. 
-                                Quis anim et anim aute ut quis do pariatur 
-                                ut dolore laboris cillum exercitation. 
-                                Et mollit ea reprehenderit veniam et. 
-                                Labore non id esse proident enim enim 
-                                tempor ullamco nulla nulla deserunt ea. 
-                                Quis anim et anim aute ut quis do pariatur 
-                                ut dolore laboris cillum exercitation. 
+                               {description}
                             </span>
                          </p>
                   </Grid>

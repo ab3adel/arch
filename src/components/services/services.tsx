@@ -38,7 +38,7 @@ let arr = [
  interface iTxt {[key:string]:string}
  interface iNodes {nodes:any[]}
  interface iCategory {nodes:any[]}
-
+interface iString {[key:string]:string}
 export const Services =()=>{
 const {t,i18n}=useTranslation()
 const {isLoading,data,isSuccess,isError}=useGetCategoryQuery(2)
@@ -47,7 +47,7 @@ const [open,setOpen]=useState(false)
 let {id} = useParams()
 let[ requiredData ,setRequiredData]= useState([{img:'',body:{en:'',ar:''},title:{ar:'',en:''}}])
 
-let [txts,setTxts]=useState<string []>([])
+let [txts,setTxts]=useState<iString []>([])
 let iterator =[1,2,3,4]
 
 
@@ -58,10 +58,10 @@ if (isSuccess && data) {
     let category = data.payload.filter(ele=>ele.id === Number(id))[0] as iCategory
    let textsArr= category.nodes.filter(ele=>ele.title.en === 'text').map((ele:any)=>{
        if (i18n.language=== 'gr'){
-           return ele.body.gr
+           return ({text:ele.body.gr,attachment:'http://backend.test.ikoniks.de/'+ele.attachment})
        }
        else {
-           return ele.body.en
+           return ({text:ele.body.en,attachment:ele.attachment})
        }
    })
    let array= category.nodes.filter(ele=>ele.title.en !== 'text')
@@ -72,7 +72,15 @@ if (isSuccess && data) {
                                             }
                                             if (ele.background) {
                                                 imgsArray.push('http://backend.test.ikoniks.de/'+ele.background)
-                                            }        })              
+                                            } 
+                                            if (ele.files.length>0){
+                                                ele.files.map((ele:any)=>{ 
+                                                    imgsArray.push('http://backend.test.ikoniks.de/'+ele.url)
+                                            })
+                                               
+
+                                            }   
+                                        })              
 setImgsArr(imgsArray)                                   
 setTxts(textsArr)
 
@@ -82,7 +90,8 @@ if (isError) {
     setOpen(true)
 }
 },[isLoading])
-
+console.log(imgsArr)
+console.log(txts)
 
     return (
         <div className="servicesContainer">
@@ -93,21 +102,21 @@ if (isError) {
              
              <div className="imagesHolder">
                 {
-                txts.map((ele:string,index:number)=>{
+                txts.map((ele:iString,index:number)=>{
 
                         if (index %2 ===0){
     
                          return ( <Holder key={index} 
                             isLoading={isLoading}
-                            img={ imgsArr[index] } 
-                            text={ele} 
+                            img={ele.attachment?ele.attachment: imgsArr[index] } 
+                            text={ele.text} 
                             title={requiredData[0].title.en} 
                             leftDir={true} />)
                         }
                         return (<Holder key={index} 
                             isLoading={isLoading}
-                            img={ imgsArr[index] } 
-                            text={ele} 
+                            img={ ele.attachment?ele.attachment: imgsArr[index]  } 
+                            text={ele.text} 
                             title={requiredData[0].title.en} 
                             leftDir={false} />)
                     
