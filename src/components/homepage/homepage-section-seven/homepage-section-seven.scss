@@ -1,0 +1,166 @@
+
+
+.sectionSevenContainer {
+  grid-row: 7/7;
+  min-height: 105vh;
+  background-image: url('../../../images/homepage7/bg-team.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: 100vw;
+  
+  .containerGrid {
+      width:100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      .sectionBody {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+         .title {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            .MuiTypography-root {
+                font-size: 1.8em;
+            }
+             .lightFont {
+                 color:rgba(17, 16, 16, 0.7);
+                 font-size:1.1em;
+             }
+            .MuiDivider-root {
+               display: flex;
+               word-spacing: 5px;
+               font-size: medium;
+               font-weight: bold;
+               color:black
+            }
+         }
+         .imageListContainer {
+             max-width: 100vw;
+             transition: .4s all;
+             scroll-behavior: smooth;
+             overflow-x: hidden;
+             .imageList {
+                 min-width: 300vw;
+                
+                 height: 50vh;
+                 display: flex;
+                 flex-direction: row;
+                 flex-wrap: nowrap;
+                
+            
+                 ::-webkit-scrollbar-thumb {
+                     background-color: transparent;
+                 }
+                 .imageHolderContainer {
+                     width: 20vw;
+                     height: 100%;
+                     .imageHolder{
+                        height: 100%;
+                         background-size: cover;
+                         background-repeat:no-repeat ;
+                         background-position: center;
+                         overflow: hidden;
+                         .info {
+                             background-color: rgba(0, 0, 0, 0.274);
+                             display: flex;
+                             justify-content: space-evenly;
+                             align-items: center;
+                             flex-direction: column;
+                             padding:1em;
+                             color:white;
+                             height: 100%;
+                             font-size: 1.2em;
+                             opacity: 0;
+                             .name {
+                                 font-size: 1.4em;
+                                 font-weight: bold;
+                             }
+                             .profession{
+                                 color:rgba(255, 255, 255, 0.8);
+                             }
+                         }
+                     }
+                 }
+             }
+         }
+         .slider {
+             display: flex;
+             justify-content: center;
+             .sliderDots {
+                 display: flex;
+                 justify-content: space-evenly;
+                 align-items: center;
+                button {
+                    display:inline-block;
+                    width: 30px;
+                    height: 30px;
+                    position: relative;
+                    border-radius: 100%;
+                    border: none;
+                    span {
+                        width:4px;
+                        height: 4px;
+                        left:50%;
+                        top: 50%;
+                        position: absolute;
+                        background-color: black;
+                        transform: translate(-50%,-50%);
+                    }
+                    
+                }
+                button.active {
+                    border:1px solid black;
+                    &:hover {
+                        box-shadow:1px 1px 1px rgb(29, 29, 29,0.4);
+                    }
+                }
+             }
+         }
+      }
+  }
+}
+@media screen and (min-width:501px) and (max-width:1024px) {
+    .sectionSevenContainer {
+        .containerGrid{
+
+            .sectionBody {
+                .imageListContainer {
+                    .imageList {
+                        .imageHolderContainer {
+                            width: 50vw;
+                            .imageHolder{
+                                width: 50vw;
+                            }
+                        }
+                    }
+                }
+    
+            }
+        }
+    }
+    
+}
+@media screen  and (max-width :501px){
+    .sectionSevenContainer {
+        .containerGrid{
+
+            .sectionBody {
+                .imageListContainer {
+                    .imageList {
+                        .imageHolderContainer {
+                            width: 100vw;
+                            .imageHolder{
+                                width: 100vw;
+                            }
+                        }
+                    }
+                }
+    
+            }
+        }
+    }
+}

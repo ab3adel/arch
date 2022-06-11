@@ -1,6 +1,6 @@
 import './layout.scss'
 import {Outlet} from 'react-router'
-import {Footer} from '../footer/footer'
+import {Footer} from '../footerSection/footerSection'
 import {Navbar} from '../navbar/navbar'
 export const Layout =() =>{
 

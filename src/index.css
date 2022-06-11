@@ -1,3 +1,8 @@
+:root {
+  --black :#272727;
+  --pieg:#c5a47e;
+  
+}
 body {
   margin: 0;
   font-family: 'Oswald', 'Roboto';

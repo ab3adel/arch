@@ -1,4 +1,4 @@
-
+$color :#c5a47e;
 .homepageOneContainer {
     min-height: 100vh;
     display: grid;
@@ -260,22 +260,86 @@
                             0 -0.07em   grey,;
             }
             .lookMoreBtn {
-                background-color: #c5a47e;
-                border-radius: 30px;
+                background-color:var(--pieg) ;
+                background-image: linear-gradient(var(--pieg) ,transparent),
+                                   linear-gradient(white,transparent),
+                                   linear-gradient(transparent ,white);
+                background-size: 100% 100% , 0% 0%, 0% 0%;                   
+                background-repeat: no-repeat;
+                background-position: 20px 100% , 100% 0%, 0% 100%;
+                border-radius: 10px;
                 height: 3rem;
                 font-size: x-large;
                 color:white;
-                display: flex;
+                display: inline-block;
                 align-items: center;
                 cursor: pointer;
+                position: relative;
+                overflow: hidden;
+                border:none;
+                transition: all .4s ease-in-out;
+                z-index: 1;
+                overflow: hidden;
+                svg {
+                    transition: .4s all ease-in;
+                }
+                &:hover {
+                    background-position: 0% 0% , 50% 50% , 50% 50%;
+                    background-size:0% 0% , 100% 100%, 100% 100%;
+                    color:black;
+                    svg {
+                        transform:rotateY(180deg);
+                        animation: rotateSvg 1s ease-in-out 1 forwards;
+                    }
+                }
+                @keyframes rotateSvg {
+                    from {
+                        transform:rotateY(180deg);
+                    }
+                    to {
+                        transform:rotateY(0deg);
+                    }
+                    
+                }
+              
+            
+             
+     
+            }
+            .btn-animated {
+                animation: moveInBottom 5s ease-out;
+                animation-fill-mode: backwards;
+                display: flex;
+                align-items: center;
                 
             }
-            .lookMoreBtn:hover {
-                background-color: rgba(13, 39, 78, 0.918);
-            }
+            
+          
+            // .lookMoreBtn:hover {
+            //     background-color: rgba(13, 39, 78, 0.918);
+            // }
         }
     }
 
+}
+@keyframes hide {
+    0% {
+        display: block;
+    }
+    100% {
+        display: none;
+    }
+}
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
 }
 @media only screen and  (max-width:501px) {
    .homepageOneContainer{

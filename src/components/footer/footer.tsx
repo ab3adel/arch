@@ -236,11 +236,7 @@ const handleClose=() =>{
                 </div>
             </Grid>
 
-            <div className="footerTail">
-                <h4>3D<p className='dot'>.</p>Ikoniks</h4>
-                <p>by Ikoniks Software</p>
-                <p><Copyright/> all Rights Reserved</p>
-            </div>
+           
             {notification.show && (<Notification show={notification.show} handleClose={handleClose}
                                     severity={notification.severity as AlertColor} message={notification.message}/>)}
         </div>

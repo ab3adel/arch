@@ -1,0 +1,102 @@
+
+.footerSectionContainer {
+    grid-row:3/3;
+    background-color: var(--black);
+    min-height: 70vh;
+    .MuiGrid-root {
+        .divider {
+            .MuiDivider-root {
+                background-color: rgba(255, 255, 255, 0.623);
+            }
+        }
+        .MuiGrid-root {
+            .MuiTypography-root {
+                color:white;
+            }
+            .logo {
+                color:white;
+                span {
+                    color:var(--pieg);
+                }
+            }
+            .lightFont {
+                color:rgba(255, 255, 255, 0.5);
+            }
+            .icons {
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                color:white;
+                .MuiBox-root {
+                    .MuiSvgIcon-root {
+                        margin-left: 5px;
+                        margin-right: 5px;
+                        border: 1px solid rgba(255, 255, 255, 0.5);
+                        border-radius: 100%;
+                    }
+
+                }
+            }
+            .contacts {
+              
+
+                .contact {
+                    display: flex;
+                    justify-content: left;
+                    margin-top: 5px;
+                    margin-bottom: 5px;
+                    .MuiBox-root {
+                        display: flex;
+                        justify-content: space-between;
+                        .MuiSvgIcon-root {
+                           margin-left:5px;
+                           margin-right: 5px;
+                           color: rgba(255, 255, 255, 0.5);
+                        }
+                    }
+                }
+            }
+            .links {
+               
+
+                .link {
+                    margin-top: 5px;
+                    margin-bottom: 5px;
+                    cursor: pointer;
+                    transition: .4s all ease-in ;
+    
+                    &:hover {
+                        color:white
+                    }
+                }
+            }
+        }
+        .footerTail {
+            color:white;
+            font-size: large;
+            display: flex;
+            justify-content: flex-start;
+            .MuiGrid-root {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: flex-end;
+                p {
+                    .dots {
+                        color:var(--pieg)
+                    }
+                }
+            }
+
+        }
+    }
+}
+@media screen  and (max-width:500px){
+    .footerSectionContainer{
+        .MuiGrid-root {
+            .footerTail {
+                font-size: small;
+               
+            }
+        }
+    }
+}

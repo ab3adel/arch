@@ -1,6 +1,6 @@
 import './homepage-section-one.scss'
 import {NavLink} from 'react-router-dom'
-import {motion,Variants, useAnimation} from 'framer-motion'
+import {motion,Variants, useAnimation, MotionAdvancedProps} from 'framer-motion'
 import 
 {
     ArrowRightAlt,
@@ -286,7 +286,7 @@ const animateManually =(str:string)=>{
                    </div>
                  </div>
                  <div className="shadowArch">
-                     arch
+                     Ikoniks
                    </div>
                 <div className="iconsGroup">
                     <Facebook color="inherit" fontSize='inherit'/>
@@ -402,15 +402,16 @@ const animateManually =(str:string)=>{
                               
                     </motion.div>
                     <motion.button
-                     className='lookMoreBtn' 
+                     className='lookMoreBtn btn-animated' 
                      variants={button}  
                      initial="first"
                      animate={controlButton}
                    >
                      
                         {t("LookMore")}
+                       
+                       
                         <ArrowRightAlt 
-                      
                         fontSize='inherit' color='inherit'/>
                     </motion.button>
                 </div>

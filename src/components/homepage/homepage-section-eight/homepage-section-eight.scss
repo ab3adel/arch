@@ -1,0 +1,186 @@
+.sectionEightContainer {
+    min-height: 100vh;
+    grid-row:8/8;
+    background-color: var(--black);
+    max-width: 100vw;
+    .header {
+        .title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            color:white;
+            .MuiTypography-root {
+                font-size: 2em;
+                color:var(--pieg);
+                span {
+                    color:white;
+                }
+            }
+            .MuiTypography-root.lightFont {
+                color:rgba(255, 255, 255, 0.4);
+                font-size: 1.3em;
+              
+            }
+            .dots {
+                font-size: 1em;
+                font-weight: bold;
+                color:rgba(255, 255, 255, 0.4);
+                letter-spacing: 5px;
+            }
+        }
+        .gridButton {
+            padding:3em;
+            display: flex;
+            justify-content: center;
+           
+            .MuiGrid-root {
+                height: 100%;
+                .sectionEightButton {
+                    position: relative;
+                    height: 100%;
+                    padding:.5em;
+                   transition: all .4s ;
+                   transition-delay: .2s;
+                   border-radius: 5px;
+                   cursor: pointer;
+                    .button {
+                        background-color: white;
+                        color:var(--black);
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-weight: lighter;
+                        border-radius: 5px;
+                        transition: all .4s ;
+                        text-align: center;
+                        max-height: 200px;
+                    }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        background-color: white;
+                        right: 0;
+                        width: 1px;
+                        height: 110%;
+                        top: 0;
+                        transition: all .4s ;
+                    }
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        background-color: white;
+                        bottom: 0;
+                        width: 100%;
+                        height: 1px;
+                        transition: all .4s ;
+                        
+                    }
+                    &:hover {
+                       border: 1px solid white;
+                        &::after {
+                            height: 0%;
+                        }
+                        &::before {
+                            width:0%;
+                        }
+                        .button {
+                            background-color: var(--black);
+                            color:white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .body {
+        .blogCard {
+            color:white;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            .lightFont {
+                color:rgba(156, 148, 148, 0.5);
+                text-align: left;
+            }
+            .date {
+                display:flex;
+                justify-content: flex-start;
+                text-align: left;
+                .MuiGrid-root {
+                    display:flex;
+                    justify-content: space-evenly;
+                    .divider {
+                        font-weight: bold;
+                        letter-spacing: 5px;
+                    }
+                }
+            }
+            .title {
+                font-size: 1.5em;
+                color:color;
+                text-align: left;
+                transition: all .4s ease-in-out;
+               .MuiTypography-root {
+                   position: relative;
+                  background-image: none;
+                   transition: .4s all ease-in;
+                   a {
+                       color:white;
+                       text-decoration: none;
+                       background-image: linear-gradient(transparent,white);
+                       background-size: 20px 2px ;
+                       transition: 2s all ease-in-out;
+                       background-position: calc(20px * -1) 100%;
+                       background-repeat: no-repeat;
+                   }
+               }
+             
+                &:hover {
+                    .MuiTypography-root{
+                        a {
+                            background-size: 100% 2px ;
+                            background-position: 100% 100%;
+                        }
+                    }
+                }
+               
+             
+            }
+            
+            img {
+                max-width: 100%;
+                
+            }
+            &:hover{
+                border: 1px solid white;
+            }
+        }
+    }
+   
+
+}
+@media screen and (max-width:500px) {
+    .sectionEightContainer {
+        .header {
+            .title {
+                .MuiTypography-root {
+                    font-size: 1.1em;
+                }
+            }
+            .gridButton {
+                padding:1em;
+            }
+        }
+        .body {
+            .blogCard {
+                .date {
+                    .MuiGrid-root{
+                        
+                        justify-content: space-between;
+                    }
+                }
+            }
+        }
+    }
+    
+}

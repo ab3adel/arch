@@ -177,7 +177,11 @@
     .homepageThreeContainer {
         grid-template-rows: 100px 100vh;
         max-width: 100vw;
- 
+        .homepageThreeHeader {
+            h3 {
+                font-size: x-large;
+            }
+        }
         .homepageThreeBody {
             .scrollableDiv {
                 .holders {

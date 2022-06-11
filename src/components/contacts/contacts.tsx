@@ -9,6 +9,7 @@ import
 from '@mui/icons-material'
 import GoogleMapReact  from 'google-map-react'
 import {useTranslation} from 'react-i18next'
+import {Footer} from '../footer/footer'
  const Contacts =() =>{
 const {t,i18n} =useTranslation()
 
@@ -63,6 +64,7 @@ const {t,i18n} =useTranslation()
                 </div>
             </div>
             <Map />   
+            <Footer />
         </div>
     )
 }
