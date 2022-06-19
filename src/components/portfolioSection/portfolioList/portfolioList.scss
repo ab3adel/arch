@@ -29,6 +29,60 @@
       }
     }
 }
+.portfolioListSection {
+  .MuiGrid-root{
+
+    .tabsCustomized {
+  
+      .MuiTabs-scroller {
+      .MuiTabs-flexContainer{
+
+        .selectedTab.MuiGrid-root {
+          opacity:1;
+          position:relative;
+          button.MuiButtonBase-root {
+            color:white;
+            font-weight: bold;
+            opacity: 1;
+          }
+          &::after {
+            content: '';
+            width:100%;
+            position: absolute;
+            height: 1px;
+            background-color: rgb(184, 184, 31);
+            transition: .4s all ease-in-out;
+            left:0;
+            bottom: 0;
+          }
+        
+        }
+        .MuiGrid-root {
+         position: relative;
+          opacity:0.6;
+          button.MuiButtonBase-root {
+            color:whitesmoke;
+          font-weight: light;
+          } 
+          &::after {
+            content: '';
+            width:0%;
+            position: absolute;
+            height: 1px;
+            background-color: rgb(184, 184, 31);
+            transition: .4s all ease-in-out;
+            left:0;
+            bottom: 0;
+          }
+        
+           
+        }
+      }
+  
+      }
+    }
+  }
+}
 .tabPanel {
   display:flex;
   justify-content: space-evenly;

@@ -66,6 +66,71 @@
     }
 }
 
+.MuiDialog-root.inspectorDetails {
+    z-index: 33333;
+    .MuiDialog-container {
+        .MuiPaper-root {
+            width:100vw;
+            height:95vh;
+            max-width: 100%;
+            max-height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            
+        }
+        .MuiDialogContent-root {
+            position: relative;
+            .closeButton {
+                position:absolute;
+                top:0;
+                left:0;
+                font-size: 2em;
+                color:white;
+                transition: .2s all;
+                &:hover {
+                    font-size: 4em;
+                }
+            }
+
+            .leftArrow {
+                position: absolute;
+                left:0;
+                top:50%;
+                color:white;
+                font-size: 4em;
+                cursor: pointer;
+                
+            }
+            .rightArrow {
+                position: absolute;
+                right: 0;
+                top:50%;
+                color:white;
+                font-size: 4em;
+                cursor: pointer;
+            }
+        }
+        .MuiDialogActions-root {
+            max-width: 100%;
+            overflow-x: hidden;
+            display: inline;
+            scroll-behavior: smooth;
+            .scrollableContainer {
+               min-width:150vw;
+                display: flex;
+                justify-content: space-evenly;
+                flex-wrap: nowrap;
+                img {
+                    width:40px;
+                    height: 40px;
+                }
+                img.selectedImage {
+                    box-shadow: 3px 4px 5px white;
+                    border:5px solid white;
+                }
+            }
+        }
+    }
+}
 
 @media screen  and (max-width:1025px){
     .portfolioContainer {

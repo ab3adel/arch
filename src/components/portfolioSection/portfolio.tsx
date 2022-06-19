@@ -11,7 +11,6 @@ import {Inspector} from './inspector'
 import { LoadingPage } from '../../tools/loadingpage/loadingpage'
 
 
-
 const  Portfolio=()=>{
    
 
@@ -31,7 +30,7 @@ return (
                container 
                className="portfolioHeader flexBox headerWithImage"
                direction={"column"}
-               xs={8} 
+               xs={5} 
                 >
                 
                     <h1>3D Ikoniks Portfolio</h1>

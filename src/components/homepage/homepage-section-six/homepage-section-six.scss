@@ -1,8 +1,10 @@
 
 .sectionSixContainer {
-    grid-row: 6/6;
+    grid-row: 5/5;
     max-width:100% ;
     background-color: var(--black);
+    display: flex;
+    align-items: center;
     .MuiGrid-root {
         color:white;
         .MuiGrid-root {

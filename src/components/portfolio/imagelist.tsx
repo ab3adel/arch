@@ -9,7 +9,7 @@ import {ImagePlaceHolder} from '../../tools/placeholder/imageplacehodler'
 import {Inspector} from './inspector'
 interface iProps {images:string[]}
 export const PortfolioList =({images}:iProps)=>{
-const [inspectorOptions,setInspectorOptions]=useState({open:false,img:""})
+const [inspectorOptions,setInspectorOptions]=useState({open:false,img:"",selectedNum:-1})
 
     return (
         <ImageList variant="masonry" cols={3} gap={3} >
@@ -17,9 +17,10 @@ const [inspectorOptions,setInspectorOptions]=useState({open:false,img:""})
                 images.map((ele:string,index:number)=>{
                     return (
                             <ImagePlaceHolder  
-                            imgSrc={ele} 
-                            key={index}
-                            setZoom={setInspectorOptions}
+                                imgSrc={ele} 
+                                key={index}
+                                setZoom={setInspectorOptions}
+                                num={index}
                             />
                        
                     )
@@ -27,7 +28,10 @@ const [inspectorOptions,setInspectorOptions]=useState({open:false,img:""})
             }
             <Inspector open={inspectorOptions.open} 
                        setOpen={()=>setInspectorOptions(pre=>({...pre,open:false}))} 
-                       imgSrc={inspectorOptions.img}/>
+                       imgSrc={inspectorOptions.img}
+                       imgList={images}
+                       selectedNum={inspectorOptions.selectedNum}
+                       selectImage={setInspectorOptions}/>
         </ImageList>
     )
 }

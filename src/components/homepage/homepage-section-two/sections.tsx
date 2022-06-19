@@ -8,7 +8,7 @@ export const Sections =() =>{
     const {t} = useTranslation()
     return (
          <>
-                <Grid item xs={12}>
+                {/* <Grid item xs={12}>
 
                     <Typography 
                         variant="subtitle1"
@@ -17,7 +17,7 @@ export const Sections =() =>{
                         sx={{fontSize:{xs:'1.1em',sm:'1.1em',md:'2em'}}}>
                         {t("OurSpecialization")}<span>:</span> 
                     </Typography>
-                </Grid>
+                </Grid> */}
                 <Grid item container
                     xs={12}
                     className="partThreeBody"

@@ -5,7 +5,7 @@
 }
 body {
   margin: 0;
-  font-family: 'Oswald', 'Roboto';
+  font-family: 'Bitter', 'Roboto';
     
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -36,6 +36,6 @@ a {
   text-decoration: none;
 }
 @font-face {
-  font-family: 'Oswald';
-  src: local('Oswald'),url('./fonts//Oswald/Oswald-VariableFont_wght.ttf');
+  font-family: 'Bitter';
+  src: local('Bitter'),url('./fonts/Bitter/Bitter-VariableFont_wght.ttf');
 }

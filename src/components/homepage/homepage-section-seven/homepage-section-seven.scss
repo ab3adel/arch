@@ -1,7 +1,7 @@
 
 
 .sectionSevenContainer {
-  grid-row: 7/7;
+  grid-row: 6/6;
   min-height: 105vh;
   background-image: url('../../../images/homepage7/bg-team.jpg');
   background-attachment: fixed;
@@ -60,7 +60,7 @@
                      height: 100%;
                      .imageHolder{
                         height: 100%;
-                         background-size: cover;
+                         background-size: 100% 100%;
                          background-repeat:no-repeat ;
                          background-position: center;
                          overflow: hidden;

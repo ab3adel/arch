@@ -21,7 +21,10 @@ const img:Variants= {
         opacity:[0.5,1],
         transition:{
             duration:3,
-            ease:'easeInOut'
+            ease:'easeInOut',
+            opacity :{
+                duration:1.5
+            }
         }
     },
     third:{

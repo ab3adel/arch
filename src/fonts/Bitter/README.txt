@@ -1,23 +1,36 @@
-Oswald Variable Font
+Bitter Variable Font
 ====================
 
-This download contains Oswald as both a variable font and static fonts.
+This download contains Bitter as both variable fonts and static fonts.
 
-Oswald is a variable font with this axis:
+Bitter is a variable font with this axis:
   wght
 
-This means all the styles are contained in a single file:
-  Oswald/Oswald-VariableFont_wght.ttf
+This means all the styles are contained in these files:
+  Bitter-VariableFont_wght.ttf
+  Bitter-Italic-VariableFont_wght.ttf
 
 If your app fully supports variable fonts, you can now pick intermediate styles
 that aren’t available as static fonts. Not all apps support variable fonts, and
-in those cases you can use the static font files for Oswald:
-  Oswald/static/Oswald-ExtraLight.ttf
-  Oswald/static/Oswald-Light.ttf
-  Oswald/static/Oswald-Regular.ttf
-  Oswald/static/Oswald-Medium.ttf
-  Oswald/static/Oswald-SemiBold.ttf
-  Oswald/static/Oswald-Bold.ttf
+in those cases you can use the static font files for Bitter:
+  static/Bitter-Thin.ttf
+  static/Bitter-ExtraLight.ttf
+  static/Bitter-Light.ttf
+  static/Bitter-Regular.ttf
+  static/Bitter-Medium.ttf
+  static/Bitter-SemiBold.ttf
+  static/Bitter-Bold.ttf
+  static/Bitter-ExtraBold.ttf
+  static/Bitter-Black.ttf
+  static/Bitter-ThinItalic.ttf
+  static/Bitter-ExtraLightItalic.ttf
+  static/Bitter-LightItalic.ttf
+  static/Bitter-Italic.ttf
+  static/Bitter-MediumItalic.ttf
+  static/Bitter-SemiBoldItalic.ttf
+  static/Bitter-BoldItalic.ttf
+  static/Bitter-ExtraBoldItalic.ttf
+  static/Bitter-BlackItalic.ttf
 
 Get started
 -----------
@@ -61,7 +74,7 @@ License
 Please read the full license text (OFL.txt) to understand the permissions,
 restrictions and requirements for usage, redistribution, and modification.
 
-You can use them in your products & projects - print or digital,
+You can use them in your products & projects – print or digital,
 commercial or otherwise.
 
 This isn't legal advice, please consider consulting a lawyer and see the full

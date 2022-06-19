@@ -3,9 +3,9 @@ import current from '../../images/back4.jpg'
 import './imageplaceholder.scss'
 import {ImageListItem} from '@mui/material'
 
-interface iProps {imgSrc:string,setZoom:Function}
+interface iProps {imgSrc:string,setZoom:Function,num:number}
 
-export const ImagePlaceHolder=({imgSrc,setZoom}:iProps)=>{
+export const ImagePlaceHolder=({imgSrc,setZoom,num}:iProps)=>{
     const [currentImage,setCurrentImage]= useState({src:current,loading:true})
     useEffect(()=>{
         let mounted =true ;
@@ -21,7 +21,7 @@ export const ImagePlaceHolder=({imgSrc,setZoom}:iProps)=>{
     },[])
     const handleZoomImage =()=>{
       
-        setZoom((pre:any)=>({...pre,open:true,img:imgSrc}))
+        setZoom((pre:any)=>({...pre,open:true,img:imgSrc,selectedNum:num}))
     }
 
     return (
@@ -38,7 +38,8 @@ export const ImagePlaceHolder=({imgSrc,setZoom}:iProps)=>{
             />
         </ImageListItem>
         :
-        <ImageListItem>
+        <ImageListItem
+         >
 
             <img
                 src={`${imgSrc}?w=161&fit=crop&auto=format`}
@@ -46,7 +47,7 @@ export const ImagePlaceHolder=({imgSrc,setZoom}:iProps)=>{
                 onClick={()=>handleZoomImage()}
                 
                 style={{cursor:'pointer'}}
-            />
+            /> 
         </ImageListItem>
        }
         </>

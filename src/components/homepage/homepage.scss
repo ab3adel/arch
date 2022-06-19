@@ -5,12 +5,12 @@
     grid-template-rows: minmax(100vh,100vh) 
                          1fr 
                          minmax(100vh,105vh) 
-                         minmax(100vh,100vh) 
-                         minmax(100vh,100vh)
+                         minmax(100vh,150vh) 
+                        
                          minmax(50vh,50vh) 
                          minmax(100vh,auto)
                          ;
     grid-column: 1/1;
-    row-gap: 2em;
+    row-gap: 3em;
   
 }

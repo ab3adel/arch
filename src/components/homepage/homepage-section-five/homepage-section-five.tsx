@@ -10,7 +10,9 @@ import {useTranslation} from 'react-i18next'
 import 
 {
     ImageList,
-    ImageListItem
+    ImageListItem,
+    Typography,
+    Grid
 } 
 from '@mui/material'
 import {useNavigate} from 'react-router'
@@ -30,10 +32,44 @@ let mounted= true
     }
 
 },[window])
-console.log(screenWidth)
+
     return (
         <div className="homepageFiveContainer">
-           <div className="homepageFiveBody">
+           <Grid 
+                container 
+                className="homepageFiveBody"
+                rowGap={2}>
+            <Grid item container xs ={12}
+             display="flex"
+             justifyContent={'center'}
+             alignItems="center">
+                <Typography
+                sx={{fontSize:{xs:'1em',sm:'1.5em',md:'1.9em'}}}
+                className="title">
+                    ....<span> ....</span>
+                </Typography>
+            </Grid>
+            <Grid item container xs ={12}
+             display="flex"
+             justifyContent={'center'}
+             alignItems="center">
+                <Typography
+                sx={{fontSize:{xs:'1em',sm:'1.5em',md:'1.9em'}}}
+                className="title">
+                    Some of<span> Our Creative :</span>
+                </Typography>
+            </Grid>
+            <Grid item container xs ={12}
+             display="flex"
+             justifyContent={'center'}
+             alignItems="center">
+                <Typography
+                sx={{fontSize:{xs:'1em',sm:'1.5em',md:'1.9em'}}}
+                className="title">
+                      <span> .... </span>....
+                </Typography>
+            </Grid>
+            <Grid item container xs ={12} >
 
                 <ImageList sx={{width:'100%',height:'100%'}} 
                 variant="masonry" 
@@ -53,7 +89,8 @@ console.log(screenWidth)
                         })
                     }
                 </ImageList>
-           </div>
+            </Grid>
+           </Grid>
            
         </div>
     )

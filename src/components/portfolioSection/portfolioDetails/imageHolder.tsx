@@ -73,7 +73,7 @@ const cancelHovering=(e:React.MouseEvent | React.TouchEvent)=>{
 
                     <ImagePlaceHolder  
                             imgSrc={imgSrc} 
-                            
+                            num={0}
                             setZoom={setInspectorOptions}
                             />
                     <motion.div

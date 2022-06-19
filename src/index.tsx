@@ -11,7 +11,7 @@ import {Provider} from 'react-redux'
 import {store} from './store/store'
 import {CircularProgress} from '@mui/material'
 import './i18n'
-import './fonts/Oswald/Oswald-VariableFont_wght.ttf'
+import './fonts/Bitter/Bitter-VariableFont_wght.ttf'
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

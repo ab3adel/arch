@@ -15,7 +15,7 @@ export const BlogCard =({imgSrc,date,title,author,description}:iProps) =>{
                 <Grid item xs={12}>
                     <img src={imgSrc} />
                 </Grid>
-                <Grid item container xs ={12}
+                {/* <Grid item container xs ={12}
                 className="date">
                     <Grid item xs ={12} sm={8}
                      paddingRight={2}>
@@ -32,10 +32,11 @@ export const BlogCard =({imgSrc,date,title,author,description}:iProps) =>{
                             {author}
                         </Typography>
                     </Grid>
-                </Grid>
+                </Grid> */}
                 <Grid item xs={12}
                     className="title">
                     <Typography color="inherit"
+                    sx={{fontSize:{xs:'1em',sm:'1em',md:'1.3em'}}}
                     >
                         <a href='#'>
 

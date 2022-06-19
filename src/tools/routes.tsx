@@ -6,10 +6,12 @@ import {Blogs} from '../components/blogs/blogs'
 import {BlogDetails} from '../components/blogs/blogdetails/blogdetails'
 import Portfolio from '../components/portfolioSection/portfolio'
 import {PortfolioList} from '../components/portfolioSection/portfolioList/portfolioList'
-import {PortfolioDetails} from '../components/portfolioSection/portfolioDetails/portfolioDetails'
+
+
 import React, { ComponentType } from 'react'
 const About = React.lazy(()=>import('../components/about/about'))
 const Contacts = React.lazy(()=>import('../components/contacts/contacts'))
+const PortfolioDetails = React.lazy(()=>import ('../components/portfolio/portfolio'))
 
 export const routes:RouteObject [] = [
     {
