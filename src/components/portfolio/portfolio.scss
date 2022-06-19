@@ -28,13 +28,13 @@
 }
 .portfolioContainer {
     display: grid;
-    grid-template-rows: 200px 1fr ;
+    grid-template-rows: auto  auto ;
     background-color:  #2b2b2b;
-    padding-bottom:3rem;
+
     .portfolioHeader {
         display: flex;
         align-items: center;
-        justify-content: center;
+
         font-size: larger;
         font-weight: bold;
         color:white;
@@ -45,8 +45,8 @@
         }
         p {
             padding:1rem;
-            text-align: center;
-            width:60%
+            text-align: justify;
+          
         }
 
     }
@@ -111,9 +111,21 @@
         }
         .MuiDialogActions-root {
             max-width: 100%;
-            overflow-x: hidden;
+            overflow-x: scroll;
             display: inline;
             scroll-behavior: smooth;
+            scrollbar-width: none;
+            &::-webkit-scrollbar-thumb {
+                background-color: transparent;
+              
+            }
+            &::-webkit-scrollbar {
+               
+                display:none;
+                
+            
+            }
+            
             .scrollableContainer {
                min-width:150vw;
                 display: flex;
@@ -159,9 +171,8 @@
         .portfolioHeader {
             overflow: hidden;
             p {
-                width: 100%;
-                font-size: medium;
-                text-align: justify;
+               
+               
             }
         }
     }
@@ -177,6 +188,67 @@
                 }
             }
     
+        }
+    }
+    .MuiDialog-root.inspectorDetails {
+      
+        .MuiDialog-container {
+            .MuiPaper-root {
+               
+                
+            }
+            .MuiDialogContent-root {
+              
+                .closeButton {
+                    position:absolute;
+                    top:0;
+                    left:0;
+                    font-size: 2em;
+                    color:white;
+                    transition: .2s all;
+                    &:hover {
+                        font-size: 4em;
+                    }
+                }
+    
+                .leftArrow {
+                    position: absolute;
+                    left:0;
+                    top:80%;
+                    color:white;
+                    font-size: 4em;
+                    cursor: pointer;
+                    
+                }
+                .rightArrow {
+                    position: absolute;
+                    right: 0;
+                    top:80%;
+                    color:white;
+                    font-size: 4em;
+                    cursor: pointer;
+                }
+            }
+            .MuiDialogActions-root {
+                max-width: 100%;
+                overflow-x: hidden;
+                display: inline;
+                scroll-behavior: smooth;
+                .scrollableContainer {
+                   min-width:150vw;
+                    display: flex;
+                    justify-content: space-evenly;
+                    flex-wrap: nowrap;
+                    img {
+                        width:40px;
+                        height: 40px;
+                    }
+                    img.selectedImage {
+                        box-shadow: 3px 4px 5px white;
+                        border:5px solid white;
+                    }
+                }
+            }
         }
     }
 }

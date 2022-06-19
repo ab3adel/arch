@@ -35,11 +35,11 @@ let width = window.innerWidth
 scroll.style.overflowX="scroll";
 if (str === 'right') {
     scroll.scrollLeft = scroll.scrollLeft +width /2;
-    scroll.style.overflowX='hidden'
+    
 }
 else {
     scroll.scrollLeft=scroll.scrollLeft - width/2
-    scroll.style.overflowX='hidden'
+    
 }
 }
 const keyPressed =(e:React.KeyboardEvent)=>{

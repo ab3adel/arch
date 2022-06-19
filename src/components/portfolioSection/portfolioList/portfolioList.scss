@@ -88,3 +88,40 @@
   justify-content: space-evenly;
   
 }
+@media screen  and (max-width:501px) {
+  .portfolioListSection {
+    .MuiGrid-root{
+
+      .tabsCustomized {
+    
+        .MuiTabs-scroller {
+        .MuiTabs-flexContainer{
+  
+          .selectedTab.MuiGrid-root {
+          
+            button.MuiButtonBase-root {
+              color:white;
+              font-weight: lighter;
+              opacity: 1;
+              font-size: .5em;
+            }
+          
+          
+          }
+          .MuiGrid-root {
+            
+            button.MuiButtonBase-root {
+              color:white;
+              font-weight: lighter;
+              opacity: 1;
+              font-size: .5em;
+            }
+          }
+         
+        }
+    
+        }
+      }
+    }
+  }
+}

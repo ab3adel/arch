@@ -1,12 +1,10 @@
 import './portfolio.scss'
-import {RectangleImage} from './rectangle'
-import {SquareImage} from './square'
+
 import {useParams} from 'react-router-dom'
 import {PortfolioList} from './imagelist'
 import {LoadingPage} from '../../tools/loadingpage/loadingpage'
 import { useState } from 'react'
-import React from 'react'
-import { isConstructorDeclaration } from 'typescript'
+import {Grid} from '@mui/material'
 
 let imgsArr:string[]= []
 for (let i =1;i<31;i++ ){
@@ -15,35 +13,42 @@ for (let i =1;i<31;i++ ){
 }
 
  const Portfolio =() =>{
-     console.log('yup')
+   
     const slug = useParams()
     const [isFinished,setIsFinished] =useState(true)
     
 
     const text = `Aute occaecat ex aliquip deserunt. Consectetur et exercitation 
               ullamco enim pariatur. Eiusmod anim anim quis commodo. Est aliquip est 
-              eiusmod reprehenderit ad duis est.`
+              eiusmod reprehenderit ad duis est.
+              ullamco enim pariatur. Eiusmod anim anim quis commodo. Est aliquip est 
+              eiusmod reprehenderit ad duis est.
+              ullamco enim pariatur. Eiusmod anim anim quis commodo. Est aliquip est 
+              eiusmod reprehenderit ad duis est.
+              `
 
     return (
-        <div className="portfolioContainer">
-            <div className="portfolioHeader">
+        <Grid container 
+           rowGap={2}
+          className="portfolioContainer">
+            <Grid item xs={12} className="portfolioHeader">
                 <h2>3D Ikoniks Title</h2>
                 <p> {text}</p>
-            </div>
-            <div className="portfolioBody">
+            </Grid>
+            <Grid item xs ={12} className="portfolioBody">
            
                 {
                     <PortfolioList images={imgsArr}/>
                 }
                 
-            </div>
+            </Grid>
              {isFinished && (
                 <LoadingPage
                  isFinished={isFinished}
                  setIsFinished={setIsFinished}
                  images={imgsArr.slice(0,1)}/>
             )}
-        </div>
+        </Grid>
     )
 }
 export default Portfolio;

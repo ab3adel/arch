@@ -20,7 +20,7 @@ export const PortfolioList =() =>{
     const {i18n} =useTranslation()
     const [sections,setSections]=useState<iSection[]>([{name:'',nodes:[]}])
 const handleChange =(e:React.SyntheticEvent<Element,Event>,newValue:number) =>{
-    console.log(newValue)
+   
     setValue(newValue)
 }
 const handleTab= (e:React.MouseEvent,num:number)=>{
@@ -47,7 +47,7 @@ if (isSuccess && data) {
     setSections(newSections)
     
 }
-console.log(data)
+
 },[isSuccess,isLoading])
 
     return (
