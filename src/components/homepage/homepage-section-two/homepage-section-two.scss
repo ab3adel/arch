@@ -20,11 +20,12 @@
     .partOne {
         color:white;
         justify-content: space-evenly;
-        padding:2em 2em 0 2em;
+        padding:2em 2em 0 0.5em;
         background-image: url('../../../images/homepage2/signature.png');
         background-size: 25%;
         background-repeat: no-repeat;
         background-position: right;
+        
         .partOneTitle {
  
             font-weight: bold;
@@ -163,9 +164,7 @@
             padding-bottom: 1em;
             .partOneBody {
                 padding-right: 0;
-                padding-bottom: 1.5em;
-
-
+                padding:0 0 1.1em 0;
             }
         }
         .partTwo {

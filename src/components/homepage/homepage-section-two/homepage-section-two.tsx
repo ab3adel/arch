@@ -30,6 +30,25 @@ const textVariant:Variants ={
                 ease:'linear'
             }
         }
+    },
+    hiden:{
+        opacity:0,
+        rotateX:'90deg',
+    },
+    showTitle :{
+        opacity:[0,1],
+        rotateX:['90deg','0deg'],
+        transition:{
+            
+            duration:2,
+            ease:'backInOut',
+            delay:.5,
+            opacity:{
+                duration:1,
+                ease:'linear'
+            }
+        }
+
     }
 }
 export const HomepageSectionTwo =() =>{
@@ -50,19 +69,30 @@ export const HomepageSectionTwo =() =>{
                 </Typography>
             </Grid>      
             <Grid item container xs={12}
-              rowGap={5}>
-                    <Grid item lg={8} md={8} sm={12} 
+              rowGap={5}
+              
+              >
+                <Grid item lg={1} md={1} sm={0} xs={0} />
+                    <Grid item lg={7} md={7} sm={12} 
                        xs={12} 
                          className="partOne"  
                     >
-                        <Typography 
-                            variant="subtitle1"
-                            className="partOneTitle"
-                            color='inherit'
-                            sx={{fontSize:{xs:'1em',sm:'1em',md:'2em'}}}
-                        >
-                           {t("WeTurnIdea")}<span>.</span>
-                        </Typography>
+                         <motion.div
+                        variants={textVariant}
+                        initial='hiden'
+                        whileInView={'showTitle'}
+                        viewport={{once:true}}
+                        
+                         >
+                            <Typography 
+                                variant="subtitle1"
+                                className="partOneTitle"
+                                color='inherit'
+                                sx={{fontSize:{xs:'1em',sm:'1em',md:'2em'}}}
+                            >
+                            {t("WeTurnIdea")}<span>.</span>
+                            </Typography>
+                         </motion.div>
                         <motion.div
                         variants={textVariant}
                         initial='initial'
@@ -98,7 +128,7 @@ export const HomepageSectionTwo =() =>{
                      className='divider'>
                         <Divider variant="fullWidth" />
                     </Grid>
-                    <Grid item  
+                    <Grid item  container
                         xs={12} 
                         sm={12} 
                         md={12} 

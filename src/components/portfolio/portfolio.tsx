@@ -3,38 +3,48 @@ import './portfolio.scss'
 import {useParams} from 'react-router-dom'
 import {PortfolioList} from './imagelist'
 import {LoadingPage} from '../../tools/loadingpage/loadingpage'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {Grid} from '@mui/material'
+import { ConstructionOutlined } from '@mui/icons-material'
 
-let imgsArr:string[]= []
-for (let i =1;i<31;i++ ){
-  import(`../../images/portfolio/0 (${i}).jpg`).then(som=>imgsArr.push(som.default))
+// let imgsArr:string[]= []
+// for (let i =1;i<31;i++ ){
+//   import(`../../images/portfolio/0 (${i}).jpg`).then(som=>imgsArr.push(som.default))
 
-}
+// }
 
- const Portfolio =() =>{
+ const Portfolio =({nodes}:{nodes:any[]}) =>{
    
-    const slug = useParams()
+   
     const [isFinished,setIsFinished] =useState(true)
-    
+    const [imgsArr,setImgsArr]=useState([''])
+    useEffect(()=>{
+        if (nodes.length >0) {
+            let newImages:any[]=[]
+             nodes.map(ele=>{
+                if (ele.attachment){
+                    newImages.push('http://backend.test.ikoniks.de/'+ele.attachment)
+                }
+                if (ele.files.length> 0) {
+                    ele.files.map((ele:any)=> {
+                        newImages.push('http://backend.test.ikoniks.de/'+ele.url)
+                    })
+                }
+               
+            })
+            setImgsArr(newImages)
+        }
 
-    const text = `Aute occaecat ex aliquip deserunt. Consectetur et exercitation 
-              ullamco enim pariatur. Eiusmod anim anim quis commodo. Est aliquip est 
-              eiusmod reprehenderit ad duis est.
-              ullamco enim pariatur. Eiusmod anim anim quis commodo. Est aliquip est 
-              eiusmod reprehenderit ad duis est.
-              ullamco enim pariatur. Eiusmod anim anim quis commodo. Est aliquip est 
-              eiusmod reprehenderit ad duis est.
-              `
+    },[nodes])
 
     return (
         <Grid container 
            rowGap={2}
           className="portfolioContainer">
-            <Grid item xs={12} className="portfolioHeader">
+            {/* <Grid item xs={12} className="portfolioHeader">
                 <h2>3D Ikoniks Title</h2>
                 <p> {text}</p>
-            </Grid>
+            </Grid> */}
             <Grid item xs ={12} className="portfolioBody">
            
                 {
