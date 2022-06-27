@@ -15,6 +15,7 @@ import
     ,Button
     ,Typography
     ,Fade
+    ,Grid
 } 
 from '@mui/material'
 import {useLocation,useNavigate} from 'react-router'
@@ -116,6 +117,7 @@ export const Navbar =() =>{
                               anchor='left'
                               open={Boolean(anchorElNav)}
                               onClose={handleCloseNavMenu} 
+                              sx={{zIndex:222000}}
                              >
                                   <List sx={{display:'flex',alignItems:'cetnter'}}>
                                          
@@ -135,6 +137,11 @@ export const Navbar =() =>{
                                                    {t("Portfolio")}
                                                 </NavLink>
                                             </ListItem >
+                                            <ListItem button onClick={handleCloseNavMenu}>
+                                                <NavLink to="/careers">
+                                                {t("Careers")}
+                                                </NavLink>
+                                            </ListItem>
                                             <ListItem button onClick={handleCloseNavMenu}>
                                                <NavLink to="/blogs">
                                                     {t('Blog')}
@@ -160,42 +167,51 @@ export const Navbar =() =>{
                                  
                                  }}>
                                      
-                                     
-                                     <Typography variant="h5" component="div" 
-                                     className="logo"
-                                     sx={{flexGrow:1,
-                                          display:'flex',
-                                           justifyContent:'center'}}
-                                           onClick={()=>navigate('/')}>
-                                                3D<span>.</span>Ikoniks
-                                     </Typography>
-                                          <Box sx={{
-                                              display:'flex',
-                                              justifyContent:'space-evenly',
-                                              alignItmes:'center',
-                                              width:'60%',
-                                              color:'white'
-                                          }}>
+                                     <Grid  item container xs={12}>
+                                        <Grid item xs={4}>
+
+                                            <Typography variant="h5" component="div" 
+                                            className="logo"
+                                            sx={{flexGrow:1,
+                                                display:'flex',
+                                                justifyContent:'center'}}
+                                                onClick={()=>navigate('/')}>
+                                                        3D<span>.</span>Ikoniks
+                                            </Typography>
+                                        </Grid>
+                                        <Grid item xs={8}
+                                         sx={{
+                                            display:'flex',
+                                            justifyContent:'space-evenly',
+                                            alignItmes:'center',
+                                         
+                                            color:'white'
+                                        }}>
                                             <NavLink to="/">
-                                            {t( 'Home')}
-                                            </NavLink>
+                                                {t( 'Home')}
+                                                </NavLink>
+                                            
+                                                <NavLink to="/about">
+                                                {t('About')}
+                                                </NavLink>
+                                                <NavLink to="/portfolio">
+                                                {t("Portfolio")}
+                                                </NavLink>
+                                                <NavLink to="/careers">
+                                                {t("Careers")}
+                                                </NavLink>
+                                                <NavLink to="/blogs">
+                                                {t('Blog')}
+                                                </NavLink>
+                                                <NavLink to="/contacts">
+                                                {t('Contacts')}
+                                                </NavLink>
+                                                <Link to="/" onClick={()=>changeLanguge()}>
+                                                    {t('Language')}
+                                                </Link> 
+                                        </Grid>
+                                     </Grid>
                                           
-                                             <NavLink to="/about">
-                                             {t('About')}
-                                            </NavLink>
-                                            <NavLink to="/portfolio">
-                                            {t("Portfolio")}
-                                            </NavLink>
-                                             <NavLink to="/blogs">
-                                             {t('Blog')}
-                                            </NavLink>
-                                            <NavLink to="/contacts">
-                                            {t('Contacts')}
-                                            </NavLink>
-                                             <Link to="/" onClick={()=>changeLanguge()}>
-                                                {t('Language')}
-                                            </Link> 
-                                            </Box>
                                           
                         </Box>
                     </Toolbar>
@@ -211,31 +227,34 @@ export const Navbar =() =>{
                     <Toolbar disableGutters>
                        
                         <Box sx={{flexGrow:1
-                                 ,display:{xs:'none',md:'flex',sm:'flex',lg:'flex'}
-                                 ,justifyContent:'space-between',
+                                 ,display:{xs:'none',md:'flex',sm:'flex',lg:'flex'},
+                                
                                  backgroundColor:'transparent'
                                  
                                  }}>
-                                     
-                                     
-                                     <Typography 
-                                                className="logo"
-                                                variant="h5" 
-                                               onClick={()=>navigate('/')}
-                                                component="div" 
-                                                sx={{flexGrow:1,
-                                                 display:'flex',
-                                                justifyContent:'center'}}>
-                                                3D<span>.</span>Ikoniks
-                                     </Typography>
-                                          <Box sx={{
-                                              display:'flex',
-                                              justifyContent:'space-evenly',
-                                              alignItmes:'center',
-                                              width:'60%',
-                                              color:'white'
-                                          }}>
-                                            <NavLink to="/">
+                                    <Grid item container xs={12}>
+                                        <Grid item xs={4}>
+
+                                            <Typography 
+                                                        className="logo"
+                                                        variant="h5" 
+                                                    onClick={()=>navigate('/')}
+                                                        component="div" 
+                                                        sx={{flexGrow:1,
+                                                        display:'flex',
+                                                        justifyContent:'center'}}>
+                                                        3D<span>.</span>Ikoniks
+                                            </Typography>
+                                        </Grid>
+                                        <Grid item xs={8}
+                                         sx={{
+                                            display:'flex',
+                                            justifyContent:'space-evenly',
+                                            alignItmes:'center',
+                                         
+                                            color:'white'
+                                        }}>
+                                        <NavLink to="/">
                                             {t( 'Home')}
                                             </NavLink>
                                           
@@ -244,6 +263,9 @@ export const Navbar =() =>{
                                             </NavLink>
                                             <NavLink to="/portfolio">
                                             {t("Portfolio")}
+                                            </NavLink>
+                                            <NavLink to="/careers">
+                                            {t("Careers")}
                                             </NavLink>
                                              <NavLink to="/blogs">
                                              {t('Blog')}
@@ -254,7 +276,12 @@ export const Navbar =() =>{
                                             <Link to="/" onClick={()=>changeLanguge()}>
                                                 {t('Language')}
                                             </Link> 
-                                            </Box>
+
+                                        </Grid>
+
+                                    </Grid>
+                                     
+                                     
                                           
                         </Box>
                     </Toolbar>

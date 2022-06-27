@@ -1,0 +1,85 @@
+.careersContainer {
+    max-width: 100vw;
+    .careersHeader {
+        background: url('../../images/careers/paintCenter.jpg') ;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+        .MuiBox-root {
+            color:white;
+            font-size: 1.5em;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+    }
+    .searchContainer {
+        .MuiTextField-root {
+            background-color: white;
+            width:100%;
+            border-radius: 10px;
+        }
+        .searchIcon {
+            .MuiButton-root {
+                background-color: white;
+                color:var(--black);
+                padding:0.1em;
+                .MuiSvgIcon-root {
+                    color:var(--black)
+                }
+            }
+        }
+    }
+    .cardContainer {
+        .MuiPaper-root {
+
+            .cardContent {
+                .jobRole {
+                    display: flex;
+                    justify-content: center;
+                    .MuiTypography-root {
+                        font-size: 1.5em;
+                        font-weight: bold;
+                    }
+                }
+                .jobLocation {
+                   
+                }
+                
+                .jobDescription {
+                   
+                    .MuiTypography-root {
+                        position: relative;
+                        span {
+                            background: linear-gradient(230deg ,white 70%,transparent );
+                            height: 30px;
+                            position: absolute;
+                            bottom:0%;
+                            left:0%;
+                            width:100%;
+
+                        }
+                    }
+                }
+            
+            }
+        }
+    }
+}
+@media screen and (max-width:501px) {
+    .careersContainer{
+        .careersHeader {
+            background-size: 200%;
+            .MuiBox-root {
+                flex-direction: column;
+            }
+        }
+        .searchContainer {
+            justify-content: space-between;
+        }
+    }
+    
+}

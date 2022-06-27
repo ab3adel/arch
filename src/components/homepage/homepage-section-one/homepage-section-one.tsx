@@ -364,6 +364,7 @@ const animateManually =(str:string)=>{
                     <NavLink  to={'/'}>{t('Home')}</NavLink>
                     <NavLink to={'/about'}>{t('About')}</NavLink>
                     <NavLink to={'/portfolio'}>{t('Portfolio')}</NavLink>
+                    <NavLink to={'/careers'}>{t('Careers')}</NavLink>
                     <NavLink to={'/blogs'}>{t('Blog')}</NavLink>
                     <NavLink to={'/contacts'}>{t('Contacts')}</NavLink>
                     <NavLink to={'/'} onClick={()=>changeLanguge()}>{t('Language')}</NavLink> 
