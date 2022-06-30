@@ -27,7 +27,8 @@ const navigate = useNavigate()
         <Grid item container xs={12}  sm={10} md={10} className="cardContainer"
         padding={1}>
 
-            <Card  onClick={()=>navigate('/careers/1')}>
+            <Card  onClick={()=>navigate('/careers/1')}
+             style={{cursor:'pointer'}}>
                 <CardContent className="cardContent" >
                     <Grid item xs={12} className="jobRole"
                     padding={1}>
@@ -81,11 +82,13 @@ const navigate = useNavigate()
                     <Divider />
                     <Grid item xs={12}
                      >
-                        <Typography className="title">
+                        <Typography className="title"
+                        fontWeight={'bold'}>
                             Qualifications :
                         </Typography>
                     </Grid>
-                    <Grid item xs={12} className="jobDescription">
+                    <Grid item xs={12} className="jobDescription"
+                    padding={1}>
                         <Typography>
                          {text.length > 30 ? text.slice(30):text}
                          <span className="hidden"></span>

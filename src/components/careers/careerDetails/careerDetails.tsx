@@ -15,11 +15,12 @@ import
     
 }
 from '@mui/icons-material'
-
+import {Application} from './application'
+import { useState } from 'react'
 
 
 export const CareerDetails =() =>{
-
+    const [open,setOpen]=useState(false)
 
     return (
        <div className="careerDetailsContainer">
@@ -190,13 +191,17 @@ export const CareerDetails =() =>{
                  className="buttonContainer">
                     <Grid item xs={4}
                     className="apply">
-                        <Button >
+                        <Button
+                         onClick={()=>setOpen(true)} >
                             Applay now
                         </Button>
                     </Grid>    
                 </Grid>
             </Grid>
         </Grid>
+        <Application 
+          open={open}
+          close={()=>setOpen(false)} />
        </div>
     )
 }

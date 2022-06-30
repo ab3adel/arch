@@ -3,6 +3,7 @@
 .careerDetailsContainer {
     max-width: 100vw;
     .MuiGrid-root.MuiGrid-container {
+        
         .careerDetails {
             background-color: white;
             border-radius: 10px;
@@ -14,6 +15,7 @@
                 }
             }
             .careerDetailsBody {
+              
                 .qualification {
                     .title {
                         font-weight: bold;
@@ -49,6 +51,51 @@
                     }
                 }
             }
+        }
+    }
+}
+.applicationContainer {
+    border-radius: 10px;
+    .application {
+        .MuiGrid-root{
+            .coverLetter {
+               
+                .MuiFormControl-root {
+                 
+                    .MuiOutlinedInput-root {
+                 
+
+                    }
+                }
+            }
+            .cvInput {
+                width:100%;
+                visibility:hidden ;
+
+            }
+            .cvClick {
+                color:blue;
+                cursor: pointer;
+                display: flex;
+                flex-direction: column;
+                .fileInput:hover {
+                    font-size: large;
+                }
+                .fileName {
+                    color:black
+                }
+            }
+           
+        }
+    }
+    .applicationButtons {
+        .sendButton {
+            background-color: black;
+            color:white;
+        }
+        .cancelButton {
+            background-color: red;
+            color:white;
         }
     }
 }
